@@ -1,10 +1,25 @@
 # Inleiding
 ## Aanleiding
+Goede en tijdige informatie-uitwisseling met de patiënt en tussen zorgverleners onderling is nodig om kwalitatief goede en veilige zorg te kunnen leveren. Het programma ‘gegevensuitwisseling in de paramedische zorg’ focust op de gestandaardiseerde uitwisseling van medische gegevens met de patiënt via een persoonlijke gezondheidsomgeving (PGO) en tussen zorgverleners onderling.
+
+Zo worden behandelingen effectief en worden fouten voorkomen. Gegevensuitwisseling vermindert bovendien overbodige administratieve lasten.
+
+Als onderdeel van het programma ontwikkelen leveranciers oplossingen voor databeschikbaarheid en gegevensuitwisseling. Om de benodigde ontwikkeling te versnellen werken leveranciers zoveel mogelijk samen bij de ontwikkeling van specificaties en software. Het projectonderdeel 'open GUPZ speciicatie en tools' 
+
 ## Doelstelling programma GUPZ
+In het programma Gegevensuitwisseling Paramedische Zorg wordt gewerkt aan verschillende doelen:
+
+- Het realiseren van gegevensuitwisseling tussen paramedici en huisartsen, medisch specialisten en paramedici onderling.  Wanneer zorgverleners medische gegevens uitwisselen, kan zorg nog beter op elkaar worden afgestemd en vermindert dit administratieve lasten.
+- Het realiseren van gegevensuitwisseling tussen paramedici en de patiënt. Gegevens worden uitgewisseld met de patiënt via de persoonlijke gezondheidsomgeving (PGO). De patiënt krijgt op deze manier meer inzicht in zijn of haar paramedische gegevens via een PGO.
+
+Meer informatie over het programma is te vinden op ![Gegevensuitwisseling Paramedische Zorg (https://gegevensuitwisselingparamedischezorg.nl/)
+
+Het programma kent een ambitieuze tijdlijn. De bij het programma betrokken leveranciers willen daarom optimaal samenwerken bij de ontwikkeling van de benodigde specificaties en software.
+
 ![Tijdlijn van het GUPZ programma](/assets/timeline.jpg)
 
 ## Ambities open GUPZ specificaties & tools
-Het programma GUPZ en de betrokken PARIS leveranciers streven naar de ontwikkeling van (open specificaties en tools voor) een FHIR gebaseerd dataplatform voor de paramedische zorg. 
+Het programma GUPZ en de betrokken PARIS leveranciers streven naar de ontwikkeling van (open specificaties en tools voor) een FHIR gebaseerd dataplatform voor de paramedische zorg. Door gezamenlijke ontwikkeling van specificaties en waar mogelijk ook software, wordt versnelling bereikt bij de realisatie van de doelen van het programma GUPZ
 
 ### Waarde voor eindgebruikers die opweegt tegen de investeringen:
 - Verlagen van de administratieve lasten voor behandelaars waardoor meer tijd overblijft voor de patient
