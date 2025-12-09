@@ -1,4 +1,4 @@
-# Open specifications & tools for GUPZ
+# Open-GUPZ
 This repository contains the source files for specifications, documentation and tools that are developed as part of the GUPZ program (GegevensUitwisseling Paramedische Zorg)
 
 ## Language
