@@ -216,4 +216,5 @@ to learn more about creating a personal access token.
 
 Documentation is automatically deployed to GitHub Pages and can be found on:
 
-[https://nictiz.github.io/api-requirements-docs/](https://nictiz.github.io/api-requirements-docs/)
+> [!WARNING]
+> To be determined
