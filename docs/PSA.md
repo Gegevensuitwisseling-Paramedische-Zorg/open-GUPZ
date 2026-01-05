@@ -93,7 +93,10 @@ open-GUPZ streeft naar maximaal hergebruik van alles wat door de deelnemende PAR
 ## Reductie van complexiteit
 PARIS leveranciers willen de complexiteit van de door hen ontwikkelde systemen beperken. Door 'seperation of concerns' kan het gebruik technologiën en implementatieprofielen die specifiek zijn voor een bepaald afsprakenstelsel zoals MedMij, binnen het dataplatform worden voorkomen of beperkt. Door scheiding van het dataplatform van het PARIS zelf, wordt voorkomen dat de complexiteit van het PARIS toeneemt.
  Door open innovatie en samenwerking kunnen complexe componten van het dataplatform gezamenlijk worden gespecificeerd en/ of ontwikkeld. 
- 
+
+## Just enough architecture
+--
+
 ## Implementatievrijheid 
 PARIS leveranciers streven naar implementatievrijheid. Dat wil zeggen dat open-GUPZ zoveel mogelijk ontwikkekplatform en -taal agnostische specificaties en patterns zal bevatten. Eventuele opensource implentaties kunnen dienen als referentie-implementatie. 
 
