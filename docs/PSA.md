@@ -2,7 +2,7 @@
 # Inleiding
 Goede en tijdige informatie-uitwisseling met de patiënt en tussen zorgverleners onderling is nodig om kwalitatief goede en veilige zorg te kunnen leveren. Het programma ‘Gegevensuitwisseling in de Paramedische Zorg’ focust op de gestandaardiseerde uitwisseling van medische gegevens met de patiënt via een persoonlijke gezondheidsomgeving (PGO) en tussen zorgverleners onderling. Zo worden behandelingen effectief en worden fouten voorkomen. Gegevensuitwisseling vermindert bovendien overbodige administratieve lasten.
 
-Voorliggende Project Start Architectuur (PSA) betreft de ontwikkeling van een FHIR gebaseerd dataplatform voor de paramedische zorg. Het platform ondersteunt gegevensuitwisseling en databeschkbaarheid in de paramedische zorg, en wordt ontwikkeld door samenwerkende leveranciers van Paramedische Informatie Systemen (PARIS). Leveranciers worden daarbij ondersteund door het programma Gegevensuitwisseling Paramedische Zorg (GUPZ). Alle specificaties, documentatie en eventuele broncode zullen worden beheerd in de 'open-GUPZ' Github repository. 
+Voorliggende Project Start Architectuur (PSA) betreft de ontwikkeling van (specificaties voor) een FHIR gebaseerd dataplatform voor de paramedische zorg. Het platform ondersteunt gegevensuitwisseling en databeschikbaarheid in de paramedische zorg, en wordt ontwikkeld door samenwerkende leveranciers van Paramedische Informatie Systemen (PARIS). Leveranciers worden daarbij ondersteund door het programma Gegevensuitwisseling Paramedische Zorg (GUPZ). Alle specificaties, documentatie en eventuele broncode zullen worden beheerd in de 'open-GUPZ' Github repository. 
 
 ## Doelstelling programma GUPZ
 In het programma Gegevensuitwisseling Paramedische Zorg wordt gewerkt aan verschillende doelen:
@@ -45,22 +45,41 @@ Open-GUPZ heeft ambities op drie gebieden:
 ## Eindproducten 
 Het programmaonderdeel 'open-GUPZ' levert ten minste de volgende eindproducten:
 - Een Project Start Architectuur (PSA) voor een FHIR gebaseerd dataplatform voor de paramedische zorg
-- Specificaties van documenttypes voor het beschikbaarstellen/ uitwisselen van ongestructureerde gegevens
-- Standaard coderingen (SNOMED refsets)
+- Een uitwerking van verschillende oplossingsrichtingen in de vorm van software architecture patterns of 'implementatieprofielen'
+- Een lijst met 'pas toe of leg uit' standaarden 
 - Specificaties van FHIR API's voor een dataplatform voor de paramedische zorg. 
 >[!WARNING]
 >How to connect to simplifier? OpenAPI?
-- Aansluitspecificaties voor partijen die op een paramedisch dataplatform aan willen sluiten
-- Solution architectuur van een dataplatform voor de paramedische zorg gebaseerd op twee alternatieve conceptuele architecturen
+- Eisen aan aansluitvoorwaarden voor partijen die op een paramedisch dataplatform aan willen sluiten
 - Optioneel source code voor gezamenlijk ontwikkelde onderdelen van een dataplatform voor de paramedische zorg
+- Specificaties van documenttypes voor het beschikbaarstellen/ uitwisselen van ongestructureerde gegevens
+- Standaard coderingen (SNOMED refsets)
+- Minimale functionele requirements/ capablities op het gebied van verwijzen en het beschikbaar stellen van informatie aan patiënten
   
 # Uitgangspunten en principes
 
 ## Gelijk speelveld
+open-GUPZ wil een bijdrage leveren aan een goed functionerende markt voor zorg-ict in de paramedische sector. Dit betekent dat open-GUPZ wil voorkomen dat paramedische praktijken zich gedwongen zien om diensten en systemen als 'totaaloplossing' af te nemen van één leverancier, of enkele leveranciers in een vast samenwerkingsverband, en dat overstapkosten van diensten of systemen beperkt, transparent en voorspelbaar blijven. In de praktijk betekent dit vooral:
+- Vrije keuze van een PARIS. Vervanging van het PARIS moet mogelijk zijn zonder dat ook de Dienstverlener Zorgaanbieder (DVA), het Verwijsplatform, het Netwerk Informatie Systeem en/ of andere op het PARIS aangesloten toepassingen voor primair of secundair gebruik moeten worden worden vervangen. Vervanging van het PARIS heeft een voorspelbare (fininanciele) impact.
+- Vrije keuze van de Dienstverlener Zorgaanbieder (DVA). Vervanging van de DVA moet mogelijk zijn zonder vervanging van het PARIS en met een voorspelbare (financiële) impact
+- Vrije keuze van Netwerk Informatiesysteem (NIS). Vervanging van het NIS moet mogelijk zijn zonder vervanging van het PARIS en met een voorspelbare (financiële) impact
+- Vrije keuze van een Verwijsplatform. Vervanging van het Verwijsplatform moet mogelijk zijn zonder vervanging van het PARIS en met een voorspelbare (financiële) impact
+- Vrije keuze van andere op het PARIS aangesloten toepassingen voor primair of secundair gebruik  moet mogelijk zijn zonder vervanging van het PARIS en met een voorspelbare (financiële) impact.
+
+Het uitgangspunt 'gelijk speelveld' wordt bereikt doordat de bij open-GUPZ aangesloten leveranciers zich conformeren aan:
+- Het gebruik van open standaarden
+- Waar mogelijk en van toepassing het gebruik van best-practices en implementatieprofielen zoals gespecificeerd binnen open-GUPZ
+- Waar mogelijk en van toepassing implementeren van Generieke functies en aansluiten bij de Gemeenschappelijke Voorzieningen zoals deze worden ontwikkeld in het kader van het Landelijk Dekkend Netwerk
+- Het hanteren van transparante API-aansluitvoorwaarden die voldoen aan de Nictiz 'API requirements for Dutch Healthcare', en dan met name de categorie 'API agreements'
+
+## Gebruik van open standaarden
+open-GUPZ maakt gebruik van een lijst van 'pas toe of leg uit' -standaarden voor de ontwikkeling van specificaties en implementatieprofielen. Het gebruik van open standaarden bevordert de interoperabiliteit en daarmee de communicatie en samenwerking tussen verschillende zorginformatiesystemen en -applicaties. Het gebruik van opsn standaarden is daarmee een belangrijke voorwaarde voor het creeren van een gelijk speelveld. 'Pas toe of leg uit' -standaarden zullen worden gebruikt op alle niveau's van het Nictiz interoperabiliteitsmodel.
+
+## Gebruik van openbare best-practices en implementatieprofielen
+
 ## Open innovatie en samenwerking 
 Onder andere deze repository met documentatie, specificaties en tools/ open source
-## Gebruik van standaarden
-Waaronder open aansluitspecificaties op PARIS
+
 ## Implementatievrijheid 
 ## Waarde voor eindgebruikers
 ## Hergebruik
@@ -73,7 +92,7 @@ FHIR complexiteit scheiden van PARIS
 ## Make, join or buy
 
 # Grondslagen
-## Algemene Verordening Gegevensbeschreming (AVG)
+## Algemene Verordening Gegevensbescherming (AVG)
 ## Wet aanvullende bepalingen verwerking persoonsgegevens in de zorg (Wabvpz)
 ## Wet op geneeskundige behandelovereenkomst (WGBO)
 ## European Health Data Space (EHDS)
