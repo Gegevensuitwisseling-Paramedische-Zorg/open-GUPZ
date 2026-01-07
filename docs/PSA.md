@@ -55,7 +55,17 @@ Het programmaonderdeel 'open-GUPZ' levert ten minste de volgende eindproducten:
 - Specificaties van documenttypes voor het beschikbaarstellen/ uitwisselen van ongestructureerde gegevens
 - Standaard coderingen (SNOMED refsets)
 - Minimale functionele requirements/ capablities op het gebied van verwijzen en het beschikbaar stellen van informatie aan patiënten
-  
+
+# Organisatie/ stakeholders
+Geef hier een eerste indicatie van de (rol van) stakeholders die betrokken zijn bij (de oplossing voor) het vraagstuk. 
+## Projectorganisatie
+>[!WARNING]
+>Saskia T...wil jij deze oppakken?
+## Samenwerkingsafspraken
+
+REAME.md
+## Stakeholdermanagement
+
 # Uitgangspunten en principes
 open-GUPZ hanteert de volgende uitgangspunten en principes:
 
@@ -74,7 +84,7 @@ Het uitgangspunt 'gelijk speelveld' wordt bereikt doordat de bij open-GUPZ aange
 - Het hanteren van transparante API-aansluitvoorwaarden die voldoen aan de Nictiz 'API requirements for Dutch Healthcare', en dan met name de categorie 'API agreements'
 
 ## Gebruik van open standaarden
-open-GUPZ ontwikkelt een lijst van 'pas toe of leg uit' -standaarden voor de ontwikkeling van een dataplatform voor de Paramedische Zorg. Het gebruik van open standaarden bevordert de interoperabiliteit en daarmee de communicatie en samenwerking tussen verschillende zorginformatiesystemen en -applicaties. Het gebruik van open standaarden is daarmee een belangrijke voorwaarde voor het creeren van een gelijk speelveld. 'Pas toe of leg uit' -standaarden zullen worden gebruikt op alle niveau's van het Nictiz interoperabiliteitsmodel.
+open-GUPZ ontwikkelt een lijst van !['pas toe of leg uit' -standaarden ](/Pas toe leg uit standaarden.md) voor de ontwikkeling van een dataplatform voor de Paramedische Zorg. Het gebruik van open standaarden bevordert de interoperabiliteit en daarmee de communicatie en samenwerking tussen verschillende zorginformatiesystemen en -applicaties. Het gebruik van open standaarden is daarmee een belangrijke voorwaarde voor het creeren van een gelijk speelveld. 'Pas toe of leg uit' -standaarden zullen worden gebruikt op alle niveau's van het Nictiz interoperabiliteitsmodel.
 
 ## Gebruik van openbare architecture patterns en implementatieprofielen
 open-GUPZ ontwikkelt software architecture patterns en implementatieprofielen als blauwdruk voor de implementatie van een dataplatform voor de Paramedische Zorg. Gebruik van architecture patterns en implementatieprofielen voorkomt of beperkt leverancier-specifieke implementatie van de verplichte standaarden en het ontstaan van monolitische 'totaaloplossingen'. Het gebruik van architecture patterns en implementatieprofielen is daarmee een belangrijke voorwaarde voor het creeren van een gelijk speelveld. 
@@ -95,7 +105,7 @@ PARIS leveranciers willen de complexiteit van de door hen ontwikkelde systemen b
  Door open innovatie en samenwerking kunnen complexe componten van het dataplatform gezamenlijk worden gespecificeerd en/ of ontwikkeld. 
 
 ## Just enough architecture
---
+open-GUPZ ontwikkelt software archtecture patterns met als doel om verschillen bij de implementatie van standaarden te voorkomen of beperken. Het detailniveau van de ontwikkelde architectuur is precies voldoende voor dat doen, en niet meer dan dat. Teveel detail zal de implementatievrijheid van PARIS leveranciers en andere stakeholders onnodig beperken.
 
 ## Implementatievrijheid 
 PARIS leveranciers streven naar implementatievrijheid. Dat wil zeggen dat open-GUPZ zoveel mogelijk ontwikkekplatform en -taal agnostische specificaties en patterns zal bevatten. Eventuele opensource implentaties kunnen dienen als referentie-implementatie. 
@@ -103,33 +113,72 @@ PARIS leveranciers streven naar implementatievrijheid. Dat wil zeggen dat open-G
 ## Make, join or buy
 Bij de ontwikkeling van een dataplatform voor de Paramedische Zorg worden alleen componenten ontwikkeld die niet opensource of commercieel, tegen een redelijk tarief, beschikbaar zijn. Make, join or buy beslissingen worden gezamenlijk gemaakt en gedocumenteerd.
 
+## Privacy by design
+open-GUPZ hanteert de 'privacy by design ontwerpfilosofie', die vereist dat privacybescherming vanaf het begin af aan meegenomen wordt bij het ontwerpen en bouwen van nieuwe systemen. Concreet betekent dit dat op de 'privacy ontwerp strategieën' uit![Het blauwe boekje](https://www.cs.ru.nl/~jhh/blauwe-boekje.html) zullen worden toegepast op het ontwerp van het dataplatform voor de Paramedische Zorg.
+
+## Security in depth
+open-GUPZ hanteert de ![ICT-beveiligingsrichtlijnen voor webapplicaties](https://www.ncsc.nl/ict-beveiligingsrichtlijnen-webapplicaties) van het Nationaal Cyber Security Center bij het opstellen van:
+- Software arcitecture patterns (richtlijnen voor de laag 'webapplicaties')
+- Implementatieprofielen voor de inrichting van platformen, webservers en netwerken (richtlijnen voor de lagen 'Platform en webservers' en 'Netwerken')
+
 ## Waarde voor eindgebruikers
 De bovenstaande uitgangspunten en principes zijn ondergeschikt aan de waarde voor eindgebruikers. Mitz beargumenteerd (pas toe of leg uit) kan worden afgeweken van de bovenstaande uitgangspunten en principes indien dit aantoonbaar bijdraagt aan de waarde voor eindgebruikers.
 
-# Grondslagen
-## Algemene Verordening Gegevensbescherming (AVG)
-- Privacy by design - blauwe boekje
-- 
+# Juridische context
 
-## Wet aanvullende bepalingen verwerking persoonsgegevens in de zorg (Wabvpz)
-- Recht op digitaal afschrift
+## Grondslag voor de verwerking van gegevens
+Een dataplatform voor de Paramedische Zorg is een middel bij de verwerking van (bijzondere) persoonsgegevens en valt daarom onder de invloedssfeer van de Algemene Verordening Gegevensbescherming (AVG). Dit betekent in ieder geval dat de aanbieder van het dataplatform verwerker is en verwerking alleen is toegestaan voor zover deze is overeengekomen in een verwerkersovereenkomst met de verwerkingsverantwoordelijke, zijnde de paramedische praktijk. De grondslag voor verwerking van deze gegevens is dat zij nodig zijn voor het uitvoeren van de behandeling. Zorginstellingen zijn uitgezonderd van het verbod op het verwerken van gegevens over gezondheid, enkel voor zover de verwerking noodzakelijk is met het oog op een goede behandeling of verzorging van de betrokkene dan wel het beheer van de betreffende instelling of beroepspraktijk (artikel 30 lid 3 UAVG).  
+
+Een dataplatform voor de Paramedische Zorg verwerkt gegevens afkomstig uit het onderliggende PARIS van één paramedische praktijk. Dit betekent dat alle door het dataplatfom verwerkte gegevens net zo noodzakelijk zijn met het oog op goede behandeling als de gegevens in het PARIS. Doel(beschikbaar stelle) en middelen (dataplatform) veranderen wel en dienen te worden verwoord in de verwerkersovereenkomst.
+
+Een dataplatform voor de Paramedische Zorg kan worden gezien als Elektronisch Uitwisselingssysteem zoals bedoeld in de Wet aanvullende Bepalingen Verwerking Persoonsgegevens in de Zorg (WABVPZ). Dit betekent dat de vanuit de WABVPZ gestelde eisen aan zo'n uitwisselingssysteem in principe ook gelden voor het dataplatform voor de Paramedische Zog. Dit betreft vooral eisen op het gebied van de [rechten van de patiënt](#rechten-van-de-betrokkene) en op het gebied van [gegevensdeling](#grondslag-voor-het-delen-van-gegevens).
+
+## Rechten van de betrokkene
+De AVG stelt eisen ten aanzien van de rechten van de betrokkene (de patiënt). Het dataplatform voor de Paramedische Zorg ondersteunt bij de implementatie van sommige van deze eisen:
+- De eis op dataportabiliteit. Het dataplatform stelt data beschikbaar in een standaard (FHIR) formaat. Daarmee is data portable
+- Recht op inzage. Het dataplatform stelt data beschikbaar aan de patiënt zelf en ondersteunt daarmee diens recht op inzage.
+
+Op grond van de Wet Aanvullende Bepalingen Verwerking Persoonsgegevens in de Zorg (WABVPZ) heeft de patiënt daarnaast recht op een eletronisch afschrift van gegevens. Omdat het dataplatform voor de Paramedische Zorg gegevens elektronisch/ digitaal beschikbaar stelt, ondersteunt zij bij de implementatie van dit recht.
+
+Voor het recht op gegevenswissing en rectificatie en aanvulling (AVG), geldt dat het dataplatform voor de Paramedische Zorg het onderliggende PARIS als bron van gegevens gebruikt. Gegevens die worden gerectificeerd, aangevuld of gewist in het onderliggende PARIS, zullen automatisch moeten worden gerectificeerd, aangevuld of gewist. De architectuur van het dataplatform dient dit te waarborgen.
+
+Het recht op inzage van logging (WABVPZ) vereist dat patiënten kosteloos een (elektronisch) afschrift op kunnen vragen, waarin staat wie wanneer informatie heeft verstrekt, ingezien of opgevraagd in het elektronisch uitwisselingssysteem. De architectuur van het dataplatform dient te borgen dat een dergelijk elektronisch afschrift eenvoudig kan worden aangeleverd.
+
+Op grond van de AVG heeft de betrokkene recht op informatie over doel en middelen van de verwerking. Deze informatie dient door de verwerkingsverantwoordelijke (de paramedische praktijk) te worden verstrekt. Vanuit open-GUPZ zal een standaard ![privacyverklaring](/privacyverklaring.md) worden ontwikkeld die kan worden opgenomen in de website van de paramedische praktijk.
+
+## Niet functionele eisen op het gebied van privacy en security
+De AVG stelt ontwerpeisen in het kader van privacy (privacy by design, privacy by default) en security (passende maatregelen). Binnen open-GUPZ worden deze eisen gedekt vanuit de principes [privacy by design](#privacy-by-design) en [security in depth](#security-in-depth).
+
+De Verordening betreffende elektronische identificatie en vertrouwensdiensten (eIDAS) stelt eisen aan de betrouwbaarheid van authenticatie door personen (zorgverleners, patiënten). open-GUPZ gaat uit van [seperation of concerns](#Seperation of concerns). De authenticatie van personen is geen 'concern' van het dataplatform maar een 'concern' van de brokers die de use case specifieke process API's aanbieden.
+
+De AVG verplicht de verwerkingsverantwoordelijke om een data protection impact assessment (DPIA) uit te voeren als een gegevensverwerking waarschijnlijk een hoog privacyrisico oplevert voor de mensen van wie de organisatie gegevens verwerkt. De verwerking van gegevens over gezondheid door een dataplatform kan worden gezien als een risicovolle verwerking waarvoor een DPIA verplicht is. open-GUPZ ontwikkelt een  ![factsheet met risico's en mitigerende maatregelen](/DPIA.md)ten behoeve van het uitvoeren van een DPIA.
+
+Naleving van NEN7510, NEN7513 en NEN712 is verplicht en verankerd in onder andere de WABVPZ, het besluit elektronische gegevensverwerking voor zorgaanbieders (Begz) en Regeling Gebruik Burgerservicenummer. Certificering van NEN7510 is niet verplicht, maar de Inspectie Gezondheidszorg en Jeugd (IGJ) ziet toe op naleving en verwacht dat zorgaanbieders aantoonbaar werken volgens de NEN7510 om de continuïteit en veiligheid van zorg te waarborgen. Naleving van NEN7510 is verplicht voor alle zorgaanbieders en staat los van het eventuele gebruik van een dataplatform voor de Paramedische Zorg. Vanuit de WABPVPZ is naleving van NEN7512 en NEN7513 verplicht. Voor deze normen bestaat geen certificering. Consequenties voor (de architectuur van) het dataplatform voor de Paramedische Zorg zijn onder andere:
+
+- Audittrail dient aantoonbaar te voldoen aan de NEN7513. De architectuur van het dataplatform dient dit te borgen.
+- Of voldaan dient te worden aan NEN7512 is afhankelijk van de use case (niet voor MedMij bijvoorbeeld). NEN7512 compliance is daarom niet in scope van het dataplatform voor de Paramedische Zorg, maar wel in scope voor de brokers die de use case specifieke process API's aanbieden.
+- [Beheer](#beheer) van het dataplatform dient te worden ingericht in overeenstemming met NEN7510
+
+De  Network and Information Security Directive 2 (NIS2), in Nederland geïmplemeteerd door de Cyberbeveiligingswet(CBW) vereist implementatie van strenge beveiligingsnormen voor organisaties groter dan 50 personen of met een jaarlijkse omzet van meer dan 10 miljoen. NIS2 is van toepassing op groeiend aantal PARIS leveranciers. Er bestaat geen specifieke NIS2 certificering, maar ISO27001 en NEN7510 certificering sluiten nauw aan bij de eisen uit NIS2. Voor het dataplatform voor de Paramedische Zorg worden de volgende maatregelen voorzien:
+
+- [Beheer](#beheer) van het dataplatform dient te worden ingericht in overeenstemming met NEN7510
+- [Security in depth](#security-in-depth) wordt ingericht in overeenstemming met de beveiligingsrichtlijnen voor webapplicaties van het Nationaal Cyber Security Center)
   
-## Wet op geneeskundige behandelovereenkomst (WGBO)
-- Gezamenlijke behandeling
+## Niet functionele eisen op het gebied van databeschikbaarheid en gegevensuitwisseling
+In het zogenaamde [FHIR besluit](https://open.overheid.nl/documenten/ronl-72d9d941c7ee7ae2c58c236290e152b22939448d/pdf) is bepaald dat FHIR STU3/ zibs2027 en FHIR R4/zibs2020 dienen te worden gebruikt als uitwisselingsstandaarden. De European Health Data Space (EHDS) vereist FHIR R4 en europese core-profiles. Voor (de architectuur van) het dataplatform voor de Paramedische Zorg betekent dit dat uiteindelijk meerdere FHIR versies ondersteund zullen moeten worden. Zie ook [Standaarden](#standaarden)
+
+In het kader van WEGIZ worden specifieke eektronische gegevensuitwisselingen verplicht gesteld en genormeerd. Op dit moment bestaat geen verplichting voor gegevensuitwisselingen die van toepassing zijn op de Paramedische Zorg.
+
+## Grondslag voor het delen van gegevens
+Voor het delen van gegevens is een grondslag nodig. Vaak wordt hierbij gedacht aan nadrukkelijke toestemming, zoals vereist vanuit de WABVPZ in het geval van een uitwisselingssysteem. Toestemming is echter lang niet altijd noodzakelijk. De ![Factsheet toestemmingen](https://www.knmp.nl/sites/default/files/2021-12/factsheet-toestemmingen.pdf) van het ministerie van VWS geeft duidelijkheid over wanneer toestemming wel en niet vereist is, en over de vorm van de vereiste toestemming. Onder de European Health Data Space (EHDS) verandert de toestemmingsvereiste per 2027 in een recht op opt-out en een recht op toegangsbeperking van zorgverleners. Hoe deze rechten in de Nederlandse situatie zullen worden geïmplementeerd is nog grotendeels onduidelijk. Zie ook de brief aan de kamer betreffende ![Opt-out EHDS en andere toezeggingen](https://open.overheid.nl/documenten/2efc8606-a4f0-4279-a2d2-2dc4fa31049a/file).
+
+De hoofddoelen van het programma GUPZ betreffen het beschikbaar stellen van gezondheidsgegevens aan de patiënt zelf en de ondersteuning van elektronisch verwijzen. In beide gevallen is geen (nadrukkelijke) toestemming van de patiënt vereist en bestaat geen noodzaak voor implementatie van een opt-out of toegangsbeperking. Om deze reden, en vanwege onduidelijkheid over de implementatie van de door EHDS vereiste opt-out en toegangsbeperking, zal toestemming noch opt-out deel uitmaken van de start archirectuur van het dataplatform voor de Paramedische Zorg. 
+
+De WAPVPZ vereist van zorgaanbieders dat zij bij de elektronische communicatie van gezondheidsgegevens een geverifieerd en gevalideerd BSN gebruiken ten behoeve van de identificatie van de patiënt. Verificatie betreft de controle dat demografische gegevens behoren tot een BSN. Validatie vindt plaats bij het eerste fysieke bezoek, waarbij aan de hand van een geldig identiteitsbewijs wordt gecontroleerd of de persoon voor de balie inderdaad degene is die is of wordt ingeschreven in het EPD. Voor (de architectuur van) het dataplatform voor de Paramedische Zorg betekent dit dat uitsluitend gezondheidsgegevens beschikbaar worden gesteld van patiënten die in het onderliggend PARIS beschikken over een geverifieerd en gevalideerd BSN. Voor gezondheidsgegevens die van andere zorgaanbieders worde ontvangen (zoals in het geval van een verwijzing) geldt dat de verificatie- en validatie verplichtingen de verantwoordelijkheid van die andere zorgaanbieder zijn.
   
-## European Health Data Space (EHDS)
-- FHIR R4
-- Van toestemming van opt-out 
-- Uitwerken --> geen specifieke use cases
-  
-## Network and Information Security Directive (NIS2)
-- Uitwerken
-  
-# Organisatie/ stakeholders
-Geef hier een eerste indicatie van de (rol van) stakeholders die betrokken zijn bij (de oplossing voor) het vraagstuk. 
 
 # Proces
-Uitwerken
+Nader Uitwerken
 
 # Informatie
 Geef hier een eerste indicatie van de informatie-objecten die relevant zijn bij (de oplossing voor) het vraagstuk.
