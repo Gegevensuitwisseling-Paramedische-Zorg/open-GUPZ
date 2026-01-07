@@ -60,11 +60,16 @@ Het programmaonderdeel 'open-GUPZ' levert ten minste de volgende eindproducten:
 Geef hier een eerste indicatie van de (rol van) stakeholders die betrokken zijn bij (de oplossing voor) het vraagstuk. 
 ## Projectorganisatie
 >[!WARNING]
->Saskia T...wil jij deze oppakken?
-## Samenwerkingsafspraken
+>Saskia T...zullen we deze samen oppakken?
 
-REAME.md
+## Samenwerkingsafspraken
+De open-GUPZ Github repository bevat de specificaties, documentatie, architecture patterns, implementatieprofielen en overige artefacten die zijn ontwikkeld door de deenemende PARIS leveranciers. Regels voor het gebruik van github zijn opgenomen in ![README.md](/README.md).
+
+Virtuele en fysieke bijeenkomsten worden periodiek verzorgd vanuit het programma GUPZ.
+
 ## Stakeholdermanagement
+>[!WARNING]
+>Saskia T...zullen we deze samen oppakken?
 
 # Uitgangspunten en principes
 open-GUPZ hanteert de volgende uitgangspunten en principes:
@@ -84,7 +89,7 @@ Het uitgangspunt 'gelijk speelveld' wordt bereikt doordat de bij open-GUPZ aange
 - Het hanteren van transparante API-aansluitvoorwaarden die voldoen aan de Nictiz 'API requirements for Dutch Healthcare', en dan met name de categorie 'API agreements'
 
 ## Gebruik van open standaarden
-open-GUPZ ontwikkelt een lijst van !['pas toe of leg uit' -standaarden ](/Pas toe leg uit standaarden.md) voor de ontwikkeling van een dataplatform voor de Paramedische Zorg. Het gebruik van open standaarden bevordert de interoperabiliteit en daarmee de communicatie en samenwerking tussen verschillende zorginformatiesystemen en -applicaties. Het gebruik van open standaarden is daarmee een belangrijke voorwaarde voor het creeren van een gelijk speelveld. 'Pas toe of leg uit' -standaarden zullen worden gebruikt op alle niveau's van het Nictiz interoperabiliteitsmodel.
+open-GUPZ ontwikkelt een lijst van [pas toe of leg uit -standaarden](/docs/Pas toe leg uit standaarden.md) voor de ontwikkeling van een dataplatform voor de Paramedische Zorg. Het gebruik van open standaarden bevordert de interoperabiliteit en daarmee de communicatie en samenwerking tussen verschillende zorginformatiesystemen en -applicaties. Het gebruik van open standaarden is daarmee een belangrijke voorwaarde voor het creeren van een gelijk speelveld. 'Pas toe of leg uit' -standaarden zullen worden gebruikt op alle niveau's van het Nictiz interoperabiliteitsmodel.
 
 ## Gebruik van openbare architecture patterns en implementatieprofielen
 open-GUPZ ontwikkelt software architecture patterns en implementatieprofielen als blauwdruk voor de implementatie van een dataplatform voor de Paramedische Zorg. Gebruik van architecture patterns en implementatieprofielen voorkomt of beperkt leverancier-specifieke implementatie van de verplichte standaarden en het ontstaan van monolitische 'totaaloplossingen'. Het gebruik van architecture patterns en implementatieprofielen is daarmee een belangrijke voorwaarde voor het creeren van een gelijk speelveld. 
@@ -144,7 +149,7 @@ Voor het recht op gegevenswissing en rectificatie en aanvulling (AVG), geldt dat
 
 Het recht op inzage van logging (WABVPZ) vereist dat patiënten kosteloos een (elektronisch) afschrift op kunnen vragen, waarin staat wie wanneer informatie heeft verstrekt, ingezien of opgevraagd in het elektronisch uitwisselingssysteem. De architectuur van het dataplatform dient te borgen dat een dergelijk elektronisch afschrift eenvoudig kan worden aangeleverd.
 
-Op grond van de AVG heeft de betrokkene recht op informatie over doel en middelen van de verwerking. Deze informatie dient door de verwerkingsverantwoordelijke (de paramedische praktijk) te worden verstrekt. Vanuit open-GUPZ zal een standaard ![privacyverklaring](/privacyverklaring.md) worden ontwikkeld die kan worden opgenomen in de website van de paramedische praktijk.
+Op grond van de AVG heeft de betrokkene recht op informatie over doel en middelen van de verwerking. Deze informatie dient door de verwerkingsverantwoordelijke (de paramedische praktijk) te worden verstrekt. Vanuit open-GUPZ zal een standaard ![privacyverklaring](/docs/privacyverklaring.md) worden ontwikkeld die kan worden opgenomen in de website van de paramedische praktijk.
 
 ## Niet functionele eisen op het gebied van privacy en security
 De AVG stelt ontwerpeisen in het kader van privacy (privacy by design, privacy by default) en security (passende maatregelen). Binnen open-GUPZ worden deze eisen gedekt vanuit de principes [privacy by design](#privacy-by-design) en [security in depth](#security-in-depth).
