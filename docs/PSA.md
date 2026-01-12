@@ -5,6 +5,7 @@ filename: PSA.md
 --- 
 # Project Start Architectuur - Dataplatform voor de paramedische zorg
 
+## Inhoud
 - [Inleiding](#inleiding)
   - [Doelstelling programma GUPZ](#doelstelling-programma-gupz)
   - [Ambities open-GUPZ](#ambities-open-GUPZ)
