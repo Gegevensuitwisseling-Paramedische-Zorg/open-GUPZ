@@ -392,7 +392,7 @@ Daarnaast worden de feitelijke documenten (in PDF/A formaat, BASE64 encoded) bes
 
 # Standaarden
 
-## Tyoen standaarden
+## Typen standaarden
 open-GUPZ maakt onderscheid tussen twee verschillende typen standaarden:
 
 ### Use case agnostische standaarden
