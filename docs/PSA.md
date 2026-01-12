@@ -90,7 +90,7 @@ Het uitgangspunt 'gelijk speelveld' wordt bereikt doordat de bij open-GUPZ aange
 - Het hanteren van transparante API-aansluitvoorwaarden die voldoen aan de Nictiz 'API requirements for Dutch Healthcare', en dan met name de categorie 'API agreements'
 
 ## Gebruik van open standaarden
-open-GUPZ ontwikkelt een lijst van [pas toe of leg uit -standaarden](/docs/Pas toe leg uit standaarden.md) voor de ontwikkeling van een dataplatform voor de Paramedische Zorg. Het gebruik van open standaarden bevordert de interoperabiliteit en daarmee de communicatie en samenwerking tussen verschillende zorginformatiesystemen en -applicaties. Het gebruik van open standaarden is daarmee een belangrijke voorwaarde voor het creeren van een gelijk speelveld. 'Pas toe of leg uit' -standaarden zullen worden gebruikt op alle niveau's van het Nictiz interoperabiliteitsmodel.
+open-GUPZ ontwikkelt een lijst van [pas toe of leg uit -standaarden](/docs/standards/Pas-toe-leg-uit-standaarden.md) voor de ontwikkeling van een dataplatform voor de Paramedische Zorg. Het gebruik van open standaarden bevordert de interoperabiliteit en daarmee de communicatie en samenwerking tussen verschillende zorginformatiesystemen en -applicaties. Het gebruik van open standaarden is daarmee een belangrijke voorwaarde voor het creeren van een gelijk speelveld. 'Pas toe of leg uit' -standaarden zullen worden gebruikt op alle niveau's van het Nictiz interoperabiliteitsmodel.
 
 ## Gebruik van openbare architecture patterns en implementatieprofielen
 open-GUPZ ontwikkelt software architecture patterns en implementatieprofielen als blauwdruk voor de implementatie van een dataplatform voor de Paramedische Zorg. Gebruik van architecture patterns en implementatieprofielen voorkomt of beperkt leverancier-specifieke implementatie van de verplichte standaarden en het ontstaan van monolitische 'totaaloplossingen'. Het gebruik van architecture patterns en implementatieprofielen is daarmee een belangrijke voorwaarde voor het creeren van een gelijk speelveld. 
@@ -122,7 +122,7 @@ PARIS leveranciers streven naar implementatievrijheid. Dat wil zeggen dat open-G
 Bij de ontwikkeling van een dataplatform voor de Paramedische Zorg worden alleen componenten ontwikkeld die niet opensource of commercieel, tegen een redelijk tarief, beschikbaar zijn. Make, join or buy beslissingen worden gezamenlijk gemaakt en gedocumenteerd.
 
 ## Privacy by design
-open-GUPZ hanteert de 'privacy by design ontwerpfilosofie', die vereist dat privacybescherming vanaf het begin af aan meegenomen wordt bij het ontwerpen en bouwen van nieuwe systemen. Concreet betekent dit dat op de 'privacy ontwerp strategieën' uit![Het blauwe boekje](https://www.cs.ru.nl/~jhh/blauwe-boekje.html) zullen worden toegepast op het ontwerp van het dataplatform voor de Paramedische Zorg.
+open-GUPZ hanteert de 'privacy by design ontwerpfilosofie', die vereist dat privacybescherming vanaf het begin af aan meegenomen wordt bij het ontwerpen en bouwen van nieuwe systemen. Concreet betekent dit dat op de 'privacy ontwerp strategieën' uit [Het blauwe boekje](https://www.cs.ru.nl/~jhh/blauwe-boekje.html) zullen worden toegepast op het ontwerp van het dataplatform voor de Paramedische Zorg.
 
 ## Security in depth
 open-GUPZ hanteert de [ICT-beveiligingsrichtlijnen voor webapplicaties](https://www.ncsc.nl/ict-beveiligingsrichtlijnen-webapplicaties) van het Nationaal Cyber Security Center bij het opstellen van:
@@ -152,14 +152,14 @@ Voor het recht op gegevenswissing en rectificatie en aanvulling (AVG), geldt dat
 
 Het recht op inzage van logging (WABVPZ) vereist dat patiënten kosteloos een (elektronisch) afschrift op kunnen vragen, waarin staat wie wanneer informatie heeft verstrekt, ingezien of opgevraagd in het elektronisch uitwisselingssysteem. De architectuur van het dataplatform dient te borgen dat een dergelijk elektronisch afschrift eenvoudig kan worden aangeleverd.
 
-Op grond van de AVG heeft de betrokkene recht op informatie over doel en middelen van de verwerking. Deze informatie dient door de verwerkingsverantwoordelijke (de paramedische praktijk) te worden verstrekt. Vanuit open-GUPZ zal een standaard ![privacyverklaring](/docs/privacyverklaring.md) worden ontwikkeld die kan worden opgenomen in de website van de paramedische praktijk.
+Op grond van de AVG heeft de betrokkene recht op informatie over doel en middelen van de verwerking. Deze informatie dient door de verwerkingsverantwoordelijke (de paramedische praktijk) te worden verstrekt. Vanuit open-GUPZ zal een standaard ![privacyverklaring](/docs/policies/privacyverklaring.md) worden ontwikkeld die kan worden opgenomen in de website van de paramedische praktijk.
 
 ## Niet functionele eisen op het gebied van privacy en security
 De AVG stelt ontwerpeisen in het kader van privacy (privacy by design, privacy by default) en security (passende maatregelen). Binnen open-GUPZ worden deze eisen gedekt vanuit de principes [privacy by design](#privacy-by-design) en [security in depth](#security-in-depth).
 
 De Verordening betreffende elektronische identificatie en vertrouwensdiensten (eIDAS) stelt eisen aan de betrouwbaarheid van authenticatie door personen (zorgverleners, patiënten). open-GUPZ gaat uit van [seperation of concerns](#Seperation of concerns). De authenticatie van personen is geen 'concern' van het dataplatform maar een 'concern' van de brokers die de use case specifieke process API's aanbieden.
 
-De AVG verplicht de verwerkingsverantwoordelijke om een data protection impact assessment (DPIA) uit te voeren als een gegevensverwerking waarschijnlijk een hoog privacyrisico oplevert voor de mensen van wie de organisatie gegevens verwerkt. De verwerking van gegevens over gezondheid door een dataplatform kan worden gezien als een risicovolle verwerking waarvoor een DPIA verplicht is. open-GUPZ ontwikkelt een  ![factsheet met risico's en mitigerende maatregelen](/DPIA.md)ten behoeve van het uitvoeren van een DPIA.
+De AVG verplicht de verwerkingsverantwoordelijke om een data protection impact assessment (DPIA) uit te voeren als een gegevensverwerking waarschijnlijk een hoog privacyrisico oplevert voor de mensen van wie de organisatie gegevens verwerkt. De verwerking van gegevens over gezondheid door een dataplatform kan worden gezien als een risicovolle verwerking waarvoor een DPIA verplicht is. open-GUPZ ontwikkelt een  [factsheet met risico's en mitigerende maatregelen](/docs/policies/DPIA.md)ten behoeve van het uitvoeren van een DPIA.
 
 Naleving van NEN7510, NEN7513 en NEN712 is verplicht en verankerd in onder andere de WABVPZ, het besluit elektronische gegevensverwerking voor zorgaanbieders (Begz) en Regeling Gebruik Burgerservicenummer. Certificering van NEN7510 is niet verplicht, maar de Inspectie Gezondheidszorg en Jeugd (IGJ) ziet toe op naleving en verwacht dat zorgaanbieders aantoonbaar werken volgens de NEN7510 om de continuïteit en veiligheid van zorg te waarborgen. Naleving van NEN7510 is verplicht voor alle zorgaanbieders en staat los van het eventuele gebruik van een dataplatform voor de Paramedische Zorg. Vanuit de WABPVPZ is naleving van NEN7512 en NEN7513 verplicht. Voor deze normen bestaat geen certificering. Consequenties voor (de architectuur van) het dataplatform voor de Paramedische Zorg zijn onder andere:
 
@@ -338,7 +338,7 @@ Daarnaast worden de feitelijke documenten (in PDF/A formaat, BASE64 encoded) bes
 open-GUPZ maakt onderscheid tussen twee verschillende typen standaarden:
 
 - Use case agnostische standaarden
-Dit betreft standaarden die dienen te worden toegepast ongeacht de specifieke use case. De te gebruiken standaarden worden vastgelegd in  [pas toe of leg uit -standaarden](/docs/Pas toe leg uit standaarden.md)
+Dit betreft standaarden die dienen te worden toegepast ongeacht de specifieke use case. De te gebruiken standaarden worden vastgelegd in  [pas toe of leg uit -standaarden](/docs/standards/Pas-toe-leg-uit-standaarden.md)
 - Use case specifieke standaarden.
 Dit betreft standaarden die specifiek zijn voor de implementatie van een use case, vaak gerelateerd aan een afsprakenstelsel dat van toepassing is op die use case, zoals MedMij in het geval van de uitwisseling van informatie tussen PARIS en Persoonlijke Gezondheidsomgeving (PGO)
 
@@ -380,10 +380,10 @@ PARIS leveranciers onderkennen twee alternatieve software architecture patterns 
 
 - Sync-agent
 Data uit het PARIS wordt (near) realtime gesynchroniseerd naar een FHIR store en van daaruit beschikbaar gesteld. Inkopende data wordt vanuit de FHIR store waar nodig  (near)realtime gesynchroniseerd naar het PARIS.
-Dit patroon wordt verder uitgewerkt in [FHIR-Facade-pattern.md](/docs/FHIR-Facade-patterm.md)
+Dit patroon wordt verder uitgewerkt in [FHIR-Facade-pattern.md](/docs/architecture/FHIR-Facade-pattern.md)
 - FHIR Facade
 Een FHIR facade is een FHIR interface rechtstreeks op het PARIS. De Facade vertaalt inkomende FHIR requests naar PARIS-specifieke datarequests en transleert PARIS-specifieke datastructuren en -formaten naar FHIR formaat.
-Dit patroon wordt verder uitgewerkt in [Sync-agent-pattern.md](/docs/Sync-agent-pattern.md)
+Dit patroon wordt verder uitgewerkt in [Sync-agent-pattern.md](/docs/architecture/Sync-agent-pattern.md)
 
 Beide patronen kennen hun eigen voor- en nadelen en kunnen desgewenst worden gecombineerd. 
 
@@ -405,7 +405,7 @@ Om aan te sluiten op MedMij dienen deelnemers (paramedische praktijken) in het b
 
 Maatregelen (controls) voor veilige exploitatie van een dataplatform vooor de Paramedische Zorg vallen onder [beheer](#beheer) en zijn de verantwoordelijkheid van de aanbieder van het dataplatform, doorgaans een PARIS leverancier. Beheerders/ aanbieders van een dataplatform voor de Paramedische Zorg dienen te voldoen aan NEN7510 en NEN7513. Certificering is niet verplicht, maar is voor grote organisaties (50> medewerkers, 10.000.000> jaaromzet) onontkomelijk om aantoonbaar te voldoen aan NIS2. 
 
-Door de verwerkingsverantwoordelijke (de paramedische praktijk) zal een Data Privacy Impact Assessment moeten worden uitgevoerd om risico's in kaart te brengen en eventueel aanvullende maatregelen te nemen om veilige exploitatie te borgen. Een lijst van risico's en bijbehorende mogelijke mitigerende maatregelen is opgenomen in [DPIA.md](/docs/DPIA.md). Bewezen maatregelen van de beheerder/ aanbieder van een dataplatform voor de Paramedische Zorg (zoals een NEN 7510 certificering of periodieke beveiligingsaudit) kunnen worden opgenomen als mitigerende maatregel. 
+Door de verwerkingsverantwoordelijke (de paramedische praktijk) zal een Data Privacy Impact Assessment moeten worden uitgevoerd om risico's in kaart te brengen en eventueel aanvullende maatregelen te nemen om veilige exploitatie te borgen. Een lijst van risico's en bijbehorende mogelijke mitigerende maatregelen is opgenomen in [DPIA.md](/docs/policies/DPIA.md). Bewezen maatregelen van de beheerder/ aanbieder van een dataplatform voor de Paramedische Zorg (zoals een NEN 7510 certificering of periodieke beveiligingsaudit) kunnen worden opgenomen als mitigerende maatregel. 
 
 Aanbeiders/ beheerders van een dataplatform voor de Paramedische zorg laten tenminste jaarlijks een greybox penetratietest uitvoeren door een EDP auditor op externe koppelvlakken. Ook bij grootschalige wijzigingen of herbouw wordt een greybox pentest uitgevoerd. De scope van de penetratietests is:
 
