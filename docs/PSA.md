@@ -80,8 +80,12 @@ Het programmaonderdeel 'open-GUPZ' levert ten minste de volgende eindproducten:
 # Organisatie en stakeholders
 Geef hier een eerste indicatie van de (rol van) stakeholders die betrokken zijn bij (de oplossing voor) het vraagstuk. 
 ## Projectorganisatie
->[!WARNING]
->Saskia T...zullen we deze samen oppakken?
+Het programmaonderdeel open-GUPZ kent drie 'ringen':
+
+- Een koplopersgroep. Dit betreft de leveranciers die de open-GUPZ specificaties gezamenlijk ontwikkelen en als eerste implementeren. Deze leveranciers hebben 'write' permissies op de open-GUPZ repository en dragen actief bij aan de inhoud van de open-GUPZ repository.
+- Een tweede ring. Dit betreft een groep leveranciers die de open-GUPZ specificaties in tweede instantie implementeren. Deze leveranciers hebben uitsluitend'read' permissies op de github repositories en kunnen issues melden.
+- Een buitenring. Dit betreft iedereen die niet in de koplopersgroep of tweede ring valt.
+
 
 ## Samenwerkingsafspraken
 De open-GUPZ Github repository bevat de specificaties, documentatie, architecture patterns, implementatieprofielen en overige artefacten die zijn ontwikkeld door de deenemende PARIS leveranciers. Regels voor het gebruik van github zijn opgenomen in ![README.md](/README.md).
