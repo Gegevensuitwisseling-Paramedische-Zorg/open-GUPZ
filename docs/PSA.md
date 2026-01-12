@@ -29,10 +29,10 @@ Voorliggende Project Start Architectuur (PSA) betreft de ontwikkeling van (speci
 ## Doelstelling programma GUPZ
 In het programma Gegevensuitwisseling paramedische zorg wordt gewerkt aan verschillende doelen:
 
-- Het realiseren van gegevensuitwisseling tussen paramedici en huisartsen, medisch specialisten en paramedici onderling.
-  Wanneer zorgverleners medische gegevens uitwisselen, kan zorg nog beter op elkaar worden afgestemd en vermindert dit administratieve lasten. De focus van GUPZ ligt op de realisatie van digitaal verwijzen.
+### Het realiseren van gegevensuitwisseling tussen paramedici en huisartsen, medisch specialisten en paramedici onderling
+Wanneer zorgverleners medische gegevens uitwisselen, kan zorg nog beter op elkaar worden afgestemd en vermindert dit administratieve lasten. De focus van GUPZ ligt op de realisatie van digitaal verwijzen.
 
-- Het realiseren van gegevensuitwisseling tussen paramedici en de patiënt.
+###Het realiseren van gegevensuitwisseling tussen paramedici en de patiënt.
   Gegevens worden uitgewisseld met de patiënt via de persoonlijke gezondheidsomgeving (PGO). De patiënt krijgt op deze manier meer inzicht in zijn of haar paramedische gegevens via een PGO. De focus van GUPZ ligt op het beschikbaarstellen van behandelplan, documenten en verslagen als PDF/A document aan het PGO.
 
 Meer informatie over het programma is te vinden op [Gegevensuitwisseling paramedische zorg](https://gegevensuitwisselingparamedischezorg.nl/)
@@ -324,47 +324,61 @@ Binnen het programma GUPZ wordt gestreefd naar standaardisatie van de verwijsstr
  
 ## Informatieobjecten ten behoeve van digitaal verwijzen
 Dit betreft in overeenstemming met de richtlijn [HASP-P](https://viewers.nhg.org/haspviewer/):
-- Contextuele gegevens bij ieder bericht. 
+
+###Contextuele gegevens bij ieder bericht. 
 Dit betreft onder andere identificatie van de patiënt, identificatie van de auteur, geadresseerde, eventuele kopie-aan en beheerder (van het systeem dat het bericht archiveert), gegevens betreffende het type bericht, datum en tijd van verzenden.
-- Gegevens betreffende de verwijzing/ het consult. 
+
+###Gegevens betreffende de verwijzing/ het consult. 
 Dit betreft onder andere de urgentie en het type zorgpad (gestandaardiseerde of verkorte toegang), eventuele voorzieningen die nodig zijn bij het consult, reden en context van de verwijzing, het ingestelde beleid/ ingestelde behandeling en de omvang en aard van de actie of interventie die de verzender verwacht van de geconsulteerde en eventuele overige zaken van belang.
-- Dossierinformatie
+###Dossierinformatie
   Dit betreft onder andere relevante regels uit het journaal, episodelijst, behandelingen, medicatie, aanvullend onderzoek,risicovol leefgedrag, familieanamnese, psychosociale anamnes en Psychogeriatrisch onderzoek.
 
 ## Informatieobjecten ten behoeve van het melden van directe toegang
 Dit betreft in overeenstemming met de richtlijn [HASP-P](https://viewers.nhg.org/haspviewer/):
-- Contextuele gegevens bij ieder bericht. 
+
+###Contextuele gegevens bij ieder bericht. 
 Dit betreft onder andere identificatie van de patiënt, identificatie van de auteur, geadresseerde, eventuele kopie-aan en beheerder (van het systeem dat het bericht archiveert), gegevens betreffende het type bericht, datum en tijd van verzenden.
-- Gegevens betreffende de directe toegang tot de paramedische praktijk
+
+###Gegevens betreffende de directe toegang tot de paramedische praktijk
 Dit betreft onder andere de screening risicofactoren door paramedicus,de paramedische diagnose of conclusie,  het paramedisch beleid/ de ingestelde behandeling en eventuele overige zaken van belang.
-- Dossierinformatie
+
+###Dossierinformatie
   Dit betreft anamnese en resultaten van lichamelijk onderzoek
 
 ## Informatieobjecten ten behoeve van de update door de paramedicus
 Dit betreft in overeenstemming met de richtlijn [HASP-P](https://viewers.nhg.org/haspviewer/):
-- Contextuele gegevens bij ieder bericht. 
+
+###Contextuele gegevens bij ieder bericht. 
 Dit betreft onder andere identificatie van de patiënt, identificatie van de auteur, geadresseerde, eventuele kopie-aan en beheerder (van het systeem dat het bericht archiveert), gegevens betreffende het type bericht, datum en tijd van verzenden.
-- Gegevens bij de update
+
+###Gegevens bij de update
 Dit betreft een eventuele vraagstelling of antwoord op een door de verwijzer gestelde vraag, het beleid of de ingestelde behandeling en eventuele overige zaken van belang.
-- Dossierinformatie
+
+###Dossierinformatie
   Dit betreft anamnese, resultaten van lichamelijk onderzoek, het behandelverloop/ resultaat, relevante uitslagen van beeldvormend-,functie- of aanvullend onderzoek en relevante uitslagen van consulten door derden
 
 ## Informatieobjecten ten behoeve van de update door de verwijzer
 Dit betreft in overeenstemming met de richtlijn [HASP-P](https://viewers.nhg.org/haspviewer/):
-- Contextuele gegevens bij ieder bericht. 
+
+###Contextuele gegevens bij ieder bericht. 
 Dit betreft onder andere identificatie van de patiënt, identificatie van de auteur, geadresseerde, eventuele kopie-aan en beheerder (van het systeem dat het bericht archiveert), gegevens betreffende het type bericht, datum en tijd van verzenden.
-- Gegevens bij de update
+
+###Gegevens bij de update
 Dit betreft de reden van de update, het beleid of de ingestelde behandeling, een eventueel antwoord op een door de paramedicus gestelde vraag en eventuele overige zaken van belang.
-- Dossierinformatie
+
+###Dossierinformatie
 Dit betreft dezelfde dossierinformatie als de informatie in het kader van het digitaal verwijzen
 
 ## Informatieobjecten ten behoeve van de eindrapportage door de paramedicus
 Dit betreft in overeenstemming met de richtlijn [HASP-P](https://viewers.nhg.org/haspviewer/):
-- Contextuele gegevens bij ieder bericht. 
+
+###Contextuele gegevens bij ieder bericht. 
 Dit betreft onder andere identificatie van de patiënt, identificatie van de auteur, geadresseerde, eventuele kopie-aan en beheerder (van het systeem dat het bericht archiveert), gegevens betreffende het type bericht, datum en tijd van verzenden.
-- Gegevens bij de eindrapportage
+
+###Gegevens bij de eindrapportage
 Dit betreft onder andere de oorspronkelijke vraagstelling/ reden verwijzing, de conclusie/ diagnose, aanbevelingen en follow-up (De in het kader van de behandeling gevraagde nazorg), afspraken met de patiënt en eventuele overige zaken van belang.
-- Dossierinformatie
+
+###Dossierinformatie
   Dit betreft anamnese, resultaten van lichamelijk onderzoek, het behandelverloop/ resultaat, relevante uitslagen van beeldvormend-,functie- of aanvullend onderzoek, relevante uitslagen van consulten door derden en psychososiale anamese.
 
 ## Informatieobjecten ten behoeve van het beschikbaar stellen van documenten, verslagen en behandelplan aan de patiënt
@@ -377,11 +391,14 @@ Daarnaast worden de feitelijke documenten (in PDF/A formaat, BASE64 encoded) bes
 
 
 # Standaarden
+
+## Tyoen standaarden
 open-GUPZ maakt onderscheid tussen twee verschillende typen standaarden:
 
-- Use case agnostische standaarden
+### Use case agnostische standaarden
 Dit betreft standaarden die dienen te worden toegepast ongeacht de specifieke use case. De te gebruiken standaarden worden vastgelegd in  [pas toe of leg uit -standaarden](/docs/standards/Pas-toe-leg-uit-standaarden.md)
-- Use case specifieke standaarden.
+
+### Use case specifieke standaarden.
 Dit betreft standaarden die specifiek zijn voor de implementatie van een use case, vaak gerelateerd aan een afsprakenstelsel dat van toepassing is op die use case, zoals MedMij in het geval van de uitwisseling van informatie tussen PARIS en Persoonlijke Gezondheidsomgeving (PGO)
 
 Op korte termijn zullen uitsluitend use case specifieke standaarden worden geïmplenteerd voor de use cases die voortvloeien uit de doelstellingen van het programma GUPZ, te weten verwijzen (en ondersteunende processen) en het beschikbaarstellen van documenten en afschriften aan het PGO.
@@ -418,17 +435,17 @@ Door het programma GUPZ wordt gestreeft naar harmonisatie van de codering van ve
 Referentiesets en waardenlijsten worden opgenomen in ['terminology'](/templates).
 
 # Architectuur patronen
-PARIS leveranciers onderkennen twee alternatieve software architecture patterns voor het dataplatform voor de Paramedishe Zorg:
+PARIS leveranciers onderkennen twee alternatieve software architecture patterns voor het dataplatform voor de Paramedishe Zorg. Beide patronen kennen hun eigen voor- en nadelen en kunnen desgewenst worden gecombineerd.
 
-- Sync-agent
+## Sync-agent
 Data uit het PARIS wordt (near) realtime gesynchroniseerd naar een FHIR store en van daaruit beschikbaar gesteld. Inkopende data wordt vanuit de FHIR store waar nodig  (near)realtime gesynchroniseerd naar het PARIS.
 Dit patroon wordt verder uitgewerkt in [FHIR-Facade-pattern.md](/docs/architecture/FHIR-Facade-pattern.md)
-- FHIR Facade
+
+## FHIR Facade
 Een FHIR facade is een FHIR interface rechtstreeks op het PARIS. De Facade vertaalt inkomende FHIR requests naar PARIS-specifieke datarequests en transleert PARIS-specifieke datastructuren en -formaten naar FHIR formaat.
 Dit patroon wordt verder uitgewerkt in [Sync-agent-pattern.md](/docs/architecture/Sync-agent-pattern.md)
 
-Beide patronen kennen hun eigen voor- en nadelen en kunnen desgewenst worden gecombineerd. 
-
+ 
 # Privacy en Informatiebeveiliging
 open-GUPZ gaat uit van [privacy by design](#privacy-by-design) en [security in depth](security-in-depth) en borgt de onder die principes en uitgangspunten beschreven richtlijnen.
 
