@@ -253,16 +253,31 @@ Updates zullen op korte termijn worden geïmplementeerd als PUSH-bericht. Dit be
 
 - Het versturen van een PUSH-update
 
+Op de langere termijn zal PUSH verkeer stapsgewijs worden vervangen door NOTFIED-PULL verkeer. Dit betekent dat het dataplatform voor de Paramedische zorg op langere termijn naast de PUSH implementatie ook:
+
+- Notificaties moet versturen en de bijbehorende update terug moet geven bij een PULL request van de ontvanger
+
+
 ## Update door de verwijzer
 
 Updates zullen op korte termijn worden geïmplementeerd als PUSH-bericht. Dit betekent voor het dataplatform voor de Paramedische zorg:
 
 - Het ontvangen en verwerken van een PUSH-## Beschikbaar stellen van documenten, verslagen en behandelplan aan de patiënt
+
+Op de langere termijn zal PUSH verkeer stapsgewijs worden vervangen door NOTFIED-PULL verkeer. Dit betekent dat het dataplatform voor de Paramedische zorg op langere termijn naast de PUSH implementatie ook:
+
+- Notificaties moet ontvangen en op basis van de notificatie bijbehorende update op moet vragen bij de verwijzen
+
   
 ## Eindrapportage door de paramedicus
 Eindrapportages zullen op korte termijn worden geïmplementeerd als PUSH-bericht. Dit betekent voor het dataplatform voor de Paramedische zorg:
 
 - Het versturen van een PUSH-bericht met de eindrapportage
+
+Op de langere termijn zal PUSH verkeer stapsgewijs worden vervangen door NOTFIED-PULL verkeer. Dit betekent dat het dataplatform voor de Paramedische zorg op langere termijn naast de PUSH implementatie ook:
+
+- Notificaties moet versturen en de bijbehorende eindrapportage terug moet geven bij een PULL request van de ontvanger
+
 
 ## Beschikbaar stellen van documenten, verslagen en behandelplan aan de patiënt
 Beschikbaar stellen van informatie aan het PGO zal (conform de betreffende MedMij gegevensdiensten) worden geïmplementeerd als PULL verzoeken. Dit betekent voor het dataplatform voor de Paramedische zorg:
