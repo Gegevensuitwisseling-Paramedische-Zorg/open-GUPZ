@@ -101,7 +101,12 @@ open-GUPZ ontwikkelt software architecture patterns en implementatieprofielen al
 PARIS leverenciers willen samenwerken, onderling en met andere stakeholders, en gezamenlijk de ideeen, technologieen en kennis ontwikkelen die nodig is voor de realisatie van een state of the art dataplatform voor de paramedische zorg. Alles dat wordt ontwikkeld wordt publiek gedeeld in De open-GUPZ repository en website.
 
 ## Seperation of concerns
-De scope van het dataplatform voor de paramedische zorg is duidelijk afgebakend: Het leveren van fijnmazige, use-case agnostische, FHIR gebaseerde system API's op het Paramedisch Informatiesysteem (PARIS). 'Seperation of concerns' wil zeggen dat het dataplatform ontkoppeld is van use-case/ afsprakenstelsel specifieke API's (process API's) en API clients (apps), zoals een Dienstverlener Zorgaanbieder (DVA) in het kader van MedMij gebaseerde uitwisseling met het PGO, een Verwijsplatform of een Netwerk Informatie Systeem (NIS) . Afbakening voorkomt het ontstaan van monolotische 'totaaloplossingen' en leverancierspecifieke implementaties van standaarden. Daarnaast reduceert afbakening de complexiteit van het platform, omdat afsprakenstelsel-specifieke maatregelen (zoals die binnen het MedMij afsprakenstelsel) niet door het platform zelf hoeven te worden geïmplementeerd.
+De scope van het dataplatform voor de paramedische zorg is duidelijk afgebakend: Het leveren van fijnmazige, use-case agnostische, FHIR gebaseerde system API's op het Paramedisch Informatiesysteem (PARIS). 'Seperation of concerns' wil zeggen dat het dataplatform ontkoppeld is van use-case/ afsprakenstelsel specifieke API's (process API's) en API clients (apps), zoals:
+- Een Dienstverlener Zorgaanbieder (DVA) in het kader van MedMij gebaseerde uitwisseling met het PGO
+- Een Verwijsplatform
+- Een Netwerk Informatie Systeem (NIS)
+
+Afbakening voorkomt het ontstaan van monolotische 'totaaloplossingen' en leverancierspecifieke implementaties van standaarden. Daarnaast reduceert afbakening de complexiteit van het platform, omdat afsprakenstelsel-specifieke maatregelen (zoals die binnen het MedMij afsprakenstelsel) niet door het platform zelf hoeven te worden geïmplementeerd.
 
 ![Three layer API architecture](/assets/3_layer_api_architecture.jpg)
 
