@@ -468,7 +468,7 @@ Door de verwerkingsverantwoordelijke (de paramedische praktijk) zal een Data Pri
 
 Aanbeiders/ beheerders van een dataplatform voor de Paramedische zorg laten tenminste jaarlijks een greybox penetratietest uitvoeren door een EDP auditor op externe koppelvlakken. Ook bij grootschalige wijzigingen of herbouw wordt een greybox pentest uitgevoerd. De scope van de penetratietests is:
 
-- De OWASP API top 10
+- De [OWASP API top 10](https://owasp.org/API-Security/)
 - [ICT-beveiligingsrichtlijnen voor TLS](https://www.ncsc.nl/transport-layer-security-tls/v21-tls)
 - Voor zover van toepassing: [ICT-beveiligingsrichtlijnen voor webapplicaties](https://www.ncsc.nl/ict-beveiligingsrichtlijnen-webapplicaties)
 
