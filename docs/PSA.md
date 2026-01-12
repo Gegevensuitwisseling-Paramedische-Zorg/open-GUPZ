@@ -433,7 +433,7 @@ Door het programma GUPZ worden waardenlijsten en referentiesets ontwikkeld ten b
 Referentiesets en waardenlijsten worden opgenomen in ['terminology'](/templates).
 
 # Architectuur patronen
-PARIS leveranciers onderkennen twee alternatieve software architecture patterns voor het dataplatform voor de Paramedishe Zorg. Beide patronen kennen hun eigen voor- en nadelen en kunnen desgewenst worden gecombineerd.
+De bij open-GUPZ betrokken PARIS leveranciers onderkennen twee alternatieve software architecture patterns voor het dataplatform voor de Paramedishe Zorg. Beide patronen kennen hun eigen voor- en nadelen en kunnen desgewenst worden gecombineerd.
 
 ## Sync-agent
 Data uit het PARIS wordt (near) realtime gesynchroniseerd naar een FHIR store en van daaruit beschikbaar gesteld. Inkopende data wordt vanuit de FHIR store waar nodig  (near)realtime gesynchroniseerd naar het PARIS.
