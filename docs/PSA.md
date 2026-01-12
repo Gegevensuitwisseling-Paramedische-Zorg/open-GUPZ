@@ -7,7 +7,7 @@ filename: PSA.md
 
 - [Inleiding](#inleiding)
   - [Doelstelling programma GUPZ](#doelstelling-programma-gupz)
-  - [Ambities open-GUPZ](#ambities-openGUPZ )
+  - [Ambities open-GUPZ](#ambities-open-GUPZ)
   - [Eindproducten](#eindproducten)
 - [Organisatie en stakeholders](#organisatie-en-stakeholders)
 - [Uitgangspunten en principes](#uitgangspunten-en-principes)\
