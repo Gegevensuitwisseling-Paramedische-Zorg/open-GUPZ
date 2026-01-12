@@ -52,9 +52,7 @@ Het programmaonderdeel 'open-GUPZ' levert ten minste de volgende eindproducten:
 - Een [Project Start Architectuur (PSA)](/docs/PSA.md) voor een FHIR gebaseerd dataplatform voor de paramedische zorg
 - Een uitwerking van verschillende oplossingsrichtingen in de vorm van [software architecture patterns](/docs/architecture) en 'implementatieprofielen'
 - Een lijst met [pas toe of leg uit standaarden](/docs/standards/Pas-toe-leg-uit-standaarden.md)
-- Specificaties van FHIR API's voor een dataplatform voor de paramedische zorg. 
->[!WARNING]
->How to connect to simplifier? OpenAPI?
+- Open API specificaties van FHIR API's voor een dataplatform voor de paramedische zorg. 
 - Eisen aan aansluitvoorwaarden voor partijen die op een paramedisch dataplatform aan willen sluiten
 - Optioneel source code voor gezamenlijk ontwikkelde onderdelen van een dataplatform voor de paramedische zorg
 - Specificaties van [documenttypes](/docs/terminology/documenttypes.md) voor het beschikbaarstellen/ uitwisselen van ongestructureerde gegevens
