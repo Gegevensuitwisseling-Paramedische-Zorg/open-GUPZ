@@ -402,7 +402,7 @@ Een betaversie van [de informatiestandaard paramedische zorg](https://nictiz.nl/
 Ten behoeve van het beschikbaar stellen van documenten aan het PGO van de patiënt implementeert het dataplatform voor de paramedische zorg de [FHIR specificaties van de MedMij gegevensdienst PDF/A](https://informatiestandaarden.nictiz.nl/wiki/MedMij:V2020.01/FHIR_PDFA). Hierbij dient te worden aangetekend dat het dataplatform wel de gegevensdienst implementeert,maar niet alle MedMij specifieke afspraken uit het [MedMij afsprakenstelse](https://afsprakenstelsel.medmij.nl/asverplicht/mmverplicht/?l=nl) die gelden voor de rol Dienstverlener Zorgaanbieder (DVA). De MedMij afspraken die gelden voor de DVA zullen worden geïmplementeerd door een op het dataplatform aangesloten DVA. Zie ook het principe [Seperation of concerns](#seperation-of-concerns).
 
 ## Standaarden specifiek voor de inhoud van documenten, verslagen en het behandelplan
-De inhoud van documenten zal sectorbreed worden gespecificeerd door het programma GUPZ. Templates voor deze documenten worden opgenomen in de open-GUPZ repository, onder ['templates'](/templates).
+De inhoud van documenten zal sectorbreed worden gespecificeerd door het programma GUPZ. Templates voor deze documenten worden opgenomen in de open-GUPZ repository, onder ['templates'](/docs/templates).
 
 ## Terminologie
 Door het programma GUPZ worden waardenlijsten en referentiesets ontwikkeld ten behoeve van:
