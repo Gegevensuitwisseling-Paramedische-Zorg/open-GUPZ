@@ -7,8 +7,9 @@ Voorliggende Project Start Architectuur (PSA) betreft de ontwikkeling van (speci
 ## Doelstelling programma GUPZ
 In het programma Gegevensuitwisseling Paramedische Zorg wordt gewerkt aan verschillende doelen:
 
-- Het realiseren van gegevensuitwisseling tussen paramedici en huisartsen, medisch specialisten en paramedici onderling.  Wanneer zorgverleners medische gegevens uitwisselen, kan zorg nog beter op elkaar worden afgestemd en vermindert dit administratieve lasten.
-- Het realiseren van gegevensuitwisseling tussen paramedici en de patiënt. Gegevens worden uitgewisseld met de patiënt via de persoonlijke gezondheidsomgeving (PGO). De patiënt krijgt op deze manier meer inzicht in zijn of haar paramedische gegevens via een PGO.
+- Het realiseren van gegevensuitwisseling tussen paramedici en huisartsen, medisch specialisten en paramedici onderling.  Wanneer zorgverleners medische gegevens uitwisselen, kan zorg nog beter op elkaar worden afgestemd en vermindert dit administratieve lasten. De focus van GUPZ ligt op de realisatie van digitaal verwijzen.
+
+- Het realiseren van gegevensuitwisseling tussen paramedici en de patiënt. Gegevens worden uitgewisseld met de patiënt via de persoonlijke gezondheidsomgeving (PGO). De patiënt krijgt op deze manier meer inzicht in zijn of haar paramedische gegevens via een PGO. De focus van GUPZ ligt op het beschikbaarstellen van behandelplan, documenten en verslagen als PDF/A document aan het PGO.
 
 Meer informatie over het programma is te vinden op ![Gegevensuitwisseling Paramedische Zorg](https://gegevensuitwisselingparamedischezorg.nl/)
 
@@ -175,7 +176,7 @@ In het zogenaamde [FHIR besluit](https://open.overheid.nl/documenten/ronl-72d9d9
 In het kader van WEGIZ worden specifieke eektronische gegevensuitwisselingen verplicht gesteld en genormeerd. Op dit moment bestaat geen verplichting voor gegevensuitwisselingen die van toepassing zijn op de Paramedische Zorg.
 
 ## Grondslag voor het delen van gegevens
-Voor het delen van gegevens is een grondslag nodig. Vaak wordt hierbij gedacht aan nadrukkelijke toestemming, zoals vereist vanuit de WABVPZ in het geval van een uitwisselingssysteem. Toestemming is echter lang niet altijd noodzakelijk. De ![Factsheet toestemmingen](https://www.knmp.nl/sites/default/files/2021-12/factsheet-toestemmingen.pdf) van het ministerie van VWS geeft duidelijkheid over wanneer toestemming wel en niet vereist is, en over de vorm van de vereiste toestemming. Onder de European Health Data Space (EHDS) verandert de toestemmingsvereiste per 2027 in een recht op opt-out en een recht op toegangsbeperking van zorgverleners. Hoe deze rechten in de Nederlandse situatie zullen worden geïmplementeerd is nog grotendeels onduidelijk. Zie ook de brief aan de kamer betreffende ![Opt-out EHDS en andere toezeggingen](https://open.overheid.nl/documenten/2efc8606-a4f0-4279-a2d2-2dc4fa31049a/file).
+Voor het delen van gegevens is een grondslag nodig. Vaak wordt hierbij gedacht aan nadrukkelijke toestemming, zoals vereist vanuit de WABVPZ in het geval van een uitwisselingssysteem. Toestemming is echter lang niet altijd noodzakelijk. De [Factsheet toestemmingen](https://www.knmp.nl/sites/default/files/2021-12/factsheet-toestemmingen.pdf) van het ministerie van VWS geeft duidelijkheid over wanneer toestemming wel en niet vereist is, en over de vorm van de vereiste toestemming. Onder de European Health Data Space (EHDS) verandert de toestemmingsvereiste per 2027 in een recht op opt-out en een recht op toegangsbeperking van zorgverleners. Hoe deze rechten in de Nederlandse situatie zullen worden geïmplementeerd is nog grotendeels onduidelijk. Zie ook de brief aan de kamer betreffende [Opt-out EHDS en andere toezeggingen](https://open.overheid.nl/documenten/2efc8606-a4f0-4279-a2d2-2dc4fa31049a/file).
 
 De hoofddoelen van het programma GUPZ betreffen het beschikbaar stellen van gezondheidsgegevens aan de patiënt zelf en de ondersteuning van elektronisch verwijzen. In beide gevallen is geen (nadrukkelijke) toestemming van de patiënt vereist en bestaat geen noodzaak voor implementatie van een opt-out of toegangsbeperking. Om deze reden, en vanwege onduidelijkheid over de implementatie van de door EHDS vereiste opt-out en toegangsbeperking, zal toestemming noch opt-out deel uitmaken van de start archirectuur van het dataplatform voor de Paramedische Zorg. 
 
@@ -183,10 +184,153 @@ De WAPVPZ vereist van zorgaanbieders dat zij bij de elektronische communicatie v
   
 
 # Proces
-Nader Uitwerken
+Een dataplatform voor de Paramedische Zorg is use case- (en dus proces) agnostisch. In het algemeen kan worden gesteld dat het dataplatform ondersteuning biedt aan:
+- Het beschikbaar stellen van informatie uit het PARIS aan externe partijen, waaronder de patiënt zelf, met als doel het ondersteunen van primaire zorgprocessen, waaronder (maar niet gelimiteerd tot) verwijsprocessen, gezamenlijk behandelen in het kader van passende hybride netwerkzorg en participatie van de patiënt zelf en van niet-professionele zorgverleners
+- Het ontvangen en verwerken van informatie van extere partijen in het PARIS, met als doel het ondersteunen van primaire zorgprocessen
+- Het beschikbaar stellen van informatie uit het PARIS ten behoeve van secundair datagebruik, waaronder (maar niet gelimitieerd tot) wetenschappelijk onderzoek, kwaliteitsinformatie en capaciteitsmanagement.
+  
+Op de korte termijn zal echter worden gefocust op de [doelen](#doelstelling-programma-gupz) van van het programma GUPZ op het gebied van gegevensuitwisseling tussen paramedici en huisartsen, medisch specialisten en paramedici onderling, en op het gebied van uitwisseling met de patiënt via de Persoonlijke Gezondheidsomgeving (PGO) van de patiënt. Deze doelstellingen omvatten specifieke processen.
+
+De afhandeling van processen binnen het PARIS zelf (zoals het verwerken en verzenden van verwijsinformatie of het klaarzetten van inforatie voor het PGO) is geen onderdeel van de scope van het verwijsplatform.
+
+## Digitaal verwijzen
+Dit betreft het ontvangen en verwerken van een verwijzing van een huisarts, medisch specialist of andere paramedicus. 
+
+## Melden van directe toegang
+Dit betreft het informeren van de huisarts dat een patiënt direct, dus zonder verwijzing, hulp heeft gezocht bij de paramedische praktijk.
+
+## Update door de paramedicus
+Dit betreft tussentijdse rapportage van de paramedicus aan de verwijzer
+
+## Update door de verwijzer
+Dit betreft een update (waaronder annulering) ten aanzien van de verwijzing, een verzoek om informatie of de verstrekking van nadere informatie door de verwijzer aan de paramedicus
+
+## Eindrapportage door de paramedicus
+Dit betreft het beschikbaar stellen van eindrapportage aan de verwijzer door de paramedicus.
+
+## Beschikbaar stellen van documenten, verslagen en behandelplan aan de patiënt
+Dit betreft het beschikbaar stellen van documenten, rapportages en een afschrift van het behandelplan aan de patiënt zelf via diens PGO. Bijnzondere aandacht verdient versionering. Steeds wanneer een nieuwe versie van een document of behandelplan beschikbaar komt, dient deze als zodanig (als nieuwe versie van een bestaand document/ behandelplan) beschibaar te worden gesteld.
+
+# Communicatiepatronen
+Een dataplatform voor de Paramedische Zorg is use case- (en dus proces) agnostisch. In het algemeen kan worden gesteld dat het dataplatform ondersteuning biedt aan de volgende communicatiepatronen:
+
+- Verzenden van PUSH berichten aan externe partijen (PUSH - uitgaand)
+- Ontvangen van PUSH berichten van externe partijen (PUSH - imkomend)
+- Verzenden van notificaties naar externe partijen en het verwerken van een bijbehorend PULL request (NOTIFIED-PULL - uitgaand)
+- Ontvangen van notificaties van externe partijen en het uitvoeren van bijbehorend PULL request (NOTIFIED-PULL - inkomend)
+- Ontvangen van verzoeken om informatie (PULL - ingaand)
+
+Op de korte termijn zal echter worden gefocust op de [doelen](#doelstelling-programma-gupz) van van het programma GUPZ op het gebied van gegevensuitwisseling tussen paramedici en huisartsen, medisch specialisten en paramedici onderling, en op het gebied van uitwisseling met de patiënt via de Persoonlijke Gezondheidsomgeving (PGO) van de patiënt. Daarnaast zal worden uitgegaan van (defacto) [standaarden](#standaarden) die een specifiek communicatiepatroon beschrijven. 
+
+## Digitaal verwijzen
+Digitale verwijzingen zullen op korte termijn worden geïmplementeerd als PUSH-bericht. Dit betekent voor het dataplatform voor de Paramedische zorg:
+
+- Het ontvangen en verwerken van een PUSH-verwijsbericht
+- Het versturen van een PUSH-verwijsbericht
+
+Op de langere termijn zal PUSH verkeer stapsgewijs worden vervangen door NOTFIED-PULL verkeer. Dit betekent dat het dataplatform voor de Paramedische zorg op langere termijn naast de PUSH implementatie ook:
+
+- Notificaties moet ontvangen en op basis van de notificatie bijbehorende verwijsinformatie op moet vragen bij de verwijzen
+- Notificaties moet versturen en de bijbehorende verwijsinformatie terug moet geven bij een PULL request van de ontvanger
+
+## Melden van directe toegang
+Meldingen van directe toegang zullen op korte termijn worden geïmplementeerd als PUSH-bericht. Dit betekent voor het dataplatform voor de Paramedische zorg:
+
+- Het versturen van een PUSH-melding directe toegang
+
+## Update door de paramedicus
+Updates zullen op korte termijn worden geïmplementeerd als PUSH-bericht. Dit betekent voor het dataplatform voor de Paramedische zorg:
+
+- Het versturen van een PUSH-update
+
+## Update door de verwijzer
+
+Updates zullen op korte termijn worden geïmplementeerd als PUSH-bericht. Dit betekent voor het dataplatform voor de Paramedische zorg:
+
+- Het ontvangen en verwerken van een PUSH-## Beschikbaar stellen van documenten, verslagen en behandelplan aan de patiënt
+  
+## Eindrapportage door de paramedicus
+Eindrapportages zullen op korte termijn worden geïmplementeerd als PUSH-bericht. Dit betekent voor het dataplatform voor de Paramedische zorg:
+
+- Het versturen van een PUSH-bericht met de eindrapportage
+
+## Beschikbaar stellen van documenten, verslagen en behandelplan aan de patiënt
+Beschikbaar stellen van informatie aan het PGO zal (conform de betreffende MedMij gegevensdiensten) worden geïmplementeerd als PULL verzoeken. Dit betekent voor het dataplatform voor de Paramedische zorg:
+
+- Het beantwoorden van PULL-verzoeken met de juiste (verwijzingen naar) PDF/A documenten.
 
 # Informatie
-Geef hier een eerste indicatie van de informatie-objecten die relevant zijn bij (de oplossing voor) het vraagstuk.
+Een dataplatform voor de Paramedische Zorg is use case agnostisch en omvat daarom potentieel alle informatieobjecten die ook in een PARIS worden vastgelegd, waaronder:
+- Demografische- en identificerende gegevens van patiënten
+- Verwijsinformatie
+- Medicatie
+- Diagnoses
+- Onderzoeksresultaten
+- Behandelinformatie
+- Correspondentie en verslagen
+- Metingen
+- Psychosociale gegevens
+
+Op de korte termijn zal echter worden gefocust op de [doelen](#doelstelling-programma-gupz) van van het programma GUPZ op het gebied van gegevensuitwisseling tussen paramedici en huisartsen, medisch specialisten en paramedici onderling, en op het gebied van uitwisseling met de patiënt via de Persoonlijke Gezondheidsomgeving (PGO) van de patiënt.
+
+Informatieobjecten ten behoeve van digitaal verwijzen en ondersteunende processen worden gedefinieerd in overeenstemming met de richtlijn [HASP-P](https://viewers.nhg.org/haspviewer/).
+
+Informatieobjecten worden daarnaast zoveel als mogelijk gedefinieerd in overeenstemming met de zorginformatiebouwstenen. Omdat de ondersteuning van digitaal verwijzen en de daaraan ondersteunende processen voorlopig zal worden gebaseerd op de ZorgDomein FHIR specificaties, is compliance met zorginformatiebouwstenen niet volledig haalbaar. Binnen het programma GUPZ wordt gestreefd naar standaardisatie van de verwijsstromen op basis van zibs2020. Zie ook [Standaarden](#standaarden). Dit betekent dat, in samenwerking met alle betrokken partijen, gestreeft wordt naar vervanging van de huidige ZorgDomein FHIR STU3 specificaties naar een FHIR R4/zibs2020 gebaseerde specificatie. 
+
+
+## Informatieobjecten ten behoeve van digitaal verwijzen
+Dit betreft in overeenstemming met de richtlijn [HASP-P](https://viewers.nhg.org/haspviewer/):
+- Contextuele gegevens bij ieder bericht. 
+Dit betreft onder andere identificatie van de patiënt, identificatie van de auteur, geadresseerde, eventuele kopie-aan en beheerder (van het systeem dat het bericht archiveert), gegevens betreffende het type bericht, datum en tijd van verzenden.
+- Gegevens betreffende de verwijzing/ het consult. 
+Dit betreft onder andere de urgentie en het type zorgpad (gestandaardiseerde of verkorte toegang), eventuele voorzieningen die nodig zijn bij het consult, reden en context van de verwijzing, het ingestelde beleid/ ingestelde behandeling en de omvang en aard van de actie of interventie die de verzender verwacht van de geconsulteerde en eventuele overige zaken van belang.
+- Dossierinformatie
+  Dit betreft onder andere relevante regels uit het journaal, episodelijst, behandelingen, medicatie, aanvullend onderzoek,risicovol leefgedrag, familieanamnese, psychosociale anamnes en Psychogeriatrisch onderzoek.
+
+## Infomatieobjecten ten behoeve van het melden van directe toegang
+Dit betreft in overeenstemming met de richtlijn [HASP-P](https://viewers.nhg.org/haspviewer/):
+- Contextuele gegevens bij ieder bericht. 
+Dit betreft onder andere identificatie van de patiënt, identificatie van de auteur, geadresseerde, eventuele kopie-aan en beheerder (van het systeem dat het bericht archiveert), gegevens betreffende het type bericht, datum en tijd van verzenden.
+- Gegevens betreffende de directe toegang tot de paramedische praktijk
+Dit betreft onder andere de screening risicofactoren door paramedicus,de paramedische diagnose of conclusie,  het paramedisch beleid/ de ingestelde behandeling en eventuele overige zaken van belang.
+- Dossierinformatie
+  Dit betreft anamnese en resultaten van lichamelijk onderzoek
+
+## Informatieobjecten ten behoeve van de update door de paramedicus
+Dit betreft in overeenstemming met de richtlijn [HASP-P](https://viewers.nhg.org/haspviewer/):
+- Contextuele gegevens bij ieder bericht. 
+Dit betreft onder andere identificatie van de patiënt, identificatie van de auteur, geadresseerde, eventuele kopie-aan en beheerder (van het systeem dat het bericht archiveert), gegevens betreffende het type bericht, datum en tijd van verzenden.
+- Gegevens bij de update
+Dit betreft een eventuele vraagstelling of antwoord op een door de verwijzer gestelde vraag, het beleid of de ingestelde behandeling en eventuele overige zaken van belang.
+- Dossierinformatie
+  Dit betreft anamnese, resultaten van lichamelijk onderzoek, het behandelverloop/ resultaat, relevante uitslagen van beeldvormend-,functie- of aanvullend onderzoek en relevante uitslagen van consulten door derden
+
+## Informatieobjecten ten behoeve van de update door de verwijzer
+Dit betreft in overeenstemming met de richtlijn [HASP-P](https://viewers.nhg.org/haspviewer/):
+- Contextuele gegevens bij ieder bericht. 
+Dit betreft onder andere identificatie van de patiënt, identificatie van de auteur, geadresseerde, eventuele kopie-aan en beheerder (van het systeem dat het bericht archiveert), gegevens betreffende het type bericht, datum en tijd van verzenden.
+- Gegevens bij de update
+Dit betreft de reden van de update, het beleid of de ingestelde behandeling, een eventueel antwoord op een door de paramedicus gestelde vraag en eventuele overige zaken van belang.
+- Dossierinformatie
+Dit betreft dezelfde dossierinformatie als de informatie in het kader van het digitaal verwijzen
+
+## Informatieobjecten ten behoeve van de eindrapportage door de paramedicus
+Dit betreft in overeenstemming met de richtlijn [HASP-P](https://viewers.nhg.org/haspviewer/):
+- Contextuele gegevens bij ieder bericht. 
+Dit betreft onder andere identificatie van de patiënt, identificatie van de auteur, geadresseerde, eventuele kopie-aan en beheerder (van het systeem dat het bericht archiveert), gegevens betreffende het type bericht, datum en tijd van verzenden.
+- Gegevens bij de eindrapportage
+Dit betreft onder andere de oorspronkelijke vraagstelling/ reden verwijzing, de conclusie/ diagnose, aanbevelingen en follow-up (De in het kader van de behandeling gevraagde nazorg), afspraken met de patiënt en eventuele overige zaken van belang.
+- Dossierinformatie
+  Dit betreft anamnese, resultaten van lichamelijk onderzoek, het behandelverloop/ resultaat, relevante uitslagen van beeldvormend-,functie- of aanvullend onderzoek, relevante uitslagen van consulten door derden en psychososiale anamese.
+
+## Informatieobjecten ten behoeve van het beschikbaar stellen van documenten, verslagen en behandelplan aan de patiënt
+Dit betreft in overeenstemming met de [MedMij gegevensdienst PDF/A](https://informatiestandaarden.nictiz.nl/wiki/MedMij:V2020.01/OntwerpPDFA) de volgende zorginformatiebouwstenen (zib2017):
+- Patiënt
+- Zorgverlener
+- Zorgaanbieder
+
+Daarnaast worden de feitelijke documenten (in PDF/A formaat, BASE64 encoded) beschikbaar gesteld.
+
 
 # Standaarden
 ## FHIR 
