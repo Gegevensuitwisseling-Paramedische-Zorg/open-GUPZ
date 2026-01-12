@@ -106,7 +106,7 @@ De scope van het dataplatform voor de paramedische zorg is duidelijk afgebakend:
 - Een Verwijsplatform
 - Een Netwerk Informatie Systeem (NIS)
 
-Afbakening voorkomt het ontstaan van monolotische 'totaaloplossingen' en leverancierspecifieke implementaties van standaarden. Daarnaast reduceert afbakening de complexiteit van het platform, omdat afsprakenstelsel-specifieke maatregelen (zoals die binnen het MedMij afsprakenstelsel) niet door het platform zelf hoeven te worden geïmplementeerd.
+Afbakening voorkomt het ontstaan van monolitische 'totaaloplossingen' en leverancierspecifieke implementaties van standaarden. Daarnaast reduceert afbakening de complexiteit van het platform, omdat afsprakenstelsel-specifieke maatregelen (zoals die binnen het MedMij afsprakenstelsel) niet door het platform zelf hoeven te worden geïmplementeerd.
 
 ![Three layer API architecture](/assets/3_layer_api_architecture.jpg)
 
