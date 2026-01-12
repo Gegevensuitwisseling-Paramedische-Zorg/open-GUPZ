@@ -160,7 +160,7 @@ Voor het recht op gegevenswissing en rectificatie en aanvulling (AVG), geldt dat
 
 Het recht op inzage van logging (WABVPZ) vereist dat patiënten kosteloos een (elektronisch) afschrift op kunnen vragen, waarin staat wie wanneer informatie heeft verstrekt, ingezien of opgevraagd in het elektronisch uitwisselingssysteem. De architectuur van het dataplatform dient te borgen dat een dergelijk elektronisch afschrift eenvoudig kan worden aangeleverd.
 
-Op grond van de AVG heeft de betrokkene recht op informatie over doel en middelen van de verwerking. Deze informatie dient door de verwerkingsverantwoordelijke (de paramedische praktijk) te worden verstrekt. Vanuit open-GUPZ zal een standaard ![privacyverklaring](/docs/policies/privacyverklaring.md) worden ontwikkeld die kan worden opgenomen in de website van de paramedische praktijk.
+Op grond van de AVG heeft de betrokkene recht op informatie over doel en middelen van de verwerking. Deze informatie dient door de verwerkingsverantwoordelijke (de paramedische praktijk) te worden verstrekt. Vanuit open-GUPZ zal een standaard [privacyverklaring](/docs/policies/privacyverklaring.md) worden ontwikkeld die kan worden opgenomen in de website van de paramedische praktijk.
 
 ## Niet functionele eisen op het gebied van privacy en security
 De AVG stelt ontwerpeisen in het kader van privacy (privacy by design, privacy by default) en security (passende maatregelen). Binnen open-GUPZ worden deze eisen gedekt vanuit de principes [privacy by design](#privacy-by-design) en [security in depth](#security-in-depth).
