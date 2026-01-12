@@ -230,7 +230,7 @@ Een dataplatform voor de paramedische zorg is use case- (en dus proces) agnostis
 - Ontvangen van notificaties van externe partijen en het uitvoeren van bijbehorend PULL request (NOTIFIED-PULL - inkomend)
 - Ontvangen van verzoeken om informatie (PULL - ingaand)
 
-Op de korte termijn zal echter worden gefocust op de [doelen](#doelstelling-programma-gupz) van van het programma GUPZ op het gebied van gegevensuitwisseling tussen paramedici en huisartsen, medisch specialisten en paramedici onderling, en op het gebied van uitwisseling met de patiënt via de Persoonlijke Gezondheidsomgeving (PGO) van de patiënt. Daarnaast zal worden uitgegaan van (defacto) [standaarden](#standaarden) die een specifiek communicatiepatroon beschrijven. 
+Op de korte termijn zal echter worden gefocust op de voor de [doelen](#doelstelling-programma-gupz) van van het programma GUPZ benodigde communicatepatronen.
 
 ## Digitaal verwijzen
 Digitale verwijzingen zullen op korte termijn worden geïmplementeerd als PUSH-bericht. Dit betekent voor het dataplatform voor de Paramedische zorg:
