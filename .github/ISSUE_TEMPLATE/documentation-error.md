@@ -8,7 +8,7 @@ assignees: ''
 ---
 
 **Describe the error**
-A clear and concise description of what the erros is.
+A clear and concise description of what the error is.
 
 **Suggest a solution**
 Describe your suggested solution
