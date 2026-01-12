@@ -287,7 +287,7 @@ Dit betreft onder andere de urgentie en het type zorgpad (gestandaardiseerde of 
 - Dossierinformatie
   Dit betreft onder andere relevante regels uit het journaal, episodelijst, behandelingen, medicatie, aanvullend onderzoek,risicovol leefgedrag, familieanamnese, psychosociale anamnes en Psychogeriatrisch onderzoek.
 
-## Infomatieobjecten ten behoeve van het melden van directe toegang
+## Informatieobjecten ten behoeve van het melden van directe toegang
 Dit betreft in overeenstemming met de richtlijn [HASP-P](https://viewers.nhg.org/haspviewer/):
 - Contextuele gegevens bij ieder bericht. 
 Dit betreft onder andere identificatie van de patiënt, identificatie van de auteur, geadresseerde, eventuele kopie-aan en beheerder (van het systeem dat het bericht archiveert), gegevens betreffende het type bericht, datum en tijd van verzenden.
@@ -333,11 +333,37 @@ Daarnaast worden de feitelijke documenten (in PDF/A formaat, BASE64 encoded) bes
 
 
 # Standaarden
-## FHIR 
-STU3 en R4 discussie
-## MedMij PDF/A
-## Informatiestandaard paramedie
-## Terminologie (SNOMED CT)
+open-GUPZ maakt onderscheid tussen twee verschillende typen standaarden:
+
+- Use case agnostische standaarden
+Dit betreft standaarden die dienen te worden toegepast ongeacht de specifieke use case. De te gebruiken standaarden worden vastgelegd in  [pas toe of leg uit -standaarden](/docs/Pas toe leg uit standaarden.md)
+- Use case specifieke standaarden.
+Dit betreft standaarden die specifiek zijn voor de implementatie van een use case, vaak gerelateerd aan een afsprakenstelsel dat van toepassing is op die use case, zoals MedMij in het geval van de uitwisseling van informatie tussen PARIS en Persoonlijke Gezondheidsomgeving (PGO)
+
+Op korte termijn zullen uitsluitend use case specifieke standaarden worden geïmplenteerd voor de use cases die voortvloeien uit de doelstellingen van het programma GUPZ, te weten verwijzen (en ondersteunende processen) en het beschikbaarstellen van documenten en afschriften aan het PGO.
+
+## FHIR versies
+open-GUPZ volgt waar mogelijk het [FHIR besluit](https://open.overheid.nl/documenten/ronl-72d9d941c7ee7ae2c58c236290e152b22939448d/pdf), met een baseline van minimaal FHIR STU3 (op basis van zibs 2017) en maximaal FHIR R4 (op basis van zibs 2020). Het dataplatform voor de Paramedische Zorg zal op korte termijn (periode tot in ieder geval eind 2027) alleen FHIR STU3 ondersteunen, omdat de te ondersteunen use cases uitsluitend gebruik maken van FHIR STU3. Op termijn zal geleidelijk worden overgestapt op FHIR R4. Dit betekent dat het dataplatform voor de Paramedische Zorg uiteindelijk minimaal twee FHIR versies tegelijkertijd dient te ondersteunen.
+
+## Standaarden specifiek voor verwijzen
+Het dataplatform voor de Paramedische Zorg zal op korte termijn (periode tot in ieder geval eind 2027) de [FHIR STU3 specificaties van ZorgDomein](https://integrator.zorgdomein.com/fhir-specs/) implementeren ter ondersteuning van het verwijzproces. 
+
+Het programma GUPZ streeft op lange termijn naar de toepassing van een nationale standaard voor verwijzen, met in ieder geval de volgende kenmerken:
+
+- Gebaseeerd op FHIR R4 en zibs2020
+- Beheerd door een onafhankelijke standaardisatie organisatie zoals Nictiz
+- Bij voorkeur gebaseerd op het NOTIFIED-PULL communicatiepatroon in plaats van het door ZorgDomein gehanteerde PUSH patroon.
+
+Een betaversie van [de informatiestandaard paramedische zorg](https://nictiz.nl/informatiestandaarden/paramedische-zorg/) is reeds ontwikkeld door Nictiz. Toepassing van deze standaard op schaal is echter in de praktijk pas haalbaar wanneer verwijzers (voornamelijk huisartsen) digitale verwijzingen plaatsen op basis van de standaard. Op dit moment wordt in nagenoeg alle gevallen verwezen met behulp van ZorgDomein en dus op basis van de [FHIR specificaties van ZorgDomein](https://integrator.zorgdomein.com/fhir-specs/). Vanuit het programma GUPZ zal in samenwerking met ZorgDomein, Nictiz en andere stakeholders worden aangestuurd op harmonisatie van de ZorgDomein specificaties en de nationale standaard, en dus naar ondersteuning van FHIR R4 en NOTIFIED-PULL.
+
+## Standaarden voor het beschikbaar stellen van documenten, verslagen en behandelplan aan de patiënt
+Ten behoeve van het beschikbaar stellen van documenten aan het PGO van de patiënt implementeert het dataplatform voor de Paramedische Zorg de [FHIR specificaties van de MedMij gegevensdienst PDF/A](https://informatiestandaarden.nictiz.nl/wiki/MedMij:V2020.01/FHIR_PDFA). Hierbij dient te worden aangetekend dat het dataplatform wel de gegevensdienst implementeert,maar niet alle MedMij specifieke afspraken uit het [MedMij afsprakenstelse](https://afsprakenstelsel.medmij.nl/asverplicht/mmverplicht/?l=nl) die gelden voor de rol Dienstverlener Zorgaanbieder (DVA). De MedMij afspraken die gelden voor de DVA zullen worden geïmplementeerd door een op het dataplatform aangesloten DVA. Zie ook het principe (Seperation of concerns)[#seperation-of-concerns].
+
+## Standaarden voor de inhoud van documenten, verslagen en het behandelplan
+De inhoud van documenten zal sectorbreed worden gespecificeerd door het programma GUPZ. Templates voor deze documenten worden opgenomen in de open-GUPZ repository, onder 'templates'.
+
+## Terminologie
+
 
 
 # Architectuur patronen
