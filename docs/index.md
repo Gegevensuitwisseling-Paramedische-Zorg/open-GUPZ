@@ -1,13 +1,13 @@
 # Index
 
 ## Start documentatie
-- [Project Start Architectuur - PSA](/docs/PSA.md)
+- [Project Start Architectuur - PSA](/docs/PSA.html)
   
 ## Architectuur
-- [Lijst van pas toe leg uit standaarden](/docs/standards/Pas-toe-leg-uit-standaarden.md)
-- [FHIR Facade pattern](/docs/architecture/FHIR-Facade-pattern.md)
-- [Sync-agent-pattern](/docs/architecture/Sync-agent-pattern.md)
+- [Lijst van pas toe leg uit standaarden](/standards/Pas-toe-leg-uit-standaarden.html)
+- [FHIR Facade pattern](/architecture/FHIR-Facade-pattern.html)
+- [Sync-agent-pattern](/architecture/Sync-agent-pattern.html)
 
 ## Beleid
-- [Risico's en mitigerende maatregelen](/docs/policies/DPIA.md)
-- [Standaard privacyverklaring](/docs/policies/Privacyverklaring.md)
+- [Risico's en mitigerende maatregelen](/policies/DPIA.html)
+- [Standaard privacyverklaring](/policies/Privacyverklaring.html)
