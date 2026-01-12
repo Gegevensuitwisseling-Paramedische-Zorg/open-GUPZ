@@ -201,7 +201,7 @@ Een dataplatform voor de paramedische zorg is use case- (en dus proces) agnostis
   
 Op de korte termijn zal echter worden gefocust op de [doelen](#doelstelling-programma-gupz) van van het programma GUPZ op het gebied van gegevensuitwisseling tussen paramedici en huisartsen, medisch specialisten en paramedici onderling, en op het gebied van uitwisseling met de patiënt via de Persoonlijke Gezondheidsomgeving (PGO) van de patiënt. Deze doelstellingen omvatten specifieke processen.
 
-De afhandeling van processen binnen het PARIS zelf (zoals het verwerken en verzenden van verwijsinformatie of het klaarzetten van inforatie voor het PGO) is geen onderdeel van de scope van het verwijsplatform.
+De afhandeling van processen binnen het PARIS zelf (zoals het verwerken en verzenden van verwijsinformatie of het klaarzetten van informatie voor het PGO) is geen onderdeel van de scope van het verwijsplatform.
 
 ## Digitaal verwijzen
 Dit betreft het ontvangen en verwerken van een verwijzing van een huisarts, medisch specialist of andere paramedicus. 
