@@ -315,11 +315,11 @@ Een dataplatform voor de paramedische zorg is use case agnostisch en omvat daaro
 
 Op de korte termijn zal echter worden gefocust op de [doelen](#doelstelling-programma-gupz) van van het programma GUPZ op het gebied van gegevensuitwisseling tussen paramedici en huisartsen, medisch specialisten en paramedici onderling, en op het gebied van uitwisseling met de patiënt via de Persoonlijke Gezondheidsomgeving (PGO) van de patiënt.
 
-Informatieobjecten ten behoeve van digitaal verwijzen en ondersteunende processen worden gedefinieerd in overeenstemming met de richtlijn [HASP-P](https://viewers.nhg.org/haspviewer/).
+Informatieobjecten ten behoeve van digitaal verwijzen en ondersteunende processen worden gedefinieerd in overeenstemming met de richtlijn [HASP-P](https://viewers.nhg.org/haspviewer/). Omdat de ondersteuning van digitaal verwijzen en de daaraan ondersteunende processen voorlopig zal worden gebaseerd op de ZorgDomein FHIR specificaties, is compliance met zorginformatiebouwstenen voor verwijzen en ondersteunende processen niet volledig haalbaar.  Informatieobjecten ten behoeve van het beschikbaar stellen van PDF/A documenten aan het PGO van de patiënt zullen in overeenstemming met het MedMij afsprakenstelsel worden gebaseerd op zibs2017.
 
-Informatieobjecten worden daarnaast zoveel als mogelijk gedefinieerd in overeenstemming met de zorginformatiebouwstenen. Omdat de ondersteuning van digitaal verwijzen en de daaraan ondersteunende processen voorlopig zal worden gebaseerd op de ZorgDomein FHIR specificaties, is compliance met zorginformatiebouwstenen niet volledig haalbaar. Binnen het programma GUPZ wordt gestreefd naar standaardisatie van de verwijsstromen op basis van zibs2020. Zie ook [Standaarden](#standaarden). Dit betekent dat, in samenwerking met alle betrokken partijen, gestreeft wordt naar vervanging van de huidige ZorgDomein FHIR STU3 specificaties naar een FHIR R4/zibs2020 gebaseerde specificatie. 
+Binnen het programma GUPZ wordt gestreefd naar standaardisatie van de verwijsstromen op basis van zibs2020. Zie ook [Standaarden](#standaarden). Dit betekent dat, in samenwerking met alle betrokken partijen, gestreeft wordt naar vervanging van de huidige ZorgDomein FHIR STU3 specificaties naar een FHIR R4/zibs2020 gebaseerde specificatie. Ook voor MedMij geldt dat de huidige zib2017 gebaseerde versie op termijn zal worden vervangen door een zibs2020 versie (of zelfs hoger)
 
-
+ 
 ## Informatieobjecten ten behoeve van digitaal verwijzen
 Dit betreft in overeenstemming met de richtlijn [HASP-P](https://viewers.nhg.org/haspviewer/):
 - Contextuele gegevens bij ieder bericht. 
