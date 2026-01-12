@@ -397,11 +397,9 @@ Daarnaast worden de feitelijke documenten (in PDF/A formaat, BASE64 encoded) bes
 ## Typen standaarden
 open-GUPZ maakt onderscheid tussen twee verschillende typen standaarden:
 
-### Use case agnostische standaarden
-Dit betreft standaarden die dienen te worden toegepast ongeacht de specifieke use case. De te gebruiken standaarden worden vastgelegd in  [pas toe of leg uit -standaarden](/docs/standards/Pas-toe-leg-uit-standaarden.md)
+- Use case agnostische standaarden. Dit betreft standaarden die dienen te worden toegepast ongeacht de specifieke use case. De te gebruiken standaarden worden vastgelegd in  [pas toe of leg uit -standaarden](/docs/standards/Pas-toe-leg-uit-standaarden.md)
 
-### Use case specifieke standaarden.
-Dit betreft standaarden die specifiek zijn voor de implementatie van een use case, vaak gerelateerd aan een afsprakenstelsel dat van toepassing is op die use case, zoals MedMij in het geval van de uitwisseling van informatie tussen PARIS en Persoonlijke Gezondheidsomgeving (PGO)
+- Use case specifieke standaarden. Dit betreft standaarden die specifiek zijn voor de implementatie van een use case, vaak gerelateerd aan een afsprakenstelsel dat van toepassing is op die use case, zoals MedMij in het geval van de uitwisseling van informatie tussen PARIS en Persoonlijke Gezondheidsomgeving (PGO)
 
 Op korte termijn zullen uitsluitend use case specifieke standaarden worden geïmplenteerd voor de use cases die voortvloeien uit de doelstellingen van het programma GUPZ, te weten verwijzen (en ondersteunende processen) en het beschikbaarstellen van documenten en afschriften aan het PGO.
 
