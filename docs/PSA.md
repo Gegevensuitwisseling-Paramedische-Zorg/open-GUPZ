@@ -7,7 +7,7 @@ filename: PSA.md
 
 - [Inleiding](#inleiding)
   - [Doelstelling programma GUPZ](#doelstelling-programma-gupz)
-  - [Ambities open-GUPZ)(#ambities-open-GUPZ )
+  - [Ambities open-GUPZ](#ambities-openGUPZ )
   - [Eindproducten](#eindproducten)
 - [Organisatie en stakeholders](#organisatie-en-stakeholders)
 - [Uitgangspunten en principes](#uitgangspunten-en-principes)\
@@ -38,7 +38,7 @@ Het programma kent een ambitieuze tijdlijn. De bij het programma betrokken lever
 
 ![Tijdlijn van het GUPZ programma](/assets/timeline.jpg)
 
-## Ambities open GUPZ 
+## Ambities open-GUPX
 Binnen het programmaonderdeel 'open-GUPZ' werken de betrokken PARIS leveranciers en de GUPZ organisatie samen aan de ontwikkeling van (open specificaties en tools voor) een FHIR gebaseerd dataplatform voor de paramedische zorg. Door gezamenlijke ontwikkeling van specificaties en waar mogelijk ook software, wordt versnelling bereikt bij de realisatie van de doelen van het programma GUPZ. Gezamenlijk ontwikkelde specificaties en software worden beheerd in de 'open-GUPZ' Github repository.
 
 Open-GUPZ heeft ambities op drie gebieden:
