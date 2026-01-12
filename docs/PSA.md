@@ -57,6 +57,7 @@ Het programmaonderdeel 'open-GUPZ' levert ten minste de volgende eindproducten:
 - Specificaties van [documenttypes](/docs/terminology/documenttypes.md) voor het beschikbaarstellen/ uitwisselen van ongestructureerde gegevens
 - [Standaard coderingen](/docs/terminology) (SNOMED refsets)
 - [Minimale functionele requirements/ capablities](/docs/requirements) op het gebied van verwijzen en het beschikbaar stellen van informatie aan patiënten
+- Beleidsondersteunende tools voor paramedische praktijken, zoals een [standaard privacyverklaring](/docs/policies/Privacyverklaring.md), [aansluitvoorwaarden](/docs/policies/Aansluitvoorwaarden.md) en [Risicomitigatie](/docs/policies/DPIA.md)
 - Optioneel source code voor gezamenlijk ontwikkelde onderdelen van een dataplatform voor de paramedische zorg
 
 # Organisatie/ stakeholders
