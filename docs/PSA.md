@@ -99,12 +99,14 @@ open-GUPZ ontwikkelt software architecture patterns en implementatieprofielen al
 PARIS leverenciers willen samenwerken, onderling en met andere stakeholders, en gezamenlijk de ideeen, technologieen en kennis ontwikkelen die nodig is voor de realisatie van een state of the art dataplatform voor de Paramedische Zorg. Alles dat wordt ontwikkeld wordt publiek gedeeld in De open-GUPZ repository en website.
 
 ## Seperation of concerns
-De scope van het dataplatform voor de Paramedische Zorg is duidelijk afgebakend: Het leveren van fijnmazige, use-case agnostische, FHIR gebaseerde system API's op het Paramedisch Informatiesysteem (PARIS). 'Seperation of concerns' wil zeggen dat het dataplatform ontkoppeld is van use-case/ afsprakenstelsel specifieke API's (process API's) en API clients (apps). Afbakening voorkomt het ontstaan van monolotische 'totaaloplossingen' en leverancierspecifieke implementaties van standaarden. 
+De scope van het dataplatform voor de Paramedische Zorg is duidelijk afgebakend: Het leveren van fijnmazige, use-case agnostische, FHIR gebaseerde system API's op het Paramedisch Informatiesysteem (PARIS). 'Seperation of concerns' wil zeggen dat het dataplatform ontkoppeld is van use-case/ afsprakenstelsel specifieke API's (process API's) en API clients (apps), zoals een Dienstverlener Zorgaanbieder (DVA) in het kader van MedMij gebaseerde uitwisseling met het PGO, een Verwijsplatform of een Netwerk Informatie Systeem (NIS) . Afbakening voorkomt het ontstaan van monolotische 'totaaloplossingen' en leverancierspecifieke implementaties van standaarden. Daarnaast reduceert afbakening de complexiteit van het platform, omdat afsprakenstelsel-specifieke maatregelen (zoals die binnen het MedMij afsprakenstelsel) niet door het platform zelf hoeven te worden geïmplementeerd.
 
 ![Three layer API architecture](/assets/3_layer_api_architecture.jpg)
 
 ## Hergebruik
 open-GUPZ streeft naar maximaal hergebruik van alles wat door de deelnemende PARIS leveranciers wordt ontwikkeld. Specificaties worden zo generiek en herbruikbaar mogelijk ontworpen. Principes als 'seperation of concerns', 'gebruik van open standaarden' en 'gebruik van openbare software archirecture patterns en implementatieprofielen' zijn hiervoor een belangrijke voorwaarde.
+
+Het dataplatform voor de Paramedische Zorg functioneert als een gestandaardiseerd toegangspunt tot ieder aangesloten PARIS. Dit leidt een herbruikbaar koppelvlak voor bijvoorbeeld aanbieders van de MedMij DVA rol, aanbieders van verwijsplatforms en aanbieders ven Netwerk Informatie Systemen (NIS)
 
 ## Reductie van complexiteit
 PARIS leveranciers willen de complexiteit van de door hen ontwikkelde systemen beperken. Door 'seperation of concerns' kan het gebruik technologiën en implementatieprofielen die specifiek zijn voor een bepaald afsprakenstelsel zoals MedMij, binnen het dataplatform worden voorkomen of beperkt. Door scheiding van het dataplatform van het PARIS zelf, wordt voorkomen dat de complexiteit van het PARIS toeneemt.
@@ -123,7 +125,7 @@ Bij de ontwikkeling van een dataplatform voor de Paramedische Zorg worden alleen
 open-GUPZ hanteert de 'privacy by design ontwerpfilosofie', die vereist dat privacybescherming vanaf het begin af aan meegenomen wordt bij het ontwerpen en bouwen van nieuwe systemen. Concreet betekent dit dat op de 'privacy ontwerp strategieën' uit![Het blauwe boekje](https://www.cs.ru.nl/~jhh/blauwe-boekje.html) zullen worden toegepast op het ontwerp van het dataplatform voor de Paramedische Zorg.
 
 ## Security in depth
-open-GUPZ hanteert de ![ICT-beveiligingsrichtlijnen voor webapplicaties](https://www.ncsc.nl/ict-beveiligingsrichtlijnen-webapplicaties) van het Nationaal Cyber Security Center bij het opstellen van:
+open-GUPZ hanteert de [ICT-beveiligingsrichtlijnen voor webapplicaties](https://www.ncsc.nl/ict-beveiligingsrichtlijnen-webapplicaties) van het Nationaal Cyber Security Center bij het opstellen van:
 - Software arcitecture patterns (richtlijnen voor de laag 'webapplicaties')
 - Implementatieprofielen voor de inrichting van platformen, webservers en netwerken (richtlijnen voor de lagen 'Platform en webservers' en 'Netwerken')
 
@@ -356,27 +358,63 @@ Het programma GUPZ streeft op lange termijn naar de toepassing van een nationale
 
 Een betaversie van [de informatiestandaard paramedische zorg](https://nictiz.nl/informatiestandaarden/paramedische-zorg/) is reeds ontwikkeld door Nictiz. Toepassing van deze standaard op schaal is echter in de praktijk pas haalbaar wanneer verwijzers (voornamelijk huisartsen) digitale verwijzingen plaatsen op basis van de standaard. Op dit moment wordt in nagenoeg alle gevallen verwezen met behulp van ZorgDomein en dus op basis van de [FHIR specificaties van ZorgDomein](https://integrator.zorgdomein.com/fhir-specs/). Vanuit het programma GUPZ zal in samenwerking met ZorgDomein, Nictiz en andere stakeholders worden aangestuurd op harmonisatie van de ZorgDomein specificaties en de nationale standaard, en dus naar ondersteuning van FHIR R4 en NOTIFIED-PULL.
 
-## Standaarden voor het beschikbaar stellen van documenten, verslagen en behandelplan aan de patiënt
+## Standaarden specifiek voor het beschikbaar stellen van documenten, verslagen en behandelplan aan de patiënt
 Ten behoeve van het beschikbaar stellen van documenten aan het PGO van de patiënt implementeert het dataplatform voor de Paramedische Zorg de [FHIR specificaties van de MedMij gegevensdienst PDF/A](https://informatiestandaarden.nictiz.nl/wiki/MedMij:V2020.01/FHIR_PDFA). Hierbij dient te worden aangetekend dat het dataplatform wel de gegevensdienst implementeert,maar niet alle MedMij specifieke afspraken uit het [MedMij afsprakenstelse](https://afsprakenstelsel.medmij.nl/asverplicht/mmverplicht/?l=nl) die gelden voor de rol Dienstverlener Zorgaanbieder (DVA). De MedMij afspraken die gelden voor de DVA zullen worden geïmplementeerd door een op het dataplatform aangesloten DVA. Zie ook het principe (Seperation of concerns)[#seperation-of-concerns].
 
-## Standaarden voor de inhoud van documenten, verslagen en het behandelplan
-De inhoud van documenten zal sectorbreed worden gespecificeerd door het programma GUPZ. Templates voor deze documenten worden opgenomen in de open-GUPZ repository, onder 'templates'.
+## Standaarden specifiek voor de inhoud van documenten, verslagen en het behandelplan
+De inhoud van documenten zal sectorbreed worden gespecificeerd door het programma GUPZ. Templates voor deze documenten worden opgenomen in de open-GUPZ repository, onder ['templates'](/templates).
 
 ## Terminologie
+Door het programma GUPZ worden waardenlijsten en referentiesets ontwikkeld ten behoeve van:
+- Het coderen van documenttypes
+Het documenttype wordt opgenomen in de DocumentReference.class. Dit codeableconcept heeft als binding 'Example', hetgeen feitelijk betekent dat iedere code kan worden gebruikt. Door GUPZ zal een waardenlijst worden opgesteld met codes bij voorkeur vanuit de door [Nictiz aangegeven waardenlijst](https://decor.nictiz.nl/pub/documentuitwisseling/docs-html-20241119T114146/voc-2.16.840.1.113883.2.4.3.11.60.106.11.5-2015-12-01T102506.html), indien nodig aangevuld met andere SNOMED-CT of LOINC coderingen.
+- Het coderen van verwijsproducten
+Door het programma GUPZ wordt gestreeft naar harmonisatie van de codering van verwijsproducten/ redenen voor de gehele paramedische sector
+>[!WARNING]
+>Saskia T...wat verder nog?
 
-
+Referentiesets en waardenlijsten worden opgenomen in ['terminology'](/templates).
 
 # Architectuur patronen
-## Sync-agent
-![Sync-agent patroon](/assets/syncagent.jpg)
+PARIS leveranciers onderkennen twee alternatieve software architecture patterns voor het dataplatform voor de Paramedishe Zorg:
 
-## FHIR Facade
-![FHIR-facade patroon](/assets/facade.jpg)
+- Sync-agent
+Data uit het PARIS wordt (near) realtime gesynchroniseerd naar een FHIR store en van daaruit beschikbaar gesteld. Inkopende data wordt vanuit de FHIR store waar nodig  (near)realtime gesynchroniseerd naar het PARIS.
+Dit patroon wordt verder uitgewerkt in [FHIR-Facade-pattern.md](/docs/FHIR-Facade-patterm.md)
+- FHIR Facade
+Een FHIR facade is een FHIR interface rechtstreeks op het PARIS. De Facade vertaalt inkomende FHIR requests naar PARIS-specifieke datarequests en transleert PARIS-specifieke datastructuren en -formaten naar FHIR formaat.
+Dit patroon wordt verder uitgewerkt in [Sync-agent-pattern.md](/docs/Sync-agent-pattern.md)
+
+Beide patronen kennen hun eigen voor- en nadelen en kunnen desgewenst worden gecombineerd. 
 
 # Privacy en Informatiebeveiliging
+open-GUPZ gaat uit van [privacy by design](#privacy-by-design) en [security in depth](security-in-depth) en borgt de onder die principes en uitgangspunten beschreven richtlijnen.
+
+Overige specifieke maatregelen zijn:
+
+## Beveiliging van netwerkverker
+open-GUPZ vereist mutual TLS (mTLS) verbindingen tussen het dataplatform voor de Paramedische Zorg en aangesloten externe systemen (waaronder DVA, Verwijsplatform en NIS). TLS verbindingen dienen te voldoen aan de [ICT-beveiligingsrichtlijnen voor TLS](https://www.ncsc.nl/transport-layer-security-tls/v21-tls). open-GUPZ vereist dat TLS instellingen minimaal voldoen aan veiligheidniveau 'Voldoende'. In het geval van veiligheidniveau 'Voldoende' dient de beheerder van het dataplatform aan te geven op welke wijze en binnen welke termijn de instelling zal voldoen aan veiligheidsniveau 'Goed'.
+
+## Authenticatie op application niveau
+Authenticatie van het aangesloten systeem (zoals een DVA, Verwijsplatform of NIS) en de eindgebruiker vindt plaats aan de hand van JSON Web Tokens (JWT) op basis van de [ZorgDomein specificatie voor application level security](https://integrator.zorgdomein.com/fhir-specs/security/#application-level-security-json-web-tokens), aangevuld met het BSN van de patiënt waarvoor het verzoek (FHIR request) wordt gedaan.
+
+## Veilige exploitatie
+Het dataplatform voor de Paramedische Zorg kan rechstreeks  worden benaderd vanaf een publiek netwerk (zoals het internet). Waarborgen van een veilige exploitatie is daarom noodzakelijk. 
+
+Om aan te sluiten op MedMij dienen deelnemers (paramedische praktijken) in het bezit te zijn van een geldige NEN 7510-certificering. 
+
+Maatregelen (controls) voor veilige exploitatie van een dataplatform vooor de Paramedische Zorg vallen onder [beheer](#beheer) en zijn de verantwoordelijkheid van de aanbieder van het dataplatform, doorgaans een PARIS leverancier. Beheerders/ aanbieders van een dataplatform voor de Paramedische Zorg dienen te voldoen aan NEN7510 en NEN7513. Certificering is niet verplicht, maar is voor grote organisaties (50> medewerkers, 10.000.000> jaaromzet) onontkomelijk om aantoonbaar te voldoen aan NIS2. 
+
+Door de verwerkingsverantwoordelijke (de paramedische praktijk) zal een Data Privacy Impact Assessment moeten worden uitgevoerd om risico's in kaart te brengen en eventueel aanvullende maatregelen te nemen om veilige exploitatie te borgen. Een lijst van risico's en bijbehorende mogelijke mitigerende maatregelen is opgenomen in [DPIA.md](/docs/DPIA.md). Bewezen maatregelen van de beheerder/ aanbieder van een dataplatform voor de Paramedische Zorg (zoals een NEN 7510 certificering of periodieke beveiligingsaudit) kunnen worden opgenomen als mitigerende maatregel. 
+
+Aanbeiders/ beheerders van een dataplatform voor de Paramedische zorg laten tenminste jaarlijks een greybox penetratietest uitvoeren door een EDP auditor op externe koppelvlakken. Ook bij grootschalige wijzigingen of herbouw wordt een greybox pentest uitgevoerd. De scope van de penetratietests is:
+
+- De OWASP API top 10
+- [ICT-beveiligingsrichtlijnen voor TLS](https://www.ncsc.nl/transport-layer-security-tls/v21-tls)
+- Voor zover van toepassing: [ICT-beveiligingsrichtlijnen voor webapplicaties](https://www.ncsc.nl/ict-beveiligingsrichtlijnen-webapplicaties)
 
 # Beheer
-
+Een dataplatform voor de Paramedische Zorg wordt aangeboden als SaaS dienst, en wordt operationeel beheerd door de aanbeider van de SaaS dienst, op basis van een met de paramedische praktijk overeengekomen Service Level Agreement (SLA).
 
 
 
