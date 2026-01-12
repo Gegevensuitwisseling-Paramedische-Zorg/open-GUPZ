@@ -8,8 +8,6 @@
 - [FHIR Facade pattern](/docs/architecture/FHIR-Facade-pattern.md)
 - [Sync-agent-pattern](/docs/architecture/Sync-agent-pattern.md)
 
-## API's
-
-## Informatie voor paramedische praktijken
+## Beleid
 - [Risico's en mitigerende maatregelen](/docs/policies/DPIA.md)
 - [Standaard privacyverklaring](/docs/policies/Privacyverklaring.md)
