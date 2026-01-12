@@ -1,3 +1,8 @@
+---
+title: Project Start Architectuur - Dataplatform voor de Paramedische Zorg
+layout: template
+filename: PSA.md
+--- 
 # Project Start Architectuur - Dataplatform voor de Paramedische Zorg
 ## Inleiding
 Goede en tijdige informatie-uitwisseling met de patiënt en tussen zorgverleners onderling is nodig om kwalitatief goede en veilige zorg te kunnen leveren. Het programma ‘Gegevensuitwisseling in de Paramedische Zorg’ focust op de gestandaardiseerde uitwisseling van medische gegevens met de patiënt via een persoonlijke gezondheidsomgeving (PGO) en tussen zorgverleners onderling. Zo worden behandelingen effectief en worden fouten voorkomen. Gegevensuitwisseling vermindert bovendien overbodige administratieve lasten.
