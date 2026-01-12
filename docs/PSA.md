@@ -425,7 +425,7 @@ De inhoud van documenten zal sectorbreed worden gespecificeerd door het programm
 
 ## Terminologie
 Door het programma GUPZ worden waardenlijsten en referentiesets ontwikkeld ten behoeve van:
-- Het coderen van documenttypes. De FHIR resource DocumentReference bevat een 'class' eigenschap waarin het documenttype wordt opgenomen als codebleconcept. Dit codeableconcept heeft als binding 'Example', hetgeen feitelijk betekent dat iedere code kan worden gebruikt. Door GUPZ zal een waardenlijst worden opgesteld met codes bij voorkeur vanuit de door [Nictiz aangegeven waardenlijst](https://decor.nictiz.nl/pub/documentuitwisseling/docs-html-20241119T114146/voc-2.16.840.1.113883.2.4.3.11.60.106.11.5-2015-12-01T102506.html), indien nodig aangevuld met andere SNOMED-CT of LOINC coderingen.
+- Het coderen van documenttypes. De FHIR resource DocumentReference bevat een eigenschap 'class' waarin het documenttype wordt opgenomen als codebleconcept. Dit codeableconcept heeft als binding 'Example', hetgeen feitelijk betekent dat iedere code kan worden gebruikt. Door GUPZ zal een waardenlijst worden opgesteld. De gebruikte waarden zijn bijvoorkeur een subset van de door [Nictiz aangegeven waardenlijst](https://decor.nictiz.nl/pub/documentuitwisseling/docs-html-20241119T114146/voc-2.16.840.1.113883.2.4.3.11.60.106.11.5-2015-12-01T102506.html), indien nodig aangevuld met andere SNOMED-CT of LOINC coderingen.
 - Het coderen van verwijsproducten. Door het programma GUPZ wordt gestreeft naar harmonisatie van de codering van verwijsproducten/ redenen voor de gehele paramedische sector
 >[!WARNING]
 >Saskia T...wat verder nog?
