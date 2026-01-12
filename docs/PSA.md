@@ -255,7 +255,7 @@ Digitale verwijzingen zullen op korte termijn worden geïmplementeerd als PUSH-b
 - Het ontvangen en verwerken van een PUSH-verwijsbericht
 - Het versturen van een PUSH-verwijsbericht
 
-Op de langere termijn zal PUSH verkeer stapsgewijs worden vervangen door NOTFIED-PULL verkeer. Dit betekent dat het dataplatform voor de Paramedische zorg op langere termijn naast de PUSH implementatie ook:
+Op de langere termijn (in ieder geval na 2027) zal PUSH verkeer stapsgewijs worden vervangen door NOTFIED-PULL verkeer. Dit betekent dat het dataplatform voor de Paramedische zorg op langere termijn naast de PUSH implementatie ook:
 
 - Notificaties moet ontvangen en op basis van de notificatie bijbehorende verwijsinformatie op moet vragen bij de verwijzen
 - Notificaties moet versturen en de bijbehorende verwijsinformatie terug moet geven bij een PULL request van de ontvanger
@@ -270,7 +270,7 @@ Updates zullen op korte termijn worden geïmplementeerd als PUSH-bericht. Dit be
 
 - Het versturen van een PUSH-update
 
-Op de langere termijn zal PUSH verkeer stapsgewijs worden vervangen door NOTFIED-PULL verkeer. Dit betekent dat het dataplatform voor de Paramedische zorg op langere termijn naast de PUSH implementatie ook:
+Op de langere termijn (in ieder geval na 2027) zal PUSH verkeer stapsgewijs worden vervangen door NOTFIED-PULL verkeer. Dit betekent dat het dataplatform voor de Paramedische zorg op langere termijn naast de PUSH implementatie ook:
 
 - Notificaties moet versturen en de bijbehorende update terug moet geven bij een PULL request van de ontvanger
 
@@ -281,7 +281,7 @@ Updates zullen op korte termijn worden geïmplementeerd als PUSH-bericht. Dit be
 
 - Het ontvangen en verwerken van een PUSH-## Beschikbaar stellen van documenten, verslagen en behandelplan aan de patiënt
 
-Op de langere termijn zal PUSH verkeer stapsgewijs worden vervangen door NOTFIED-PULL verkeer. Dit betekent dat het dataplatform voor de Paramedische zorg op langere termijn naast de PUSH implementatie ook:
+Op de langere termijn (in ieder geval na 2027) zal PUSH verkeer stapsgewijs worden vervangen door NOTFIED-PULL verkeer. Dit betekent dat het dataplatform voor de Paramedische zorg op langere termijn naast de PUSH implementatie ook:
 
 - Notificaties moet ontvangen en op basis van de notificatie bijbehorende update op moet vragen bij de verwijzen
 
@@ -291,7 +291,7 @@ Eindrapportages zullen op korte termijn worden geïmplementeerd als PUSH-bericht
 
 - Het versturen van een PUSH-bericht met de eindrapportage
 
-Op de langere termijn zal PUSH verkeer stapsgewijs worden vervangen door NOTFIED-PULL verkeer. Dit betekent dat het dataplatform voor de Paramedische zorg op langere termijn naast de PUSH implementatie ook:
+Op de langere termijn (in ieder geval na 2027) zal PUSH verkeer stapsgewijs worden vervangen door NOTFIED-PULL verkeer. Dit betekent dat het dataplatform voor de Paramedische zorg op langere termijn naast de PUSH implementatie ook:
 
 - Notificaties moet versturen en de bijbehorende eindrapportage terug moet geven bij een PULL request van de ontvanger
 
