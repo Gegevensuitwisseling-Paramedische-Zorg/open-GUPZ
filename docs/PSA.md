@@ -32,7 +32,7 @@ Open-GUPZ heeft ambities op drie gebieden:
 ### Versnellen door open innovatie:
 - Samenwerken bij research & development van specificaties, documentatie en code 
 - Compliant zijn aan wet en regelgeving op de meest efficiente manier
-- Verschillen en overeenkomsten met eerdere MedMij & vergelijkbare trajecten duidelijk krijgen en lessons leurned inbrengen
+- Verschillen en overeenkomsten met eerdere MedMij- & vergelijkbare trajecten duidelijk krijgen en lessons learned inbrengen
 - Fundament voor toekomstige ontwikkelingen, maar geen alle dingen doekjes
 - Vroegtijdig betrokken zodat geen grote inhaalslag nodig is wanneer wetgeving zaken verplicht stelt PE 18-11
 - Leren van andere sectoren
