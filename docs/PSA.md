@@ -51,7 +51,7 @@ Open-GUPZ heeft ambities op drie gebieden:
 Het programmaonderdeel 'open-GUPZ' levert ten minste de volgende eindproducten:
 - Een [Project Start Architectuur (PSA)](/docs/PSA.md) voor een FHIR gebaseerd dataplatform voor de paramedische zorg
 - Een uitwerking van verschillende oplossingsrichtingen in de vorm van [software architecture patterns](/docs/architecture) en 'implementatieprofielen'
-- Een lijst met [pas toe of leg uit](/docs/standards/Pas-toe-leg-uit-standaarden.md)
+- Een lijst met [pas toe of leg uit standaarden](/docs/standards/Pas-toe-leg-uit-standaarden.md)
 - Specificaties van FHIR API's voor een dataplatform voor de paramedische zorg. 
 >[!WARNING]
 >How to connect to simplifier? OpenAPI?
