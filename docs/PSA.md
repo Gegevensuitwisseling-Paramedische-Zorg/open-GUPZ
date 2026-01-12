@@ -16,7 +16,7 @@ In het programma Gegevensuitwisseling Paramedische Zorg wordt gewerkt aan versch
 
 - Het realiseren van gegevensuitwisseling tussen paramedici en de patiënt. Gegevens worden uitgewisseld met de patiënt via de persoonlijke gezondheidsomgeving (PGO). De patiënt krijgt op deze manier meer inzicht in zijn of haar paramedische gegevens via een PGO. De focus van GUPZ ligt op het beschikbaarstellen van behandelplan, documenten en verslagen als PDF/A document aan het PGO.
 
-Meer informatie over het programma is te vinden op ![Gegevensuitwisseling Paramedische Zorg](https://gegevensuitwisselingparamedischezorg.nl/)
+Meer informatie over het programma is te vinden op [Gegevensuitwisseling Paramedische Zorg](https://gegevensuitwisselingparamedischezorg.nl/)
 
 Het programma kent een ambitieuze tijdlijn. De bij het programma betrokken leveranciers willen daarom optimaal samenwerken bij de ontwikkeling van de benodigde specificaties en software.
 
