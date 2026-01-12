@@ -217,7 +217,7 @@ De WAPVPZ vereist van zorgaanbieders dat zij bij de elektronische communicatie v
 # Proces
 Een dataplatform voor de paramedische zorg is use case- (en dus proces) agnostisch. In het algemeen kan worden gesteld dat het dataplatform ondersteuning biedt aan:
 - Het beschikbaar stellen van informatie uit het PARIS aan externe partijen, waaronder de patiënt zelf, met als doel het ondersteunen van primaire zorgprocessen, waaronder (maar niet gelimiteerd tot) verwijsprocessen, gezamenlijk behandelen in het kader van passende hybride netwerkzorg en participatie van de patiënt zelf en van niet-professionele zorgverleners
-- Het ontvangen en verwerken van informatie van extere partijen in het PARIS, met als doel het ondersteunen van primaire zorgprocessen
+- Het ontvangen en verwerken van informatie van extere partijen en de patiënt zelf in het PARIS, met als doel het ondersteunen van primaire zorgprocessen
 - Het beschikbaar stellen van informatie uit het PARIS ten behoeve van secundair datagebruik, waaronder (maar niet gelimitieerd tot) wetenschappelijk onderzoek, kwaliteitsinformatie en capaciteitsmanagement.
   
 Op de korte termijn zal echter worden gefocust op de [doelen](#doelstelling-programma-gupz) van van het programma GUPZ op het gebied van gegevensuitwisseling tussen paramedici en huisartsen, medisch specialisten en paramedici onderling, en op het gebied van uitwisseling met de patiënt via de Persoonlijke Gezondheidsomgeving (PGO) van de patiënt. Deze doelstellingen omvatten specifieke processen.
