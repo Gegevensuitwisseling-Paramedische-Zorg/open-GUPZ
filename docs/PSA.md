@@ -10,7 +10,7 @@ filename: PSA.md
   - [Ambities open-GUPZ](#ambities-open-GUPZ)
   - [Eindproducten](#eindproducten)
 - [Organisatie en stakeholders](#organisatie-en-stakeholders)
-- [Uitgangspunten en principes](#uitgangspunten-en-principes)\
+- [Uitgangspunten en principes](#uitgangspunten-en-principes)
 - [Juridische context](#juridische-context)
 - [Proces](#proces)
 - [Communicatiepatronen](#communicatiepatronen)
