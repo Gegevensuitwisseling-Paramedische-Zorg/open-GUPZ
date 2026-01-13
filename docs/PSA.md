@@ -46,10 +46,9 @@ Open-GUPZ heeft ambities op drie gebieden:
 
 ### Waarde voor eindgebruikers die opweegt tegen de investeringen:
 - Verlagen van de administratieve lasten voor behandelaars waardoor meer tijd overblijft voor de patient
-- Duidelijkheid zorg(plan) voor patient door verminderen van informatie ruis
-- Patienten op veilige (informatiebeveiliging en veiligheid) manier informeren
-- Professionele uitstraling door juiste en veilige dataoverdracht
-- Overzichtelijke investeringen en kostenoptimalisatie voor de paramedische praktijk.
+- Patienten op veilige (informatiebeveiliging en patiëntveiligheid) manier informeren over de zorg en het zorgplan
+- Professionele uitstraling door juiste en veilige dataoverdracht en samenwerking in het zorgnetwerk
+- Overzichtelijke en transparante investeringen en kostenoptimalisatie voor de paramedische praktijk.
   
 ### Versnellen door open innovatie:
 - Samenwerken bij research & development van specificaties, documentatie en code 
