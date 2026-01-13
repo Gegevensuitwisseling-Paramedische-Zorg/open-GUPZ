@@ -339,7 +339,11 @@ Informatieobjecten ten behoeve van digitaal verwijzen en ondersteunende processe
 
 Binnen het programma GUPZ wordt gestreefd naar standaardisatie van de verwijsstromen op basis van zibs2020. Zie ook [Standaarden](#standaarden). Dit betekent dat, in samenwerking met alle betrokken partijen, gestreeft wordt naar vervanging van de huidige ZorgDomein FHIR STU3 specificaties naar een FHIR R4/zibs2020 gebaseerde specificatie. Ook voor MedMij geldt dat de huidige zib2017 gebaseerde versie op termijn zal worden vervangen door een zibs2020 versie (of zelfs hoger)
 
- 
+## Interfaces
+Het dataplatform voor de paramedische zorg biedt gestandaardiseerde FHIR based (STU3 of R4) API's op paramedische data. De geboden API's voldoen aan de [Nictiz API requirements for Dutch Healthcare](https://nictiz.github.io/api-requirements-docs/v1.2.0/) in ieder geval op het niveau van ['Technically standardized API standardization level'](https://nictiz.github.io/api-requirements-docs/v1.2.0/definitions-and-scope/#technically-standardized-api-standardization-level) en waar mogelijk (afhankelijk van de beschikbaarheid van een dergelijke standaard) op het niveau van ['Fully standardized API standardization level'](https://nictiz.github.io/api-requirements-docs/v1.2.0/definitions-and-scope/#fully-standardized-api-standardization-level)
+
+
+
 ## Informatieobjecten ten behoeve van digitaal verwijzen
 Dit betreft in overeenstemming met de richtlijn [HASP-P](https://viewers.nhg.org/haspviewer/):
 
