@@ -179,7 +179,7 @@ Op grond van de Wet Aanvullende Bepalingen Verwerking Persoonsgegevens in de Zor
 
 Voor het recht op gegevenswissing en rectificatie en aanvulling (AVG), geldt dat het dataplatform voor de paramedische zorg het onderliggende PARIS als bron van gegevens gebruikt. Gegevens die worden gerectificeerd, aangevuld of gewist in het onderliggende PARIS, zullen automatisch moeten worden gerectificeerd, aangevuld of gewist. De architectuur van het dataplatform dient dit te waarborgen.
 
-Het recht op inzage van logging (WABVPZ) vereist dat patiënten kosteloos een (elektronisch) afschrift op kunnen vragen, waarin staat wie wanneer informatie heeft verstrekt, ingezien of opgevraagd in het elektronisch uitwisselingssysteem. De architectuur van het dataplatform dient te borgen dat een dergelijk elektronisch afschrift eenvoudig kan worden aangeleverd.
+Het recht op inzage van logging (WABVPZ) vereist dat patiënten kosteloos een (elektronisch) afschrift op kunnen vragen, waarin staat wie wanneer informatie heeft verstrekt, ingezien of opgevraagd in het elektronisch uitwisselingssysteem. De architectuur van het dataplatform dient te borgen dat een dergelijk elektronisch afschrift eenvoudig kan worden aangeleverd. Het dataplatform dient daartoe te beschikken over een NEN7513 compliant audittrail en een rapportagevoorziening op de audittrail.
 
 Op grond van de AVG heeft de betrokkene recht op informatie over doel en middelen van de verwerking. Deze informatie dient door de verwerkingsverantwoordelijke (de paramedische praktijk) te worden verstrekt. Vanuit open-GUPZ zal een standaard [privacyverklaring](/docs/policies/privacyverklaring.md) worden ontwikkeld die kan worden opgenomen in de website van de paramedische praktijk.
 
