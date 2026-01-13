@@ -13,6 +13,7 @@ filename: PSA.md
 - [Organisatie en stakeholders](#organisatie-en-stakeholders)
 - [Uitgangspunten en principes](#uitgangspunten-en-principes)
 - [Juridische context](#juridische-context)
+- [Relatie met (inter)nationale ontwikkelingen](#relatie-met-internationale-ontwikkelingen)
 - [Proces](#proces)
 - [Communicatiepatronen](#communicatiepatronen)
 - [Informatie](#informatie)
