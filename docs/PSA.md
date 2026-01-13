@@ -347,60 +347,60 @@ Het dataplatform voor de paramedische zorg biedt gestandaardiseerde FHIR based (
 ## Informatieobjecten ten behoeve van digitaal verwijzen
 Dit betreft in overeenstemming met de richtlijn [HASP-P](https://viewers.nhg.org/haspviewer/):
 
-###Contextuele gegevens bij ieder bericht. 
+### Contextuele gegevens bij ieder bericht. 
 Dit betreft onder andere identificatie van de patiënt, identificatie van de auteur, geadresseerde, eventuele kopie-aan en beheerder (van het systeem dat het bericht archiveert), gegevens betreffende het type bericht, datum en tijd van verzenden.
 
-###Gegevens betreffende de verwijzing/ het consult. 
+### Gegevens betreffende de verwijzing/ het consult. 
 Dit betreft onder andere de urgentie en het type zorgpad (gestandaardiseerde of verkorte toegang), eventuele voorzieningen die nodig zijn bij het consult, reden en context van de verwijzing, het ingestelde beleid/ ingestelde behandeling en de omvang en aard van de actie of interventie die de verzender verwacht van de geconsulteerde en eventuele overige zaken van belang.
-###Dossierinformatie
+### Dossierinformatie
   Dit betreft onder andere relevante regels uit het journaal, episodelijst, behandelingen, medicatie, aanvullend onderzoek,risicovol leefgedrag, familieanamnese, psychosociale anamnes en Psychogeriatrisch onderzoek.
 
 ## Informatieobjecten ten behoeve van het melden van directe toegang
 Dit betreft in overeenstemming met de richtlijn [HASP-P](https://viewers.nhg.org/haspviewer/):
 
-###Contextuele gegevens bij ieder bericht. 
+### Contextuele gegevens bij ieder bericht. 
 Dit betreft onder andere identificatie van de patiënt, identificatie van de auteur, geadresseerde, eventuele kopie-aan en beheerder (van het systeem dat het bericht archiveert), gegevens betreffende het type bericht, datum en tijd van verzenden.
 
-###Gegevens betreffende de directe toegang tot de paramedische praktijk
+### Gegevens betreffende de directe toegang tot de paramedische praktijk
 Dit betreft onder andere de screening risicofactoren door paramedicus,de paramedische diagnose of conclusie,  het paramedisch beleid/ de ingestelde behandeling en eventuele overige zaken van belang.
 
-###Dossierinformatie
+### Dossierinformatie
   Dit betreft anamnese en resultaten van lichamelijk onderzoek
 
 ## Informatieobjecten ten behoeve van de update door de paramedicus
 Dit betreft in overeenstemming met de richtlijn [HASP-P](https://viewers.nhg.org/haspviewer/):
 
-###Contextuele gegevens bij ieder bericht. 
+### Contextuele gegevens bij ieder bericht. 
 Dit betreft onder andere identificatie van de patiënt, identificatie van de auteur, geadresseerde, eventuele kopie-aan en beheerder (van het systeem dat het bericht archiveert), gegevens betreffende het type bericht, datum en tijd van verzenden.
 
-###Gegevens bij de update
+### Gegevens bij de update
 Dit betreft een eventuele vraagstelling of antwoord op een door de verwijzer gestelde vraag, het beleid of de ingestelde behandeling en eventuele overige zaken van belang.
 
-###Dossierinformatie
+### Dossierinformatie
   Dit betreft anamnese, resultaten van lichamelijk onderzoek, het behandelverloop/ resultaat, relevante uitslagen van beeldvormend-,functie- of aanvullend onderzoek en relevante uitslagen van consulten door derden
 
 ## Informatieobjecten ten behoeve van de update door de verwijzer
 Dit betreft in overeenstemming met de richtlijn [HASP-P](https://viewers.nhg.org/haspviewer/):
 
-###Contextuele gegevens bij ieder bericht. 
+### Contextuele gegevens bij ieder bericht. 
 Dit betreft onder andere identificatie van de patiënt, identificatie van de auteur, geadresseerde, eventuele kopie-aan en beheerder (van het systeem dat het bericht archiveert), gegevens betreffende het type bericht, datum en tijd van verzenden.
 
-###Gegevens bij de update
+### Gegevens bij de update
 Dit betreft de reden van de update, het beleid of de ingestelde behandeling, een eventueel antwoord op een door de paramedicus gestelde vraag en eventuele overige zaken van belang.
 
-###Dossierinformatie
+### Dossierinformatie
 Dit betreft dezelfde dossierinformatie als de informatie in het kader van het digitaal verwijzen
 
 ## Informatieobjecten ten behoeve van de eindrapportage door de paramedicus
 Dit betreft in overeenstemming met de richtlijn [HASP-P](https://viewers.nhg.org/haspviewer/):
 
-###Contextuele gegevens bij ieder bericht. 
+### Contextuele gegevens bij ieder bericht. 
 Dit betreft onder andere identificatie van de patiënt, identificatie van de auteur, geadresseerde, eventuele kopie-aan en beheerder (van het systeem dat het bericht archiveert), gegevens betreffende het type bericht, datum en tijd van verzenden.
 
-###Gegevens bij de eindrapportage
+### Gegevens bij de eindrapportage
 Dit betreft onder andere de oorspronkelijke vraagstelling/ reden verwijzing, de conclusie/ diagnose, aanbevelingen en follow-up (De in het kader van de behandeling gevraagde nazorg), afspraken met de patiënt en eventuele overige zaken van belang.
 
-###Dossierinformatie
+### Dossierinformatie
   Dit betreft anamnese, resultaten van lichamelijk onderzoek, het behandelverloop/ resultaat, relevante uitslagen van beeldvormend-,functie- of aanvullend onderzoek, relevante uitslagen van consulten door derden en psychososiale anamese.
 
 ## Informatieobjecten ten behoeve van het beschikbaar stellen van documenten, verslagen en behandelplan aan de patiënt
