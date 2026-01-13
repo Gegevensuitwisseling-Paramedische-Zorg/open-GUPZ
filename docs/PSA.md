@@ -52,8 +52,9 @@ Open-GUPZ heeft ambities op drie gebieden:
 - Overzichtelijke en transparante investeringen en kostenoptimalisatie voor de paramedische praktijk.
   
 ### Versnellen door open innovatie:
-- Samenwerken bij research & development van specificaties, documentatie en code 
+- Samenwerken bij research & development van specificaties, documentatie en code
 - Samenwerken om compliance aan wet en regelgeving te bereiken
+- Leveranciers van brokers (waaronder DVA, NIS, Verwijsplatforms) open en eenduidige API's bieden op paramedische data
 - Leren van  eerdere projecten en lessons learned inbrengen
 - Creeren van een stevig Fundament voor toekomstige ontwikkelingen, maar met een duidelijke scope (databeschikbaarheid)
 - Vroegtijdig betrokken zijnzodat geen grote inhaalslag nodig is wanneer wetgeving zaken verplicht stelt PE 18-11
