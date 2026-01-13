@@ -212,7 +212,21 @@ Voor het delen van gegevens is een grondslag nodig. Vaak wordt hierbij gedacht a
 De hoofddoelen van het programma GUPZ betreffen het beschikbaar stellen van gezondheidsgegevens aan de patiënt zelf en de ondersteuning van elektronisch verwijzen. In beide gevallen is geen (nadrukkelijke) toestemming van de patiënt vereist en bestaat geen noodzaak voor implementatie van een opt-out of toegangsbeperking. Om deze reden, en vanwege onduidelijkheid over de implementatie van de door EHDS vereiste opt-out en toegangsbeperking, zal toestemming noch opt-out deel uitmaken van de start archirectuur van het dataplatform voor de paramedische zorg. 
 
 De WAPVPZ vereist van zorgaanbieders dat zij bij de elektronische communicatie van gezondheidsgegevens een geverifieerd en gevalideerd BSN gebruiken ten behoeve van de identificatie van de patiënt. Verificatie betreft de controle dat demografische gegevens behoren tot een BSN. Validatie vindt plaats bij het eerste fysieke bezoek, waarbij aan de hand van een geldig identiteitsbewijs wordt gecontroleerd of de persoon voor de balie inderdaad degene is die is of wordt ingeschreven in het EPD. Voor (de architectuur van) het dataplatform voor de paramedische zorg betekent dit dat uitsluitend gezondheidsgegevens beschikbaar worden gesteld van patiënten die in het onderliggend PARIS beschikken over een geverifieerd en gevalideerd BSN. Voor gezondheidsgegevens die van andere zorgaanbieders worde ontvangen (zoals in het geval van een verwijzing) geldt dat de verificatie- en validatie verplichtingen de verantwoordelijkheid van die andere zorgaanbieder zijn.
-  
+
+# Relatie met (inter)nationale ontwikkelingen
+
+## Nationale visie en strategie
+De [Nationale Visie en Strategie (NVS)](https://open.overheid.nl/documenten/ronl-36667024db962a4962d0815e7cf2d3c9596d7255/pdf) is ontwikkeld in opdrachtvan VWS en beschrijft de gewenste toekomst van het Gezondheids Informatiestelsel. Belangrijke kenmerken zijn de verschuiving van focus op geprotocolliseerde gegevensuitwisseling (zoas gereguleerd door WEGIZ) naar brede databeschikbaarheid en de daarbij behorende verschuiving van bescherming van privacy boven alles naar vertrouwen en bestraffing van misbruik. Een dataplatform sluit aan bij de verschuiving van focus naar brede databeschikbaarheid.
+
+## Landelijk Dekkend Netwerk
+Het Landelijk Dekkend Netwerk (LDN) is een intiatief en programma van VWS dat zich richt op het verbinden van bestaande zorginfrastructuren ten behoeve van het uitwisselen en beschikbaar stellen van gezondheidsinformatie. Het dataplatform zal een knooppunt vormen in het LDN.
+
+## CumuluZ
+De stichting CumuluZ zorgdata richt zich op de eenduidige ontsuiting en federatie van data uit zorg informatie systemen voor primair en secundair gebruik. Het dataplatform voor de paramedische zorg is een belangrijke sleutel voor de ontsluiting van paramedische data en daarmee een koppelvlak voor de CumuluZ data infrastructuur.
+
+## Electronic Health Data Space
+De Electronic Health Data Space (EHDS) is een europese verordening die zich richt op verplichte databeschikbaarheid voor primair en secundair gebruik en pp versterking van de rechten van de patiënt door introductie van een opt-out en toegangsbeperking. De EHDS bevat regelgeving op grond waarvan leveranciers van de Europese markt geweerd kunnen worden en onder andere de verplichting tot het aanbieden van (FHIR R4) AP's. Het dataplatform helpt PARIS leveranciers om voorbereid te zijn op de EHDS.
+
 
 # Proces
 Een dataplatform voor de paramedische zorg is use case- (en dus proces) agnostisch. In het algemeen kan worden gesteld dat het dataplatform ondersteuning biedt aan:
