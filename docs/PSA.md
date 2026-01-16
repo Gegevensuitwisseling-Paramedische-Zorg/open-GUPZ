@@ -277,7 +277,7 @@ Digitale verwijzingen zullen op korte termijn worden geïmplementeerd als PUSH-b
 
 Op de langere termijn (in ieder geval na 2027) zal PUSH verkeer stapsgewijs worden vervangen door NOTFIED-PULL verkeer. Dit betekent dat het dataplatform voor de Paramedische zorg op langere termijn naast de PUSH implementatie ook:
 
-- Notificaties moet ontvangen en op basis van de notificatie bijbehorende verwijsinformatie op moet vragen bij de verwijzen
+- Notificaties moet ontvangen en op basis van de notificatie bijbehorende verwijsinformatie op moet vragen bij de verwijzer
 - Notificaties moet versturen en de bijbehorende verwijsinformatie terug moet geven bij een PULL request van de ontvanger
 
 ## Melden van directe toegang
@@ -492,7 +492,3 @@ Aanbeiders/ beheerders van een dataplatform voor de Paramedische zorg laten tenm
 
 # Beheer
 Een dataplatform voor de paramedische zorg wordt aangeboden als SaaS dienst, en wordt operationeel beheerd door de aanbeider van de SaaS dienst, op basis van een met de paramedische praktijk overeengekomen Service Level Agreement (SLA).
-
-
-
-
