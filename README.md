@@ -10,7 +10,10 @@ Documentation and specifications are written in Dutch.
 Contributors **MUST** understand the importance of writing readable and consistent Git branch names and commit messages.
 
 ### Workflow
-The main branch is the ultimate source of thurtih and should always be deployable. For each issue that requires a change, contributers create a new branch. Contributers don't directly merge their changes with main, but create pull requests instead.   
+The main branch is the ultimate source of thruth and should always be deployable. No change will ever take place without a correponding issue. Issues are either resolved directly or discussed with the first-ring participants of PARIS vendors in two-weakly meetings. 
+
+For each issue that requires a change, contributers create a new branch. Contributers don't directly merge their changes with main, but create pull requests instead.   
+
 
 ### Git Branch Naming Conventions
 
