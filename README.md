@@ -1,4 +1,4 @@
-# Open-GUPZ
+# open-GUPZ
 This repository contains the source files for specifications, documentation and tools that are developed as part of the GUPZ program (GegevensUitwisseling Paramedische Zorg)
 
 As a starting point for learning more about the GUPZ program and open-GUPZ, see [Project Start Architecture for this project](docs/PSA.md)
