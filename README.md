@@ -9,6 +9,9 @@ Documentation and specifications are written in Dutch.
 
 Contributors **MUST** understand the importance of writing readable and consistent Git branch names and commit messages.
 
+### Workflow
+The main branch is the ultimate source of thurtih and should always be deployable. For each issue that requires a change, contributers create a new branch. Contributers don't directly merge their changes with main, but create pull requests instead.   
+
 ### Git Branch Naming Conventions
 
 Contributors **MUST** follow a very lean and simple Git branch naming convention that makes it easy to correlate the
@@ -25,8 +28,8 @@ These rules are in line with GitHub's approach when
 ```
 reference-description-in-kebab-case
 
-noref-add-contributing-docs
-120-fix-publish-workflow
+noref-add-facade-pattern
+120-fix-Sync-agent-pattern
 ```
 
 ### Git Commit Message Conventions
