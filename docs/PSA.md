@@ -32,7 +32,7 @@ In het programma Gegevensuitwisseling paramedische zorg wordt gewerkt aan versch
 
 - Het realiseren van gegevensuitwisseling tussen paramedici en huisartsen, medisch specialisten en paramedici onderling. Wanneer zorgverleners (para)medische gegevens uitwisselen, kan zorg nog beter op elkaar worden afgestemd en vermindert dit administratieve lasten. 
 
-- Het realiseren van gegevensuitwisseling tussen paramedici en de patiënt. Gegevens worden uitgewisseld met de patiënt via de persoonlijke gezondheidsomgeving (PGO). De patiënt krijgt op deze manier meer inzicht in zijn of haar paramedische gegevens via een PGO. De eerste focus van GUPZ ligt op het beschikbaarstellen van behandelplan, documenten en verslagen als PDF/A document aan het PGO, in latere fase wordt ook gewerkt aan gestructureerde uitwisseling en verkennen welke behandeldienten wenselijk zijn om via het PGO te onsluiten. 
+- Het realiseren van gegevensuitwisseling tussen paramedici en de patiënt. Gegevens worden uitgewisseld met de patiënt via de persoonlijke gezondheidsomgeving (PGO). De patiënt krijgt op deze manier meer inzicht in zijn of haar paramedische gegevens via een PGO. De eerste focus van GUPZ ligt op het beschikbaarstellen van behandelplan, documenten en verslagen als PDF/A document aan het PGO, in latere fase wordt ook gewerkt aan gestructureerde uitwisseling en verkennen welke behandeldiensten wenselijk zijn om via het PGO te onsluiten. 
 
 Meer informatie over het programma is te vinden op [Gegevensuitwisseling paramedische zorg](https://gegevensuitwisselingparamedischezorg.nl/)
 
@@ -462,11 +462,11 @@ De bij open-GUPZ betrokken PARIS leveranciers onderkennen twee alternatieve soft
 
 ## Sync-agent
 Data uit het PARIS wordt (near) realtime gesynchroniseerd naar een FHIR store en van daaruit beschikbaar gesteld. Inkopende data wordt vanuit de FHIR store waar nodig  (near)realtime gesynchroniseerd naar het PARIS.
-Dit patroon wordt verder uitgewerkt in [FHIR-Facade-pattern.md](/docs/architecture/FHIR-Facade-pattern.md)
+Dit patroon wordt verder uitgewerkt in [FHIR-Facade-pattern.md](/docs/architecture/Sync-agent-pattern.md)
 
 ## FHIR Facade
 Een FHIR facade is een FHIR interface rechtstreeks op het PARIS. De Facade vertaalt inkomende FHIR requests naar PARIS-specifieke datarequests en transleert PARIS-specifieke datastructuren en -formaten naar FHIR formaat.
-Dit patroon wordt verder uitgewerkt in [Sync-agent-pattern.md](/docs/architecture/Sync-agent-pattern.md)
+Dit patroon wordt verder uitgewerkt in [Sync-agent-pattern.md](/docs/architecture/FHIR-Facade-pattern.md)
 
  
 # Privacy en Informatiebeveiliging
