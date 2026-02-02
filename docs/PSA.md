@@ -462,11 +462,11 @@ De bij open-GUPZ betrokken PARIS leveranciers onderkennen twee alternatieve soft
 
 ## Sync-agent
 Data uit het PARIS wordt (near) realtime gesynchroniseerd naar een FHIR store en van daaruit beschikbaar gesteld. Inkopende data wordt vanuit de FHIR store waar nodig  (near)realtime gesynchroniseerd naar het PARIS.
-Dit patroon wordt verder uitgewerkt in [FHIR-Facade-pattern.md](/docs/architecture/Sync-agent-pattern.md)
+Dit patroon wordt verder uitgewerkt in [Sync-agent-pattern.md](/docs/architecture/Sync-agent-pattern.md)
 
 ## FHIR Facade
 Een FHIR facade is een FHIR interface rechtstreeks op het PARIS. De Facade vertaalt inkomende FHIR requests naar PARIS-specifieke datarequests en transleert PARIS-specifieke datastructuren en -formaten naar FHIR formaat.
-Dit patroon wordt verder uitgewerkt in [Sync-agent-pattern.md](/docs/architecture/FHIR-Facade-pattern.md)
+Dit patroon wordt verder uitgewerkt in [FHIR-Facade-pattern.md](/docs/architecture/FHIR-Facade-pattern.md)
 
  
 # Privacy en Informatiebeveiliging
