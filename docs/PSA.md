@@ -222,6 +222,9 @@ De [Nationale Visie en Strategie (NVS)](https://open.overheid.nl/documenten/ronl
 ## Landelijk Dekkend Netwerk
 Het [Landelijk Dekkend Netwerk (LDN)](https://www.datavoorgezondheid.nl/landelijk-dekkend-netwerk) is een intiatief en programma van VWS dat zich richt op het verbinden van bestaande zorginfrastructuren ten behoeve van het uitwisselen en beschikbaar stellen van gezondheidsinformatie. Het dataplatform zal een knooppunt vormen in het LDN.
 
+## PoCs en pilots Generieke Functies
+Het ministerie van VWS heeft de uitvoering van proof of concepts’ (PoC’s) en pilots binnen het programma Implementatie generieke functies uitbesteed. De eerste resultaten van de PoC's en pilots worden verwacht vanaf Q2 2026. Indien nodig zullen specificaties van het dataplatform voor de paramedische zorg worden uitgebreid of aangepast aan de resultaten. Vanuit open-GUPZ zal de voortgang van de PoC's en pilots nauwlettend worden gevolgd.
+
 ## CumuluZ
 De [Stichting CumuluZ zorgdata](https://www.cumuluz.org/) richt zich op de eenduidige ontsluiting en federatie van data uit zorg informatie systemen voor primair en secundair gebruik. CumuluZ wordt door VWS gezien als data integratieplatform binnen het LDN, met als belangrijkste taken bronontsluiting en federatie van data uit verschillende bronnen. Het dataplatform voor de paramedische zorg zal dienst doen als eenduidig koppelvlak voor een CumuluZ connector voor de paramedische zorg.
 
