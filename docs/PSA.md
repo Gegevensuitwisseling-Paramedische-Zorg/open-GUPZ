@@ -496,6 +496,6 @@ Aanbieders/ beheerders van een dataplatform voor de Paramedische zorg laten tenm
 - Voor zover van toepassing: [ICT-beveiligingsrichtlijnen voor webapplicaties](https://www.ncsc.nl/ict-beveiligingsrichtlijnen-webapplicaties)
 
 # Beheer
-Een dataplatform voor de paramedische zorg wordt aangeboden als SaaS dienst, en wordt operationeel beheerd door de aanbieder van de SaaS dienst, op basis van een met de paramedische praktijk overeengekomen Service Level Agreement (SLA).
+Een dataplatform voor de paramedische zorg wordt aangeboden als SaaS dienst, en wordt operationeel beheerd door de aanbieder van de SaaS dienst, op basis van een met de paramedische praktijk overeengekomen Service Level Agreement (SLA) en Verwerkings Overeenkomst (VWO)
 
 
