@@ -481,7 +481,10 @@ Overige specifieke maatregelen zijn:
 open-GUPZ vereist mutual TLS (mTLS) verbindingen tussen het dataplatform voor de paramedische zorg en aangesloten externe systemen (waaronder DVA, Verwijsplatform en NIS). TLS verbindingen dienen te voldoen aan de [ICT-beveiligingsrichtlijnen voor TLS](https://www.ncsc.nl/transport-layer-security-tls/v21-tls). open-GUPZ vereist dat TLS instellingen minimaal voldoen aan veiligheidniveau 'Voldoende'. In het geval van veiligheidniveau 'Voldoende' dient de beheerder van het dataplatform aan te geven op welke wijze en binnen welke termijn de instelling zal voldoen aan veiligheidsniveau 'Goed'.
 
 ## Authenticatie op application niveau
-Authenticatie van het aangesloten systeem (zoals een DVA, Verwijsplatform of NIS) en de eindgebruiker vindt plaats aan de hand van JSON Web Tokens (JWT) op basis van de [ZorgDomein specificatie voor application level security](https://integrator.zorgdomein.com/fhir-specs/security/#application-level-security-json-web-tokens), aangevuld met het BSN van de patiënt waarvoor het verzoek (FHIR request) wordt gedaan.
+Authenticatie van het aangesloten systeem (zoals een DVA, Verwijsplatform of NIS) en de eindgebruiker vindt plaats aan de hand van JSON Web Tokens (JWT) op basis van de [ZorgDomein specificatie voor application level security](https://integrator.zorgdomein.com/fhir-specs/security/#application-level-security-json-web-tokens), aangevuld met het BSN van de patiënt waarvoor het verzoek (FHIR request) wordt gedaan. Indien de gebruiker een door de patiënt gemachtigde persoon betreft, bijvoorbeeld via DigiD machtigingen, dient naast het BSN van de patiënt ook het BSN van de gemachtigde te worden toegevoegd aan het token.
+
+## Logging
+Alle toegang tot data via het dataplatform wordt gelogd. Logging dient te voldoen aan NEN 7513.  
 
 ## Veilige exploitatie
 Het dataplatform voor de paramedische zorg kan rechstreeks  worden benaderd vanaf een publiek netwerk (zoals het internet). Waarborgen van een veilige exploitatie is daarom noodzakelijk. 
