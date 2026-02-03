@@ -1,4 +1,9 @@
-#FHIR Sync agent pattern
+---
+title: FHIR Sync agent pattern
+layout: template
+filename: Sync-agent-pattern.md
+--- 
+# FHIR Sync agent pattern
 
 # Synoniemen
 FHIR-ETL
