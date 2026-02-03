@@ -1,18 +1,18 @@
 #Sync agent pattern
 
 # Synoniemen
-FHIR-store
+FHIR-ETL
 
 # Bedoeling
-Een FHIR-facade biedt FHIR compliant API's op een lagacy systeem dat zelf geen (FHIR) gestandaardiseerde toegang tot gezondheids(zorg)informatie biedt. Een FHIR-facade acteert als een real-time vertaler: Restfull FHIR requests worden realtime vertaald naar legacy queries of API-calls, en de resultaten van die queries en calls terug naar FHIR responses.
+Een FHIR-sync-agent repliceert data uit een legacy systeem naar een FHIR compliant store, en (soms) vice versa. FHIR compliant clients kunnen zodoende data afkomstig uit het legacy systeem benaderen voor lezen en (soms) schrijven. 
 
-Door toepassing van een FHIR-facade kunnen lagacy systemen FHIR compliant worden gemaakt. In het zogenaamde [FHIR besluit](https://open.overheid.nl/documenten/ronl-72d9d941c7ee7ae2c58c236290e152b22939448d/pdf) is door het ministerie van VWS besloten dat bij het beschikbaarstellen en uitwisselen van gezondheids(zorg)informatie gebruik dient te worden gemaakt van FHIR (versies STU3 of R4). Een FHIR-facade voegt de daarvoor benodigde capabilities toe aan legacy systemen.
+Door toepassing van een FHIR-facade kunnen lagacy systemen FHIR compliant worden gemaakt. In het zogenaamde [FHIR besluit](https://open.overheid.nl/documenten/ronl-72d9d941c7ee7ae2c58c236290e152b22939448d/pdf) is door het ministerie van VWS besloten dat bij het beschikbaarstellen en uitwisselen van gezondheids(zorg)informatie gebruik dient te worden gemaakt van FHIR (versies STU3 of R4). Een FHIR-sync-agent voegt de daarvoor benodigde capabilities toe aan legacy systemen.
 
 # Alternatieven
-FHIR stores zijn een alternatief voor FHIR-facades. In dat geval synchroniseert een sync-agent data in legacy systemen (near realtime of batchgewijs, afhankelijk van de vereisten) naar een FHIR-compliant data store, en vice versa.
+FHIR-facades zijn een alternatief voor FHIR-stores en het sync-agent pattern. Een FHIR-facade vertaalt FHIR requests in realtime naar verzoeken op het onderliggende legacy systeem, en de resultaten uit het legacy systeem naar FHIR compliant responses
 
 # Probleem
-FHIR is een relatief nieuwe standaard voor databeschikaarheid en gegevensuitwisseling in de (Nederlandse) zorg. Veel systemen van voor 2018 (de eerste normatieve release van FHIR was R4 in 2018) bieden daarom uit zichzelf geen FHIR API's. Een FHIR-facade voegt functionaliteit toe aan dit soort systemen waardoor zij native FHIR ondersteuning lijken te bieden.
+FHIR is een relatief nieuwe standaard voor databeschikaarheid en gegevensuitwisseling in de (Nederlandse) zorg. Veel systemen van voor 2018 (de eerste normatieve release van FHIR was R4 in 2018) bieden daarom uit zichzelf geen FHIR API's. Een FHIR-store sync-agent voegt functionaliteit toe aan dit soort systemen waardoor zij native FHIR ondersteuning lijken te bieden.
 
 FHIR ondersteuning is van belang om te kunnen voldoen aan het Nederlandse [FHIR besluit](https://open.overheid.nl/documenten/ronl-72d9d941c7ee7ae2c58c236290e152b22939448d/pdf) (en de sinds dat besluit ontwikkelde informatiestandaarden) en aan de [Europen Health Data Space](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202500327) (EHDS).
 
