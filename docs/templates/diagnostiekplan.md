@@ -1,3 +1,8 @@
+---
+title: Diagnostiekplan template
+layout: template
+filename: diagnostiekplan.md
+--- 
 # Diagnostiekplan OVN voor GUPZ (SOEP) 
 Besproken en akkoord bevonden door het OVN bestuur dd 4 dec 2025 (Martin Boersma)<br/> 
 <br/>
