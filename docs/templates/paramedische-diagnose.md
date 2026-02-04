@@ -1,3 +1,9 @@
+---
+title: Paramedische diagnose template
+layout: template
+filename: paramedische-diagnose.md
+--- 
+
 # Paramedische diagnose: 
 Paramedische diagnose bestaat tot nadere uitwerking van de diverse referentiesets uit 1 tekstveld. 
 
