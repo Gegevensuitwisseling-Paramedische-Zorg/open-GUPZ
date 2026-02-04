@@ -1,3 +1,8 @@
+---
+title: FHIR-facade pattern
+layout: template
+filename: FHIR-Facade-pattern.md
+--- 
 # FHIR-facade pattern
 
 # Synoniemen
