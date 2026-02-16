@@ -432,7 +432,17 @@ open-GUPZ maakt onderscheid tussen twee verschillende typen standaarden:
 Op korte termijn zullen uitsluitend use case specifieke standaarden worden geïmplenteerd voor de use cases die voortvloeien uit de doelstellingen van het programma GUPZ, te weten verwijzen (en ondersteunende processen) en het beschikbaarstellen van documenten en afschriften aan het PGO.
 
 ## FHIR versies
-open-GUPZ volgt waar mogelijk het [FHIR besluit](https://open.overheid.nl/documenten/ronl-72d9d941c7ee7ae2c58c236290e152b22939448d/pdf), met een baseline van minimaal FHIR STU3 (op basis van zibs 2017) en maximaal FHIR R4 (op basis van zibs 2020). Het dataplatform voor de paramedische zorg zal op korte termijn (periode tot in ieder geval eind 2027) alleen FHIR STU3 ondersteunen, omdat de te ondersteunen use cases uitsluitend gebruik maken van FHIR STU3. Op termijn zal geleidelijk worden overgestapt op FHIR R4. Dit betekent dat het dataplatform voor de paramedische zorg uiteindelijk minimaal twee FHIR versies tegelijkertijd dient te ondersteunen.
+open-GUPZ volgt waar mogelijk het [FHIR besluit](https://open.overheid.nl/documenten/ronl-72d9d941c7ee7ae2c58c236290e152b22939448d/pdf), met een baseline van minimaal FHIR STU3 (op basis van zibs 2017) en maximaal FHIR R4 (op basis van zibs 2020). Hierbij geldt dat:
+
+- Gekozen wordt voor R4 TENZIJ er zwaarwegende redenen zijn om naar STU3 uit te wijken
+- De FHIR versie wordt bepaald per API/ afsprakenstelsel
+- De gekozen FHIR versies iedere twee maanden opnieuw wordt geevalueerd door de koplopergroep van open-GUPZ
+
+Overwegende dat:
+- Zowel MedMij gegevensdiensten als ZorgDomein FHIR specificaties zijn gebaseerd op STU3
+- Obtwikkelen van transformaties van R4 naar STU3 teveel tijd in beslag neemt
+
+Worden vooralsnog alle API's van het dataplatform gebaseerd op FHIR STU3. Op termijn zal geleidelijk worden overgestapt op FHIR R4. Dit betekent dat het dataplatform voor de paramedische zorg uiteindelijk minimaal twee FHIR versies tegelijkertijd dient te ondersteunen.
 
 ## Standaarden specifiek voor verwijzen
 Het dataplatform voor de paramedische zorg zal op korte termijn (periode tot in ieder geval eind 2027) de [FHIR STU3 specificaties van ZorgDomein](https://integrator.zorgdomein.com/fhir-specs/) implementeren ter ondersteuning van het verwijzproces. 
