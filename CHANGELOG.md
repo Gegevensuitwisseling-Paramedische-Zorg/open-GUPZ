@@ -14,4 +14,4 @@
 ### Changed
 - Changed FHIR version policies in PSA.md
 - Replaced 'legacy system' with 'niet-FHIR-native' in FHIR-facade-pattern.md and Sync-agent-pattern.md
-- 
+- Added EPS/IPS to (inter)nationale ontwikkelingen
