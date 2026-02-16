@@ -231,6 +231,10 @@ De [Stichting CumuluZ zorgdata](https://www.cumuluz.org/) richt zich op de eendu
 ## European Health Data Space
 De European Health Data Space (EHDS) is een europese verordening die zich richt op verplichte databeschikbaarheid voor primair en secundair gebruik en pp versterking van de rechten van de patiënt door introductie van een opt-out en toegangsbeperking. De EHDS bevat regelgeving op grond waarvan leveranciers van de Europese markt geweerd kunnen worden en onder andere de verplichting tot het aanbieden van (FHIR R4) API's. Het dataplatform helpt PARIS leveranciers om voorbereid te zijn op de EHDS.
 
+## International Patient Summary/ European Patient Summary
+De EHDS streeft naar de uitwisseling van een Europese Patient Summary (EPS) tussen alle lidstaten per 2029. De EPS wordt daarmee verplicht voor leveranciers op de Europese markt (voor zover van toepassing op de betreffende leverancier). De EPS wijkt minimaal af van de IPS (International Patient Summary). De FHIR profiles ten behoeve van EPS worden gebaseerd op FHIR R4. Zowel MedMij als de ZorgDomein FHIR specificaties zijn vooralsnog gebaseerd op FHIR STU3. Vervanging zal R4 is vanwege de EHDS en de EPS onvermijdelijk.
+
+Nictiz werkt momenteel aan de harmonisatie van de Nederlandse Basis Gegevensset Zorg (BGZ) met de EPS, en aan de harmonisatie van de nl-Core FHIR profiles met de eu-core profiles. Vanuit open-GUPZ zullen de ontwikkelingen op de voet gevoelgd worden zodat de impact van wijzigingen op nl-core profiles tijdig kan worden vastgesteld. Zowel MedMij als de ZorgDomein FHIR specificaties zijn vooralsnog gebaseerd op FHIR STU3. Vervanging zal R4 is vanwege de EHDS en de EPS onvermijdelijk.
 
 # Proces
 Een dataplatform voor de paramedische zorg is use case- (en dus proces) agnostisch. In het algemeen kan worden gesteld dat het dataplatform ondersteuning biedt aan:
