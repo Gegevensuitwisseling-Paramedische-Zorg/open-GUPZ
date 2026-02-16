@@ -11,4 +11,8 @@ Het dataplatform biedt afsprakenstelsel onafhankelijke FHIR API's op het onderli
 Het aantal FHIR API's zal de komende jaren gelijdelijk worden uitgebrijd, maar in eerste instantie zal het dataplatform alle FHIR API's bieden die nodig zijn voor het IHE Mobile access to Health Documents (MHD) profiel. Het MHD profiel is het integratieprofiel dat wordt gebruikt door de MedMij gegevensdienst 'Documenten' en de onderliggende informatiestandaard PDF/A.
 
 ## Juridica
-Omdat het dataplatform niet binnen het MedMij afsprakenstelse valt, is er geen sprake van MedMij specifieke aanvullende regelgeving of andere eisen.
+Omdat het dataplatform niet binnen het MedMij afsprakenstelse valt, is er geen sprake van MedMij specifieke aanvullende regelgeving of andere eisen. 
+
+### Verwerking BSN
+Het dataplatform valt binnen het zorgaanbiedersdomein en mag daarom het BSN verwerken. Het BSN zal dan ook als patientidentifier worden aangeboden in alle FHIR resourcs. Het is aan de Dienstverlener Aanbieder (DVA) om het BSN te filteren. De DVA zal daarnaast het BSN van de patiënt opnemen in het JWT token eb veheve van application lever authentication en waar nodig in FHIR query-parameters.
+Voor deze opzet is gekozen om de herbruikbaarheid van FHIR API's op het dataplatform te borgen. 
