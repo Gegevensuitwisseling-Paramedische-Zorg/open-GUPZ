@@ -21,7 +21,7 @@ Een goede beveiliging van via het dataplatform beschikaar gestelde gegevens is e
 
 | # | Titel | Type | Beschrijving | Maatregelen |
 | --| ---------- | ------------ | ----------- | -----|
-|  | Aanvaller doet zich voor als dataplatform| Spoofing | Een aanvaller doet zich voor als een dataplatform waardoor een vertrouwde externe partij vertrouwelijke gegevens naar de aanvaller stuurt en/ of onterecht vertrouwd op gegevens afkomstig van de aanvaller|TLS op basis van PKI Overheid Private G1 server certificaat iom beveiligingsrichtlijnen voor TLS van NCSC, minimaal niveau Voldoende |
+|  | Aanvaller doet zich voor als FHIR API| Spoofing | Een aanvaller doet zich voor als de FHIR API van het dataplatform waardoor een vertrouwde externe partij vertrouwelijke gegevens naar de aanvaller stuurt en/ of onterecht vertrouwd op gegevens afkomstig van de aanvaller|TLS op basis van PKI Overheid Private G1 server certificaat iom beveiligingsrichtlijnen voor TLS van NCSC, minimaal niveau Voldoende |
 |  | Externe partij ontkent het opvragen of wijzigen van data bij het dataplatform| Non-Repudiation | Een extern systeem ontkent een actie op het dataplatform| Alle FHIR operaties (CRUD) worden gelogd conform NEN7513 |
 
 **FHIR flow**
@@ -79,6 +79,13 @@ Aan iedere HTTP call naar een FHIR API van het dataplatform wordt een onderteken
 ### Token inhoud
 
 **Token header**
+De token header bevat de volgende velden:
+
+| veld | betekenis | waarde |
+|---|---|---|
+| alg | Signing algorithm| Vaste waarde: HS256|
+| typ | Type token | Vaste waarde: JWT |
+| kid | ID van de Key gebruikt voor signing | alfanumerieke identifier van de key in de JWKS keyset |
 
 **Token payload**
 
@@ -113,7 +120,7 @@ Voor zowel de signing keys als de encryption keys worden X.509 certificaten gebr
 Het dataplatform gebruikt JWKS key rotation om verlopen keys tijdig en automatisch te vervangen door nieuwe keys.
 
 > [!WARNING]
-> Verder uitwerken
+> Verder uitwerken. Hoe om te gaan met key rotation van encryption keys???
 
 ## Audit trail
 Het dataplatform imnplementeert audit trail die voldoet aan NEN7513.
