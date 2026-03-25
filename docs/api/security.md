@@ -23,8 +23,8 @@ Een goede beveiliging van via het dataplatform beschikaar gestelde gegevens is e
 
 | # | Titel | Type | Beschrijving | Maatregelen |
 | --| ---------- | ------------ | ----------- | -----|
-|  | Blootstelling vertouwelijke gegevens in transit | Information Disclosure | Vertrouwelijke gegevens kunnen worden 'afgeluisterd' door een 'man in the middle' | Het dataplatform vereist TLS 1.2 of hoger |
-|  | Ongeautoriseerde aanpassing van gegevens in transit | Information Disclosure | Vertrouwelijke gegevens kunnen worden 'aangepast' door een 'man in the middle' | Het dataplatform vereist TLS 1.2 of hoger |
+|  | Blootstelling vertouwelijke gegevens in transit | Information Disclosure | Vertrouwelijke gegevens kunnen worden 'afgeluisterd' door een 'man in the middle' | Het dataplatform vereist TLS configuratie iom Beveiligingsrichtlijnen voor TLS van het NCSC, minimaal niveau Voldoende |
+|  | Ongeautoriseerde aanpassing van gegevens in transit | Information Disclosure | Vertrouwelijke gegevens kunnen worden 'aangepast' door een 'man in the middle' | Het dataplatform vereist TLS configuratie iom Beveiligingsrichtlijnen voor TLS van het NCSC, minimaal niveau Voldoende |
 |  | Blootstelling BSN | Information Disclosure | BSN uit het JWT token is leesbaar voor onvertrouwde tussenliggende componenten die TLS termination ? SSL offloading doen, zoals proxies en load balancers | Het dataplatform vereist een versleuteld JWT token |
 
 **External system**
