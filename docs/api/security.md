@@ -23,6 +23,7 @@ Een goede beveiliging van via het dataplatform beschikaar gestelde gegevens is e
 | --| ---------- | ------------ | ----------- | -----|
 |  | Aanvaller doet zich voor als FHIR API| Spoofing | Een aanvaller doet zich voor als de FHIR API van het dataplatform waardoor een vertrouwde externe partij vertrouwelijke gegevens naar de aanvaller stuurt en/ of onterecht vertrouwd op gegevens afkomstig van de aanvaller|TLS op basis van PKI Overheid Private G1 server certificaat iom beveiligingsrichtlijnen voor TLS van NCSC, minimaal niveau Voldoende |
 |  | Externe partij ontkent het opvragen of wijzigen van data bij het dataplatform| Non-Repudiation | Een extern systeem ontkent een actie op het dataplatform| Alle FHIR operaties (CRUD) worden gelogd conform NEN7513 |
+| | Token replay | Elevation of Privilage | Aanvaller hergebruikt een token om toegang tot API's te verkrijgen | Maximaal geaccepteerde token lifespan van 15 minuten. Combinatie met TLS |
 
 **FHIR flow**
 
@@ -88,6 +89,15 @@ De token header bevat de volgende velden:
 | kid | ID van de Key gebruikt voor signing | alfanumerieke identifier van de key in de JWKS keyset |
 
 **Token payload**
+De token payload bevat de volgende claims:
+
+| veld | betekenis | waarde | Voorbeeld|
+|---|---|---|---|
+| patient | BSN van de patiënt waarvan gegevens worden opgevraagd of gewijzigd | http://fhir.nl/fhir/NamingSystem/bsn\|{bsn} | http://fhir.nl/fhir/NamingSystem/bsn\|000000012 |
+| provider | Zorgaanbieder waarvoor het verzoek bestemd is | http://fhir.nl/fhir/NamingSystem/agb-z\|{agb} | http://fhir.nl/fhir/NamingSystem/agb-z\|20000001|
+| iat | Moment waarop het token gecreeerd is. Wordt door dataplatform gebruikt om maximale token lifetime te kunnen controleren | Numeric Date | 1617181723 |
+| exp | Uiterlijke moment van geldigheid van het token | Numeric Date| 1617185323|
+| iss | Token issuer | String | ZorgDomein |
 
 ### Token beveiliging
 Het gebruikte JWT token bevat gevoelige informatie, waaronder met name het BSN van de patiënt waarvoor informatie wordt benaderd. Het token dient daarom te worden beveiligd om te voorkomen dat:
@@ -102,6 +112,9 @@ Het dataplatform gaat uit van de volgende stappen voor JWT token beveiliging:
 - Sign the JWT (JWS): Het vertrouwde externe systeem creeert het JWT en ondertekend het met de private signing key
 - Encrypt the JWT (JWE): Het vertrouwde externe systeem versleutelt het resulterende ondertekende JWT met behulp van de public encryption key van het dataplatform
 - Het vertrouwde externe systeem verstuurt het versleutelde token in de HTTP Authorization header: Authorization bearer <encrypted token>. Het dataplatform ontsleutelt het token met behukp van zijn private encryption key en valideert de digital signature met behulp van de public signing key van het vertrouwde externe systeem
+- Het dataplatform valideert de creation time van het JWT token. Indien deze langer is dan 15 minuten geleden dan wordt het request geweigerd
+- Het dataplatform valideert de expiration time van het JWT token. Indien deze is verstreken wordt het request geweigerd
+- Het dataplatform valideert de issuer van het token 
 
 
 ### Eisen aan de te gebruiken certificaten
