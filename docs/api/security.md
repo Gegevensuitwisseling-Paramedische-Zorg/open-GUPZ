@@ -8,11 +8,16 @@ Een goede beveiliging van via het dataplatform beschikaar gestelde gegevens is e
 - Voorkomen van Denial of service
 - Afdwingen van autorisaties (voorkomen van Elevation of privilege)
 
-# Risico analyse FHIR Facade pattern
+# Risico analyse
 
-![Threat model voor het FHIR Facade pattern](/assets/FHIR-Facade-threat-model.jpg)
+> [!WARNING]
+> Risico analyse is onvolledig en heeft verdere uitwerking nodig. Met name risico's van PARIS en internal flow
 
-**FHIR Facade**
+**Level 0 threat model**
+
+![Level 0 threat model voor het data platform](/assets/open-GUPZ-threat-model-level0.jpg)
+
+**FHIR API**
 
 | # | Titel | Type | Beschrijving | Maatregelen |
 | --| ---------- | ------------ | ----------- | -----|
@@ -33,8 +38,6 @@ Een goede beveiliging van via het dataplatform beschikaar gestelde gegevens is e
 | --| ---------- | ------------ | ----------- | -----|
 |  | Aanvaller doet zich voor als vertrouwd extern systeem | Spoofing | Een aanvaller doet zich voor als vertrouwd extern systeem, waardoor een dataplatform vertrouwelijke gegevens beschikbaar stelt aan de aanvaller | Het dataplatform vereist mutual TLS op basis van een PKI Overheid Private G1 certificaat iom beveiligingsrichtlijnen TLS van het NCSC, minimaal niveau Voldoende. Het dataplatform vereist een door het vertrouwde externe systeem digitaal ondertekend JWT |
 
-
-# Risico analyse Sync-agent pattern
 
 # Uitwerking van maatregelen 
 Beveiligingsmaatregelen kunnen worden onderverdeeld in de volgende categorieën:
@@ -98,15 +101,19 @@ Het dataplatform gaat uit van de volgende stappen voor JWT token beveiliging:
 Voor zowel de signing keys als de encryption keys worden X.509 certificaten gebruikt uitgegegen door een trusted Certificate Authority (CA).
 
 **Signing Key**
-Key usage: digitalSignature
-Signing algorithm: RSA-SHA256
+- Key usage: digitalSignature
+- Signing algorithm: RSA-SHA256
 
 **Encryption Key**
-Key usage: keyEncipherment 
-Encryption Algoritm: RSA-OAEP-256
+- Key usage: keyEncipherment 
+- Encryption Algoritm: RSA-OAEP-256
 
 
 ### Key rotation
+Het dataplatform gebruikt JWKS key rotation om verlopen keys tijdig en automatisch te vervangen door nieuwe keys.
+
+> [!WARNING]
+> Verder uitwerken
 
 ## Audit trail
 Het dataplatform imnplementeert audit trail die voldoet aan NEN7513.
