@@ -1,5 +1,5 @@
 ---
-title: FAPI Security
+title: API Security
 layout: template
 filename: security.md
 --- 
