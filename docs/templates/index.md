@@ -7,7 +7,7 @@ Om die reden is gekozen voor het harmoniseren van:
 •	de vastlegging van de paramedische diagnose;
 •	de templates voor correspondentie.
 
-Hoewel deze harmonisatie mede is ingegeven door PGO-uitwisseling, betreft het gebruik van de templates nadrukkelijk het genereren van (PDF/A) documenten binnen de paramedische zorg als geheel. De scope is daarmee breder dan alleen PGO 
+Hoewel deze harmonisatie mede is ingegeven door PGO-uitwisseling, betreft het gebruik van de templates nadrukkelijk het genereren van documenten binnen de paramedische zorg als geheel, ongeacht het gewenste doelformaat (e.g. PDF/A, tekst, etc). De scope is daarmee breder dan alleen PGO 
 
 # Toepassing
 De templates beschrijven de te genereren OUTPUT, en dus niet de vastlegging in het dossier zelf. Vanzelfsprekend dient de vastlegging afdoende te zijn om de in de teplates beschreven OUTPUT te kunnen registeren. De volgende regels zijn van toepassing:
