@@ -1,4 +1,7 @@
 # Inleiding
+> [!WARNING]
+> Deze beschrijving is niet (volledig) van toepassing op de ZorgDomein API's
+
 Een goede beveiliging van via het dataplatform beschikaar gestelde gegevens is een belangrijke vereiste. De te nemen beveiligingsmaatregelen volgen uit een risicoanalyse op basis van de STRIDE methodiek:
 
 - Voorkomen dat een persoon, systeem of applicatie zich voordoet als iets of iemand anders en daardoor onterecht toegang verkrijgt tot het platform en de data die het platform beschikbaar stelt (Spoofing)
