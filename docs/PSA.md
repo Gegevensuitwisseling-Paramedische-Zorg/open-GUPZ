@@ -474,6 +474,8 @@ Door het programma GUPZ worden waardenlijsten en referentiesets ontwikkeld ten b
 
 Referentiesets en waardenlijsten worden opgenomen in ['terminology'](/templates).
 
+Referentiesets zullen beschikbaar komen via de Nationale Terminologie Service (NTS)
+
 # Architectuur patronen
 De bij open-GUPZ betrokken PARIS leveranciers onderkennen twee alternatieve software architecture patterns voor het dataplatform voor de Paramedishe Zorg. Beide patronen kennen hun eigen voor- en nadelen en kunnen desgewenst worden gecombineerd.
 
