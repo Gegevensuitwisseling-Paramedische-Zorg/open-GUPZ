@@ -1,3 +1,9 @@
+---
+title: FAPI Security
+layout: template
+filename: security.md
+--- 
+
 # Inleiding
 > [!WARNING]
 > Deze beschrijving is niet (volledig) van toepassing op de ZorgDomein API's
