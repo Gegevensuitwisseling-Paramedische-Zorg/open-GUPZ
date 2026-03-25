@@ -18,6 +18,7 @@ De templates beschrijven de te genereren OUTPUT, en dus niet de vastlegging in h
 # Identificerende gegevens
 Teneinde de gegenereerde documenten ook in de context van het PGO te kunnen gebruiken, bevat geen van de templates het BSN van de patiënt. Naam, geboortedatum, geslacht en adresgegevens mogen (optioneel) in de documenten worden opgenomen.
 
+Omdat in de FHIR berichten/ resources die documenten beschikbaar stellen het BSN altijd als metadata beschikbaar is, kunnen ontvangende systemen de beschikbaar gestelde documenten altijd relateren aan de juiste patiënt.
 
 # Templates
 
