@@ -7,8 +7,19 @@ Om die reden is gekozen voor het harmoniseren van:
 •	de vastlegging van de paramedische diagnose;
 •	de templates voor correspondentie.
 
-Hoewel deze harmonisatie mede is ingegeven door PGO-uitwisseling, betreft het gebruik van de templates nadrukkelijk de vastlegging in het dossier als geheel. De scope is daarmee breder dan alleen PGO en ziet op uniforme dossiervoering binnen de paramedische zorg.
-Templates
+Hoewel deze harmonisatie mede is ingegeven door PGO-uitwisseling, betreft het gebruik van de templates nadrukkelijk het genereren van (PDF/A) documenten binnen de paramedische zorg als geheel. De scope is daarmee breder dan alleen PGO 
+
+# Toepassing
+De templates beschrijven de te genereren OUTPUT, en dus niet de vastlegging in het dossier zelf. Vanzelfsprekend dient de vastlegging afdoende te zijn om de in de teplates beschreven OUTPUT te kunnen registeren. De volgende regels zijn van toepassing:
+
+- De templates zijn normatief. Documenten en brieven bevatten exact de in het template beschreven datavelden
+- Hoewel in het dossier zelf meer informatie mag (zal) worden vastgelegd, wordt deze niet in de gegenereerde documenten opgenomen
+
+# Identificerende gegevens
+Teneinde de gegenereerde documenten ook in de context van het PGO te kunnen gebruiken, bevat geen van de templates het BSN van de patiënt. Naam, geboortedatum, geslacht en adresgegevens mogen (optioneel) in de documenten worden opgenomen.
+
+
+# Templates
 
 ## Behandelplan en diagnostisch plan
 Tijdens het uitwerken van het behandelplan is geconstateerd dat voor OVN een afzonderlijk diagnostisch plan passender is. Voor de overige disciplines is een apart diagnostisch plan niet van toepassing.
