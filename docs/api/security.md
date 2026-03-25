@@ -37,12 +37,17 @@ Een goede beveiliging van via het dataplatform beschikaar gestelde gegevens is e
 # Risico analyse Sync-agent pattern
 
 # Uitwerking van maatregelen 
+Beveiligingsmaatregelen kunnen worden onderverdeeld in de volgende categorieën:
 
+- Transport level security
+- Application level security
+- Audit trail
+  
 ## Transport level security
 Het dataplatform vereist mutual TLS (mTLS). Hierdoor wordt geborgd dat:
 - Alle verkeer tussen het dataplatform en het externe systeem wordt versleuteld
 - Het externe systeem kan het dataplatform authenticeren op basis van het server certificaat dat het dataplatform presenteert tijdens de TLS handshake
-- Het dataplatfom kan het externe systeem authenticeren op basis van het client certificaat dat het externe systeem presenteert tijdens de TLS handshake
+- Het dataplatfom kan het vertrouwde externe systeem authenticeren op basis van het client certificaat dat het externe systeem presenteert tijdens de TLS handshake
 
 
 ### Eisen aan de TLS configuratie
@@ -66,6 +71,7 @@ Het dataplatform presenteert een PKI Overheid Private G1 certificaat aan het ext
 Het dataplatform vereist dat het externe systeem een PKI Overheid Private G1 certificaat presenteert tijdens de TLS handshake
 
 ## Application level security
+Aan iedere HTTP call naar een FHIR API van het dataplatform wordt een ondertekend en versleuteld JWT token toegevoegd aan de HTTP Authorization header.
 
 ### Token inhoud
 
@@ -73,13 +79,34 @@ Het dataplatform vereist dat het externe systeem een PKI Overheid Private G1 cer
 
 **Token payload**
 
-### Token ondertekening
+### Token beveiliging
+Het gebruikte JWT token bevat gevoelige informatie, waaronder met name het BSN van de patiënt waarvoor informatie wordt benaderd. Het token dient daarom te worden beveiligd om te voorkomen dat:
 
-### Token versleuteling
+- De inhoud van het token wordt aangepast door een onbevoegde/ kwaadwillende partij (token integriteit)
+- De inhoud van het token wordt blootgesteld aan een onbevoegde/ kwaadwillende partij (token vertrouwelijkheid)
+- Een onvertouwde partij een token kan genereren dat afkomstig lijkt van een vertrouwde partij (token authentocatie)
+
+Het dataplatform gaat uit van de volgende stappen voor JWT token beveiliging:
+
+- Key exchange: Het vertrouwde externe systeem gebruikt een private signing key om het JWT te ondertekenen en de public encryption key van het dataplatform om het JWT te versleutelen. Het dataplatform gebruikt de public signing key van het externe systeem om de digital signature te verifieren en haar private encryption key om de JWT te ontsluetelen
+- Sign the JWT (JWS): Het vertrouwde externe systeem creeert het JWT en ondertekend het met de private signing key
+- Encrypt the JWT (JWE): Het vertrouwde externe systeem versleutelt het resulterende ondertekende JWT met behulp van de public encryption key van het dataplatform
+- Het vertrouwde externe systeem verstuurt het versleutelde token in de HTTP Authorization header: Authorization bearer <encrypted token>. Het dataplatform ontsleutelt het token met behukp van zijn private encryption key en valideert de digital signature met behulp van de public signing key van het vertrouwde externe systeem
+
 
 ### Eisen aan de te gebruiken certificaten
+Voor zowel de signing keys als de encryption keys worden X.509 certificaten gebruikt uitgegegen door een trusted Certificate Authority (CA).
 
-### Vernieuwen van certificaten
+**Signing Key**
+Key usage: digitalSignature
+Signing algorithm: RSA-SHA256
 
-## Logging
+**Encryption Key**
+Key usage: keyEncipherment 
+Encryption Algoritm: RSA-OAEP-256
+
+
+### Key rotation
+
+## Audit trail
 Het dataplatform imnplementeert audit trail die voldoet aan NEN7513.
