@@ -10,6 +10,8 @@ Een goede beveiliging van via het dataplatform beschikaar gestelde gegevens is e
 
 # Risico analyse FHIR Facade pattern
 
+![Threat model voor het FHIR Facade pattern](/assets/FHIR Facade threat model.jpg)
+
 **FHIR Facade**
 
 | # | Titel | Type | Beschrijving | Maatregelen |
