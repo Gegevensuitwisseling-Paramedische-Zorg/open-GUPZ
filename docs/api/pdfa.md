@@ -1,3 +1,8 @@
+---
+title: PDF/A
+layout: template
+filename: pdfa.md
+--- 
 
 # PDF/A #
 
