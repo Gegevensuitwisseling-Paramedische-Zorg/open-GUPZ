@@ -7,14 +7,18 @@ filename: Medmij-pdfa.md
 # Paramedie specifieke eisen aan het beschikbaarstellen van documenten via het PGO #
 
 ## Functionele eisen en wensen voor het beschikbaar stellen van documenten aan het PGO ##
-Het genereren en PGO  uitwisseling van de templatre behandelplan is als voorbeeld uitgewerkt, onderstaande functionele wensen gelden echter voor alle documenten voor PGO uitwisseling, dus ook voor paramedische diagnose en brieven/updates bijv. Functionele wensen raken potentieel zowel de werking van het PARIS als van het dataplatform.
+Het genereren en beschikbaar stellen aan het PGO van een behandelplan is als voorbeeld uitgewerkt, onderstaande functionele wensen gelden echter voor alle documenten die aan het PGO beschikbaar worden gesteld, dus ook voor paramedische diagnose en brieven/updates bijv. Functionele wensen raken potentieel zowel de werking van het PARIS als van het dataplatform.
  
-### Het template is beschikbaar in het PARIS ###
-De  paramedicus kan alleen bovenstaande zaken opstellen via het daarvoor gemaakte template. Dat vormt de minimale basis. Het template is een output norm.
-Als er een PDFA genereert wordt en sjabloonveld zijn niet gevuld, dan wordt dit veld niet opgenomen in de PDFA die genereert wordt voor de uitwisseling, zodat er geen lege velden in de PDFA staan.  
+### Vastlegging in het PARIS voldoet aan de door de beroepsgroepen vastgestelde document-templates ###
+Alle velden die zijn opgenomen in de document-templates kunnen in het PARIS door de paramedicus worden vastgelegd. 
+De  paramedicus kan alleen bovenstaande zaken opstellen via het daarvoor gemaakte template. Het template vormt de minimale basis voor registratie en is de norm voor output (naar brieven en documenten). Dit wil zeggen dat gegenereerde documenten geen velden bevatten die niet in het template zijn gedefinieerd.  
 
-NVLF subdoelen: Als paramedicus wil ik dat de velden van het behandelplan in het PGO waar mijn beroepsgroep geen gebruik van maakt niet getoond worden in het PGO. Dit geldt voor het onderdeel Subdoelen voor de NVLF.
-Optometrie: als ik als paramedicus een diagnostiekplan opstel wil ik gebruik kunnen maken van landelijke protocollen, zodat ik snel een standaard diagnostiekplan heb.
+Als er een PDF/A genereert wordt en sjabloonveld zijn niet gevuld, dan wordt dit veld niet opgenomen in de PDF/A die genereert wordt voor de uitwisseling, zodat er geen lege velden in de PDFA staan.  
+
+<ins>NVLF subdoelen:</ins>  
+Als paramedicus wil ik dat de velden van het behandelplan in het PGO waar mijn beroepsgroep geen gebruik van maakt niet getoond worden in het PGO. Dit geldt voor het onderdeel Subdoelen voor de NVLF.  
+<ins>Optometrie:</ins>  
+als ik als paramedicus een diagnostiekplan opstel wil ik gebruik kunnen maken van landelijke protocollen, zodat ik snel een standaard diagnostiekplan heb.
 
 ### Alleen definitieve documenten worden met PGO gedeeld ###
 De paramedicus markeert actief een document als definitief, waarmee deze aangeeft dat dit document gereed is, in het dossier als versie bewaard moet worden en klaar is voor  uitwisseling naar het PGO.
