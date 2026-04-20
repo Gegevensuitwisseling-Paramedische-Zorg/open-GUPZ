@@ -7,7 +7,7 @@ filename: Medmij-pdfa.md
 # Paramedie specifieke eisen aan het beschikbaarstellen van documenten via het PGO #
 
 ## Functionele eisen en wensen voor het beschikbaar stellen van documenten aan het PGO ##
-Het genereren en beschikbaar stellen aan het PGO van een behandelplan is als voorbeeld uitgewerkt, onderstaande functionele wensen gelden echter voor alle documenten die aan het PGO beschikbaar worden gesteld, dus ook voor paramedische diagnose en brieven/updates bijv. Functionele wensen raken potentieel zowel de werking van het PARIS als van het dataplatform.
+Het genereren en beschikbaar stellen aan het PGO van een behandelplan is als voorbeeld uitgewerkt, onderstaande functionele wensen eisen gelden echter voor alle documenten die aan het PGO beschikbaar worden gesteld, dus ook voor paramedische diagnose en brieven/updates bijv. Functionele wensen raken potentieel zowel de werking van het PARIS als van het dataplatform.
  
 ### Vastlegging in het PARIS voldoet aan de door de beroepsgroepen vastgestelde document-templates ###
 Alle velden die zijn opgenomen in de document-templates kunnen in het PARIS door de paramedicus worden vastgelegd. 
@@ -15,14 +15,24 @@ De  paramedicus kan alleen bovenstaande zaken opstellen via het daarvoor gemaakt
 
 Als er een PDF/A genereert wordt en sjabloonveld zijn niet gevuld, dan wordt dit veld niet opgenomen in de PDF/A die genereert wordt voor de uitwisseling, zodat er geen lege velden in de PDFA staan.  
 
-<ins>NVLF subdoelen:</ins>  
-Als paramedicus wil ik dat de velden van het behandelplan in het PGO waar mijn beroepsgroep geen gebruik van maakt niet getoond worden in het PGO. Dit geldt voor het onderdeel Subdoelen voor de NVLF.  
+<ins>NVLF specifiek:</ins>  
+Leden van de NVLF leggen geen subdoelen vast. Deze worden dus ook niet in de betreffende PARISen aangeboden en ook niet in de gegenereerde PDF/A opgenomen.
 <ins>Optometrie:</ins>  
 als ik als paramedicus een diagnostiekplan opstel wil ik gebruik kunnen maken van landelijke protocollen, zodat ik snel een standaard diagnostiekplan heb.
 
+### Voor alle aan het PGO aangeboden documenten wordt een status bijgehouden ###
+Behandelplannen en de overige aan het PGO aangeboden documenten hebben een status. De status van documenten is in het PARIS in te zien. Het betreft de volgende statussen:
+
+- Concept:
+  Dit is een behandelplan (document) dat door paramedicus gemaakt of gegenereert is (bijvoorbeeld op basis van een bestaand behandelplan), maar dat nog niet als definitief is gemarkeerd.  Naast de status wordt ook de datum vastgelegd waarop het behandelplan (het document) gemaakt is.
+- Actueel:  
+Dit is de actuele versie van het behandelplan, dat de basis vormt voor de behandeling. Deze status wordt bij het behandelplan (het document) vastgelegd zodra de paramedicus het document als 'definitief' markeert. Naast de status wordt ook de datum vastgelegd waarop het behandelplan (het document) als definitief werd gemarkeerd en wordt een eventuele geldigheidsduur vastgelegd
+
+- Gearchiveerd:  
+  Dit is een behandelplan (document) dat definitief was, maar wordt vervangen door een nieuwe versie van het behandelplan. Wanneer een concept behandelplan (document) definitief wordt gemaakt, wordt een eventuele bestaande als definitief gemarkeerde versie gearchiveerd. Naast de status wordt ook de archiefdatum vastgelegd.
+
 ### Alleen definitieve documenten worden met PGO gedeeld ###
-De paramedicus markeert actief een document als definitief, waarmee deze aangeeft dat dit document gereed is, in het dossier als versie bewaard moet worden en klaar is voor  uitwisseling naar het PGO.
-Dit geldt voor alle opgestelde templates die als PDF/A uitgewisseld worden.
+De paramedicus markeert actief een document als definitief, waarmee deze aangeeft dat dit document gereed is, in het dossier als versie bewaard moet worden en klaar is voor  uitwisseling naar het PGO. Alleen als definitiefg gemarkeerde behandelplannen (documenten) mogen met het PGO worden gedeeld. Dit geldt voor alle documenten die als PDF/A uitgewisseld worden.
 
 ### Een wijziging in een eerder gemaakt document leidt altijd tot een nieuwe versie van dat document ###
 De paramedicus kan een bestaand behandelplan wijzigen, definitief maken en bewaren als nieuwe versie. De oude versie wordt daarmee automatisch gearchiveerd.
