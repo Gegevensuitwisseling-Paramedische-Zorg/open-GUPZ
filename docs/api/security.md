@@ -110,7 +110,7 @@ De token payload bevat de volgende claims:
 | iss | Token issuer | String | ZorgDomein | Ja |
 | nbf | Note before, eerste moment vanaf wanneer het token geldig is | Numeric Date | 1617181723 | Nee |
 | jti | Unieke ID token | String | 4a006a12-dc2b-470a-b031-a3682b653ba7 | Nee |
-| aud | Resource server waarvoor de JWT geldig is (de specifieke dataplatform instantie) | https://praktijkx.dataplatform.nl | nee |
+| aud | Resource server waarvoor de JWT geldig is (de specifieke dataplatform instantie) | String | https://praktijkx.dataplatform.nl | nee |
 | scope | Diensten (resources) waarvoor het JWT geldig is | String. Wordt vooralsnog optioneel meegestuurd | medmij.gegevensdienst.50 | nee |
 
 ### Token beveiliging
