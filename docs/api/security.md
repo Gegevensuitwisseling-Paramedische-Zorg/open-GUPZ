@@ -30,9 +30,9 @@ Een goede beveiliging van via het dataplatform beschikaar gestelde gegevens is e
 
 | # | Titel | Type | Beschrijving | Maatregelen |
 | --| ---------- | ------------ | ----------- | -----|
-|  | Aanvaller doet zich voor als FHIR API| Spoofing | Een aanvaller doet zich voor als de FHIR API van het dataplatform waardoor een vertrouwde externe partij vertrouwelijke gegevens naar de aanvaller stuurt en/ of onterecht vertrouwd op gegevens afkomstig van de aanvaller|TLS op basis van PKI Overheid Private G1 server certificaat iom beveiligingsrichtlijnen voor TLS van NCSC, minimaal niveau Voldoende |
+|  | Aanvaller doet zich voor als FHIR API| Spoofing | Een aanvaller doet zich voor als de FHIR API van het dataplatform waardoor een vertrouwde externe partij vertrouwelijke gegevens naar de aanvaller stuurt en/ of onterecht vertrouwd op gegevens afkomstig van de aanvaller|mTLS op basis van PKI Overheid Private G1 server certificaat iom beveiligingsrichtlijnen voor TLS van NCSC, minimaal niveau Voldoende |
 |  | Externe partij ontkent het opvragen of wijzigen van data bij het dataplatform| Non-Repudiation | Een extern systeem ontkent een actie op het dataplatform| Alle FHIR operaties (CRUD) worden gelogd conform NEN7513 |
-| | Token replay | Elevation of Privilage | Aanvaller hergebruikt een token om toegang tot API's te verkrijgen | Maximaal geaccepteerde token lifespan van 15 minuten. Combinatie met TLS |
+| | Token replay | Elevation of Privilage | Aanvaller hergebruikt een token om toegang tot API's te verkrijgen | Maximaal geaccepteerde token lifespan van 15 minuten. Combinatie met mTLS |
 
 **FHIR flow**
 
@@ -80,7 +80,8 @@ Voor TLS 13 worden de volgende cypher suites ondersteund:
 - TLS_AES_128_GCM_SHA256
 
 ### Eisen aan de te gebruiken certificaten
-Het dataplatform presenteert een PKI Overheid Private G1 certificaat aan het externe systeem. 
+Het dataplatform presenteert een PKI Overheid Private G1 certificaat aan het externe systeem. Een multitenant dataplatform (een dataplatform dat door meerdere paramedische praktijken wordt gebruikt) kan hetzelfde PKI overheid certificaat gebruiken voor alle onderliggende praktijken.
+
 Het dataplatform vereist dat het externe systeem een PKI Overheid Private G1 certificaat presenteert tijdens de TLS handshake
 
 ## Application level security
