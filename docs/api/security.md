@@ -108,6 +108,8 @@ De token payload bevat de volgende claims:
 | iat | Moment waarop het token gecreeerd is. Wordt door dataplatform gebruikt om maximale token lifetime te kunnen controleren | Numeric Date | 1617181723 |
 | exp | Uiterlijke moment van geldigheid van het token | Numeric Date| 1617185323|
 | iss | Token issuer | String | ZorgDomein |
+| aud | Resource server waarvoor de JWT geldig is (de specifieke dataplatform instantie) | https://praktijkx.dataplatform.nl |
+| scope | Diensten (resources) waarvoor het JWT geldig is | String. Wordt vooralsnog optioneel meegestuurd | medmij.gegevensdienst.50 |
 
 ### Token beveiliging
 Het gebruikte JWT token bevat gevoelige informatie, waaronder met name het BSN van de patiënt waarvoor informatie wordt benaderd. Het token dient daarom te worden beveiligd om te voorkomen dat:
@@ -125,6 +127,17 @@ Het dataplatform gaat uit van de volgende stappen voor JWT token beveiliging:
 - Het dataplatform valideert de creation time van het JWT token. Indien deze langer is dan 15 minuten geleden dan wordt het request geweigerd
 - Het dataplatform valideert de expiration time van het JWT token. Indien deze is verstreken wordt het request geweigerd
 - Het dataplatform valideert de issuer van het token 
+
+### MedMij specifieke eisen op het gebied van application level security ###
+In tokens afkomstig van een MedMij DVA wordt het JWT scope field door de DVA gevuld met één of meer van de geldige MedMij gegevensdienstnummers conform het volgende format:
+> medmij.gegevensdienst.**nummer van de gegevensdienst**
+
+Het dataplatform mag in dit geval controleren:
+- Of de issuer (iss) inderdaad een DVA is
+- Of de DVA deze gegevensdienst op mag vragen bij het dataplatform   
+  Dit kan bijvoorbeeld afhangen van of de gegevensdienst gekwalificeerd is (zie [de MedMij deelnemerlijst](https://medmij.nl/overzicht-kandidaat-deelnemers/))
+
+
 
 
 ### Eisen aan de te gebruiken certificaten
