@@ -16,5 +16,9 @@ Het dataplatform volgt de door Nictiz opgestelde  [MedMij FHIR Implementation Gu
 | Dataplatform | Document Responder | Find Document Reference | Required |
 | Dataplatform | Document Responder | Retreive Document | Required |
 
+## Document versionering ##
+> [!IMPORTANT]
+> Regels voor document versionering dienen nog te worden toegevoegd en aan te sluten op de functionele eisen ten aanzien van het beschikbaar stellen van documenten aan het pgo.
+
 ## Security ##
 De beveiliging van verkeer tussen Dienstverlener Aanvieder (DVA) en het dataplatform wordt beschreven in [security.md](security.md).
