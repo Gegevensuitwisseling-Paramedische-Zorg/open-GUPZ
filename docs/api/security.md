@@ -128,6 +128,17 @@ Het dataplatform gaat uit van de volgende stappen voor JWT token beveiliging:
 - Het dataplatform valideert de expiration time van het JWT token. Indien deze is verstreken wordt het request geweigerd
 - Het dataplatform valideert de issuer van het token 
 
+### MedMij specifieke eisen op het gebied van application level security ###
+In tokens afkomstig van een MedMij DVA wordt het JWT scope field door de DVA gevuld met één of meer van de geldige MedMij gegevensdienstnummers conform het volgende format:
+> medmij.gegevensdienst.**nummer van de gegevensdienst**
+
+Het dataplatform mag in dit geval controleren:
+- Of de issuer (iss) inderdaad een DVA is
+- Of de DVA deze gegevensdienst op mag vragen bij het dataplatform   
+  Dit kan bijvoorbeeld afhangen van of de gegevensdienst gekwalificeerd is (zie [de MedMij deelnemerlijst](https://medmij.nl/overzicht-kandidaat-deelnemers/))
+
+
+
 
 ### Eisen aan de te gebruiken certificaten
 Voor zowel de signing keys als de encryption keys worden X.509 certificaten gebruikt uitgegegen door een trusted Certificate Authority (CA).
