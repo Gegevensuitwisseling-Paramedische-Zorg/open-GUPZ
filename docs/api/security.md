@@ -108,6 +108,8 @@ De token payload bevat de volgende claims:
 | iat | Moment waarop het token gecreeerd is. Wordt door dataplatform gebruikt om maximale token lifetime te kunnen controleren | Numeric Date | 1617181723 |
 | exp | Uiterlijke moment van geldigheid van het token | Numeric Date| 1617185323|
 | iss | Token issuer | String | ZorgDomein |
+| aud | Resource server waarvoor de JWT geldig is (de specifieke dataplatform instantie) | https://praktijkx.dataplatform.nl |
+| scope | diensten waarvoor het JWT geldig is | |
 
 ### Token beveiliging
 Het gebruikte JWT token bevat gevoelige informatie, waaronder met name het BSN van de patiënt waarvoor informatie wordt benaderd. Het token dient daarom te worden beveiligd om te voorkomen dat:
