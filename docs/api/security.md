@@ -92,22 +92,24 @@ Aan iedere HTTP call naar een FHIR API van het dataplatform wordt een onderteken
 **Token header**
 De token header bevat de volgende velden:
 
-| veld | betekenis | waarde |
+| veld | betekenis | waarde | Verplicht |
 |---|---|---|
-| alg | Signing algorithm| Vaste waarde: HS256|
-| typ | Type token | Vaste waarde: JWT |
-| kid | ID van de Key gebruikt voor signing | alfanumerieke identifier van de key in de JWKS keyset |
+| alg | Signing algorithm| Vaste waarde: HS256| Ja |
+| typ | Type token | Vaste waarde: JWT | Ja |
+| kid | ID van de Key gebruikt voor signing | alfanumerieke identifier van de key in de JWKS keyset | Ja |
 
 **Token payload**
 De token payload bevat de volgende claims:
 
-| veld | betekenis | waarde | Voorbeeld|
+| veld | betekenis | waarde | Voorbeeld| Verplicht |
 |---|---|---|---|
-| patient | BSN van de patiënt waarvan gegevens worden opgevraagd of gewijzigd | http://fhir.nl/fhir/NamingSystem/bsn\|{bsn} | http://fhir.nl/fhir/NamingSystem/bsn\|000000012 |
-| provider | Zorgaanbieder waarvoor het verzoek bestemd is | http://fhir.nl/fhir/NamingSystem/agb-z\|{agb} | http://fhir.nl/fhir/NamingSystem/agb-z\|20000001|
-| iat | Moment waarop het token gecreeerd is. Wordt door dataplatform gebruikt om maximale token lifetime te kunnen controleren | Numeric Date | 1617181723 |
-| exp | Uiterlijke moment van geldigheid van het token | Numeric Date| 1617185323|
-| iss | Token issuer | String | ZorgDomein |
+| patient | BSN van de patiënt waarvan gegevens worden opgevraagd of gewijzigd | http://fhir.nl/fhir/NamingSystem/bsn\|{bsn} | http://fhir.nl/fhir/NamingSystem/bsn\|000000012 | Nee |
+| provider | Zorgaanbieder waarvoor het verzoek bestemd is | http://fhir.nl/fhir/NamingSystem/agb-z\|{agb} | http://fhir.nl/fhir/NamingSystem/agb-z\|20000001| Nee |
+| iat | Moment waarop het token gecreeerd is. Wordt door dataplatform gebruikt om maximale token lifetime te kunnen controleren | Numeric Date | 1617181723 | Ja |
+| exp | Uiterlijke moment van geldigheid van het token | Numeric Date| 1617185323| Ja |
+| iss | Token issuer | String | ZorgDomein | Ja |
+| nbf | Note before, eerste moment vanaf wanneer het token geldig is | Numeric Date | 1617181723 | Nee |
+| jti | Unieke ID token | String | 4a006a12-dc2b-470a-b031-a3682b653ba7 | Nee |
 | aud | Resource server waarvoor de JWT geldig is (de specifieke dataplatform instantie) | https://praktijkx.dataplatform.nl |
 | scope | Diensten (resources) waarvoor het JWT geldig is | String. Wordt vooralsnog optioneel meegestuurd | medmij.gegevensdienst.50 |
 
@@ -136,9 +138,6 @@ Het dataplatform mag in dit geval controleren:
 - Of de issuer (iss) inderdaad een DVA is
 - Of de DVA deze gegevensdienst op mag vragen bij het dataplatform   
   Dit kan bijvoorbeeld afhangen van of de gegevensdienst gekwalificeerd is (zie [de MedMij deelnemerlijst](https://medmij.nl/overzicht-kandidaat-deelnemers/))
-
-
-
 
 ### Eisen aan de te gebruiken certificaten
 Voor zowel de signing keys als de encryption keys worden X.509 certificaten gebruikt uitgegegen door een trusted Certificate Authority (CA).
