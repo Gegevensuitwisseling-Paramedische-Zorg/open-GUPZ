@@ -30,9 +30,9 @@ Een goede beveiliging van via het dataplatform beschikaar gestelde gegevens is e
 
 | # | Titel | Type | Beschrijving | Maatregelen |
 | --| ---------- | ------------ | ----------- | -----|
-|  | Aanvaller doet zich voor als FHIR API| Spoofing | Een aanvaller doet zich voor als de FHIR API van het dataplatform waardoor een vertrouwde externe partij vertrouwelijke gegevens naar de aanvaller stuurt en/ of onterecht vertrouwd op gegevens afkomstig van de aanvaller|TLS op basis van PKI Overheid Private G1 server certificaat iom beveiligingsrichtlijnen voor TLS van NCSC, minimaal niveau Voldoende |
+|  | Aanvaller doet zich voor als FHIR API| Spoofing | Een aanvaller doet zich voor als de FHIR API van het dataplatform waardoor een vertrouwde externe partij vertrouwelijke gegevens naar de aanvaller stuurt en/ of onterecht vertrouwd op gegevens afkomstig van de aanvaller|mTLS op basis van PKI Overheid Private G1 server certificaat iom beveiligingsrichtlijnen voor TLS van NCSC, minimaal niveau Voldoende |
 |  | Externe partij ontkent het opvragen of wijzigen van data bij het dataplatform| Non-Repudiation | Een extern systeem ontkent een actie op het dataplatform| Alle FHIR operaties (CRUD) worden gelogd conform NEN7513 |
-| | Token replay | Elevation of Privilage | Aanvaller hergebruikt een token om toegang tot API's te verkrijgen | Maximaal geaccepteerde token lifespan van 15 minuten. Combinatie met TLS |
+| | Token replay | Elevation of Privilage | Aanvaller hergebruikt een token om toegang tot API's te verkrijgen | Maximaal geaccepteerde token lifespan van 15 minuten. Combinatie met mTLS |
 
 **FHIR flow**
 
@@ -80,7 +80,8 @@ Voor TLS 13 worden de volgende cypher suites ondersteund:
 - TLS_AES_128_GCM_SHA256
 
 ### Eisen aan de te gebruiken certificaten
-Het dataplatform presenteert een PKI Overheid Private G1 certificaat aan het externe systeem. 
+Het dataplatform presenteert een PKI Overheid Private G1 certificaat aan het externe systeem. Een multitenant dataplatform (een dataplatform dat door meerdere paramedische praktijken wordt gebruikt) kan hetzelfde PKI overheid certificaat gebruiken voor alle onderliggende praktijken.
+
 Het dataplatform vereist dat het externe systeem een PKI Overheid Private G1 certificaat presenteert tijdens de TLS handshake
 
 ## Application level security
@@ -109,6 +110,8 @@ De token payload bevat de volgende claims:
 | iss | Token issuer | String | ZorgDomein | Ja |
 | nbf | Note before, eerste moment vanaf wanneer het token geldig is | Numeric Date | 1617181723 | Nee |
 | jti | Unieke ID token | String | 4a006a12-dc2b-470a-b031-a3682b653ba7 | Nee |
+| aud | Resource server waarvoor de JWT geldig is (de specifieke dataplatform instantie) | https://praktijkx.dataplatform.nl |
+| scope | Diensten (resources) waarvoor het JWT geldig is | String. Wordt vooralsnog optioneel meegestuurd | medmij.gegevensdienst.50 |
 
 ### Token beveiliging
 Het gebruikte JWT token bevat gevoelige informatie, waaronder met name het BSN van de patiënt waarvoor informatie wordt benaderd. Het token dient daarom te worden beveiligd om te voorkomen dat:
@@ -126,6 +129,15 @@ Het dataplatform gaat uit van de volgende stappen voor JWT token beveiliging:
 - Het dataplatform valideert de creation time van het JWT token. Indien deze langer is dan 15 minuten geleden dan wordt het request geweigerd
 - Het dataplatform valideert de expiration time van het JWT token. Indien deze is verstreken wordt het request geweigerd
 - Het dataplatform valideert de issuer van het token 
+
+### MedMij specifieke eisen op het gebied van application level security ###
+In tokens afkomstig van een MedMij DVA wordt het JWT scope field door de DVA gevuld met één of meer van de geldige MedMij gegevensdienstnummers conform het volgende format:
+> medmij.gegevensdienst.**nummer van de gegevensdienst**
+
+Het dataplatform mag in dit geval controleren:
+- Of de issuer (iss) inderdaad een DVA is
+- Of de DVA deze gegevensdienst op mag vragen bij het dataplatform   
+  Dit kan bijvoorbeeld afhangen van of de gegevensdienst gekwalificeerd is (zie [de MedMij deelnemerlijst](https://medmij.nl/overzicht-kandidaat-deelnemers/))
 
 ### Eisen aan de te gebruiken certificaten
 Voor zowel de signing keys als de encryption keys worden X.509 certificaten gebruikt uitgegegen door een trusted Certificate Authority (CA).
