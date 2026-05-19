@@ -16,6 +16,9 @@ Het dataplatform volgt de door Nictiz opgestelde  [MedMij FHIR Implementation Gu
 | Dataplatform | Document Responder | Find Document Reference | Required |
 | Dataplatform | Document Responder | Retreive Document | Required |
 
+### document referenties ###
+Het dataplatform biedt alle documentreferenties aan als verwijzing naar een binary resource. Dit betekent dat de Retrieve Document transactie de binary resource bevraagt.
+
 ## Document versionering ##
 > [!IMPORTANT]
 > Regels voor document versionering dienen nog te worden toegevoegd en aan te sluten op de functionele eisen ten aanzien van het beschikbaar stellen van documenten aan het pgo.
