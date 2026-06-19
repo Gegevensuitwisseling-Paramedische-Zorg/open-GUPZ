@@ -29,11 +29,9 @@ Vecozo ondersteunt een subset van de ZorgDomein document typee. Onderstaande tab
 
 | Code                 | Display value       | 
 | -------------------- | ------------------- | 
-| appointment-request  | Afspraakbericht     |
 | referral-letter      | Verwijsbrief        |
 | supplement           | Nazending           |
 | cancellation         | Annuleringsbericht  |
-| final-report         | Eindverslag         |
 
 
 ## Security ##
