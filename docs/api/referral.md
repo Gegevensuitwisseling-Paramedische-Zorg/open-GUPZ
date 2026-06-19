@@ -13,13 +13,13 @@ Het dataplatform volgt de door ZorgDomein opgestelde  [General FHIR specificatio
 ### Vecozo dienst Verwijzen ###
 De Vecozo dienst 'Verwijzen' volgt de door ZorgDomein opgestelde [General FHIR specifications](https://integrator.zorgdomein.com/fhir-specs/) met een aantal kleine verschillen.
 
-**ZD ReferralRequest**
+**ZD ReferralRequest**   
 Binnen de ZorgDomein specificaties is het system van de identifier een fixed value (http://zorgdomein.nl/zdnumber/). Vecozo gebruikt daarentegen urn:nl:verwijzen:verwijsnummer.
 
-**ZD Organization**
+**ZD Organization**   
 Vecozo gebruikt altijd het AGB nummer van de organisatie als identifier. Binnen ZorgDomein worden soms ook andere identifiers gebruikt
 
-**Document types**
+**Document types**   
 De ZorgDomein FHIR specificatie gaat uit van het [uitwisselen (PUSH) van clinical documents](https://integrator.zorgdomein.com/fhir-specs/fhir-documents/). Patient informatie wordt gebundeld in een document dat voldoet aan het [ZD Document](https://integrator.zorgdomein.com/fhir-specs/resource-profiles/zd-document/) profile. Ieder document kent een type waarin waarden uit de [Document type](https://integrator.zorgdomein.com/terminology/code-system/document-type/) codesystem mogen worden opgenomen. 
 
 Vecozo ondersteunt een subset van de ZorgDomein document typee. Onderstaande tabel bevat de door Vecozo ondersteunde subtypes (en bijbehorende transacties).
