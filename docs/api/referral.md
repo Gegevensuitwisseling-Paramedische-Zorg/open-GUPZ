@@ -19,6 +19,9 @@ Binnen de ZorgDomein specificaties is het system van de identifier een fixed val
 **ZD Organization**   
 Vecozo gebruikt altijd het AGB nummer van de organisatie als identifier. Binnen ZorgDomein worden soms ook andere identifiers gebruikt
 
+**ZD Coverage**
+Deze wordt door Vecozo standaard niet toegevoegd.
+
 **Dossiergegevens**   
 Vecozo stuurt geen (semi-)gestructureerde (narrative) dossiergegevens mee zoals ZorgDomein dat doet. Note: ZorgDomein stuurt dossiergegevens voor zover deze door de bronsystemen beschikbaar zijn gesteld. Dossiergegevens worden wel in de verwijsbrief zelf opgenomen.
 
