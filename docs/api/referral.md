@@ -19,13 +19,14 @@ Binnen de ZorgDomein specificaties is het system van de identifier een fixed val
 **ZD Organization**   
 Vecozo gebruikt altijd het AGB nummer van de organisatie als identifier. Binnen ZorgDomein worden soms ook andere identifiers gebruikt
 
+**Dossiergegevens**   
+Vecozo stuurt geen (semi-)gestructureerde (narrative) dossiergegevens mee zoals ZorgDomein dat doet. Note: ZorgDomein stuurt dossiergegevens voor zover deze door de bronsystemen beschikbaar zijn gesteld. Dossiergegevens worden wel in de verwijsbrief zelf opgenomen.
+
 **Document types**   
 De ZorgDomein FHIR specificatie gaat uit van het [uitwisselen (PUSH) van clinical documents](https://integrator.zorgdomein.com/fhir-specs/fhir-documents/). Patient informatie wordt gebundeld in een document dat voldoet aan het [ZD Document](https://integrator.zorgdomein.com/fhir-specs/resource-profiles/zd-document/) profile. Ieder document kent een type waarin waarden uit de [Document type](https://integrator.zorgdomein.com/terminology/code-system/document-type/) codesystem mogen worden opgenomen. 
 
 Vecozo ondersteunt een subset van de ZorgDomein document typee. Onderstaande tabel bevat de door Vecozo ondersteunde subtypes (en bijbehorende transacties).
 
-> [!IMPORTANT]
-> Deze dienen nog te worden gevalideerd met Vecozo.
 
 | Code                 | Display value       | 
 | -------------------- | ------------------- | 
