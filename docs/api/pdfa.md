@@ -9,7 +9,7 @@ filename: pdfa.md
 ## Ongestructureerde documenten beschikbaar stellen in PDF/A formaat ##
 Het dataplatform beschikt over een FHIR API om ongestructureerde documenten beschikbaar te stellen in PDF/A formaat. Het koppelvlak kan worden gebruikt ongeacht de specifieke use case, voor zowel het beschikbaar stellen van documenten aan patiënten (MedMij PGO of anderzins) als zorgverleners (in het kader van bijvoorbeeld terugrapportage of netwerkzorg).
 
-Binnen openGUPZ wordt onderscheid gemaakt in twee verschillende typen documenten:
+Binnen openGUPZ wordt onderscheid gemaakt tussen twee verschillende typen documenten:
 
 ### Dossiersamenvattingen ###
 Dit betreft een statische weergave van (een deel van) het dossier op een gegeven moment in de tijd, ook wel een snapshot van het dossier genoemd. Dossiersamenvattingen worden door het PARIS gegenereerd uit de beschikbare dossierinformatie. De gegenereerde tekst kan **niet** door de eindgebruiker worden aangepast of aangevuld. Alleen de brongegevens (het dossier) kunnen worden aangepast, waarna een nieuw document kan worden gegenereerd, of een nieuwe versie van het document kan worden gegenereerd.
