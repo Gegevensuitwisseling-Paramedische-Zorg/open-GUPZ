@@ -7,7 +7,7 @@ filename: pdfa.md
 # PDF/A documenten #
 
 ## Ongestructureerde documenten beschikbaar stellen in PDF/A formaat ##
-Het dataplatform beschikt over een FHIR API om ongestructureerde documenten beschikbaar te stellen in PDF/A formaat. Het koppelvlak kan worden gebruikt ongeacht een specifieke use case, voor zowel het beschikbaar stellen van documenten aan patiënten (MedMij PGO of anderzins) als zorgverleners (in het kader van bijvoorbeeld terugrapportage of netwerkzorg).
+Het dataplatform beschikt over een FHIR API om ongestructureerde documenten beschikbaar te stellen in PDF/A formaat. Het koppelvlak kan worden gebruikt ongeacht de specifieke use case, voor zowel het beschikbaar stellen van documenten aan patiënten (MedMij PGO of anderzins) als zorgverleners (in het kader van bijvoorbeeld terugrapportage of netwerkzorg).
 
 Binnen openGUPZ wordt onderscheid gemaakt in twee verschillende typen documenten:
 
