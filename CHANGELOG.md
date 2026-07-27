@@ -16,7 +16,7 @@
 - Replaced 'legacy system' with 'niet-FHIR-native' in FHIR-facade-pattern.md and Sync-agent-pattern.md
 - Added EPS/IPS to (inter)nationale ontwikkelingen
 
-##[1.0.2] 27-07-2026
+## [1.0.2] 27-07-2026
 ### Changed
 - Diverse uitbreidingen api/pdfa.md
 - Toevoeging 'De gegenereerde tekst kan niet door de eindgebruiker worden aangepast of aangevuld' aan templates/careplan.md
