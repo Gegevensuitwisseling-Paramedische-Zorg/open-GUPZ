@@ -4,7 +4,7 @@ layout: template
 filename: careplan.md
 --- 
 # Behandelplan
-Het behandelplan bestaat uit de volgende 7 velden. Voor alle velden geldt dat indien dit niet van toepassing is, je dit niet invult. Het hoofddoel is het enige veld dat verplicht is. 
+Het behandelplan bestaat uit de volgende 7 velden. Voor alle velden geldt dat indien dit niet van toepassing is, je dit niet invult. Het hoofddoel is het enige veld dat verplicht is. De gegenereerde tekst kan niet door de eindgebruiker worden aangepast of aangevuld.
 
 ## 1.	Hoofddoel
 Antwoordveld: een open tekstveld.
