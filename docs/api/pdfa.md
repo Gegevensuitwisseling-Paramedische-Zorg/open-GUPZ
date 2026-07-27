@@ -44,7 +44,7 @@ Beschikbaar gestelde documenten krijgen een status:
 | unkown| unkown | Onbekend |Keuze PARIS |
 | - | - | Concept | Keuze PARIS |
 
-In de MedMij kwalificatie wordt uitgegaan van de door Nictiz gehanteerde statussen. Om die reden gebruikt het dataplatform de Nictiz coderingen voor het **DocumentReference.status** veld. Waar Nictiz geen waarde aangeeft wordt uitgegaan van de Standaard HL7 FHIR statussen.
+In de MedMij kwalificatie wordt uitgegaan van de door Nictiz gehanteerde statussen. Om die reden gebruikt het dataplatform de Nictiz coderingen voor het **DocumentReference.status** veld. Waar Nictiz geen waarde aangeeft wordt uitgegaan van de Standaard HL7 FHIR statussen. De GUPZ status wordt gebruikt voor communicatie met beleidsmedewerkers en eindgebruikers binnen het GUPZ programma.
 
 > [!IMPORTANT]
 > Documenten met de openGUPZ status 'Concept' worden nooit via de PDF/A API beschikbaar gesteld.
