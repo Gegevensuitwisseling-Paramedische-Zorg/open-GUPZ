@@ -21,3 +21,9 @@
 - Diverse uitbreidingen api/pdfa.md
 - Toevoeging 'De gegenereerde tekst kan niet door de eindgebruiker worden aangepast of aangevuld' aan templates/careplan.md
 - Toevoeging 'De gegenereerde tekst kan niet door de eindgebruiker worden aangepast of aangevuld' aan templates/paramedische-diagnose.md
+
+## [1.0.3] 06-08-2026
+### Added
+- /src/JwtCliTool/README.md
+- /src/JwtCliTool/JwtCliTool.csproj
+- /src/JwtCliTool/Program.cs
