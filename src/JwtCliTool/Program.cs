@@ -10,7 +10,7 @@ internal static class Program
     private static readonly string HelpText = string.Join(Environment.NewLine, new[]
     {
         "jwtcli - genereert een JWT, signeert met een RSA private key (JWS/RS256)",
-        "         en encrypt het resultaat als geneste JWE (RSA-OAEP + A256GCM).",
+        "         en encrypt het resultaat als geneste JWE (RSA-OAEP + A256CBC-HS512).",
         "",
         "Verplicht:",
         "  --signing-key <pad>     PEM-bestand met de RSA private key (PKCS#1 of PKCS#8), voor signing",
@@ -27,7 +27,7 @@ internal static class Program
         "  --jti <waarde>          JWT ID (jti). Standaard: nieuwe GUID",
         "  --nbf <unix-seconds>    not-before (nbf). Standaard: nu",
         "  --help                  toon deze help",
-        "  --out <pad>              schrijf JWT naar bestand in plaats van stdout",
+        "  --out <pad>             schrijf JWT naar bestand in plaats van stdout",
         "",
         "Voorbeeld:",
         "  jwtcli --signing-key private_signing_key.pem --encryption-key public_encryption_key.pem  \\",
