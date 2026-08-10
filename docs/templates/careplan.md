@@ -13,6 +13,9 @@ Antwoordveld: een open tekstveld.
 Dit wordt alleen ingevuld indien van toepassing.<br/> 
 Antwoordveld: een open tekstveld.
 
+<ins>NVLF specifiek:</ins>  
+Leden van de NVLF leggen geen subdoelen vast. Deze worden dus ook niet in de betreffende PARISen aangeboden en ook niet in de gegenereerde PDF/A opgenomen. 
+
 ## 3.	Verrichtingen
 Antwoordveld: een open tekstveld.<br/>
 Hier volgt tzt de referentieset Verrichtingen. 
