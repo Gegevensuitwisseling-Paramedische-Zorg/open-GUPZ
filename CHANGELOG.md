@@ -27,3 +27,8 @@
 - /src/JwtCliTool/README.md
 - /src/JwtCliTool/JwtCliTool.csproj
 - /src/JwtCliTool/Program.cs
+
+## [1.0.4] 10-08-2026
+### Changed
+- Functionele requirements 'medmij-pdfa.md' gelijk getrokken aan de API specificatie 'pdfa.md'
+- Opmaak Diagnostiekplan.md aangepast aan de overige templates en diagnostiekplan specifieke tekst uit de functionele requirements verplaatst naar 'diagnostiekplan.md'
