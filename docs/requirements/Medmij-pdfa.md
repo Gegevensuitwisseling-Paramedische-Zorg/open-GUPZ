@@ -10,13 +10,12 @@ filename: Medmij-pdfa.md
 Het genereren en beschikbaar stellen aan het PGO van een behandelplan is als voorbeeld uitgewerkt, onderstaande functionele eisen gelden echter voor alle documenten die aan het PGO beschikbaar worden gesteld, dus ook voor paramedische diagnose en brieven/updates bijv. Functionele eisen raken potentieel zowel de werking van het PARIS als van het dataplatform.
  
 ### Vastlegging in het PARIS voldoet aan de door de beroepsgroepen vastgestelde document-templates ###
-Alle velden die zijn opgenomen in de document-templates kunnen in het PARIS door de paramedicus worden vastgelegd. 
-De  paramedicus kan alleen bovenstaande zaken opstellen via het daarvoor gemaakte template. Het template vormt de minimale basis voor registratie en is de norm voor output (naar brieven en documenten). Dit wil zeggen dat gegenereerde documenten geen velden bevatten die niet in het template zijn gedefinieerd.  
+Alle velden die als verplicht zijn opgenomen in de document-templates kunnen in het PARIS door de paramedicus worden vastgelegd. 
+Het template vormt de minimale basis voor registratie en is de norm voor output (naar brieven en documenten). Dit wil zeggen dat gegenereerde documenten geen velden bevatten die niet in het template zijn gedefinieerd.  
 
-Als er een PDF/A genereert wordt en sjabloonveld zijn niet gevuld, dan wordt dit veld niet opgenomen in de PDF/A die genereert wordt voor de uitwisseling, zodat er geen lege velden in de PDFA staan.  
+Als er een PDF/A genereert wordt en een sjabloonveld is niet gevuld, dan wordt dit veld niet opgenomen in de PDF/A die genereert wordt voor de uitwisseling, zodat er geen lege velden in de PDFA worden opgenomen.  
 
-<ins>NVLF specifiek:</ins>  
-Leden van de NVLF leggen geen subdoelen vast. Deze worden dus ook niet in de betreffende PARISen aangeboden en ook niet in de gegenereerde PDF/A opgenomen. 
+
 
 ### Specifieke eisen voor de optometrie ten aanzien van het template Diagnostiekplan ###
 > [!IMPORTANT]
