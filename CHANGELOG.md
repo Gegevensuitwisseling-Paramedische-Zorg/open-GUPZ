@@ -38,3 +38,4 @@
 - /src/JwtDecryptCliTool/README.md
 - /src/JwtDecryptCliTool/JwtDecryptCliTool.csproj
 - /src/JwtDecryptCliTool/Program.cs
+- /docs/test/tokens-testen.md
