@@ -32,3 +32,9 @@
 ### Changed
 - Functionele requirements 'medmij-pdfa.md' gelijk getrokken aan de API specificatie 'pdfa.md'
 - Opmaak Diagnostiekplan.md aangepast aan de overige templates en diagnostiekplan specifieke tekst uit de functionele requirements verplaatst naar 'diagnostiekplan.md'
+
+## [1.0.3] 11-08-2026
+### Added
+- /src/JwtDecryptCliTool/README.md
+- /src/JwtDecryptCliTool/JwtDecryptCliTool.csproj
+- /src/JwtDecryptCliTool/Program.cs
