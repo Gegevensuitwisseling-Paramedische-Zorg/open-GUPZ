@@ -30,7 +30,7 @@ Een goede beveiliging van via het dataplatform beschikaar gestelde gegevens is e
 
 | # | Titel | Type | Beschrijving | Maatregelen |
 | --| ---------- | ------------ | ----------- | -----|
-|  | Aanvaller doet zich voor als FHIR API| Spoofing | Een aanvaller doet zich voor als de FHIR API van het dataplatform waardoor een vertrouwde externe partij vertrouwelijke gegevens naar de aanvaller stuurt en/ of onterecht vertrouwd op gegevens afkomstig van de aanvaller|mTLS op basis van PKI Overheid Private G1 server certificaat iom beveiligingsrichtlijnen voor TLS van NCSC, minimaal niveau Voldoende |
+|  | Aanvaller doet zich voor als FHIR API| Spoofing | Een aanvaller doet zich voor als de FHIR API van het dataplatform waardoor een vertrouwde externe partij vertrouwelijke gegevens naar de aanvaller stuurt en/ of onterecht vertrouwd op gegevens afkomstig van de aanvaller|mTLS op basis van PKI Overheid Private G4 server certificaat iom beveiligingsrichtlijnen voor TLS van NCSC, minimaal niveau Voldoende |
 |  | Externe partij ontkent het opvragen of wijzigen van data bij het dataplatform| Non-Repudiation | Een extern systeem ontkent een actie op het dataplatform| Alle FHIR operaties (CRUD) worden gelogd conform NEN7513 |
 | | Token replay | Elevation of Privilage | Aanvaller hergebruikt een token om toegang tot API's te verkrijgen | Maximaal geaccepteerde token lifespan van 15 minuten. Combinatie met mTLS |
 
@@ -46,7 +46,7 @@ Een goede beveiliging van via het dataplatform beschikaar gestelde gegevens is e
 
 | # | Titel | Type | Beschrijving | Maatregelen |
 | --| ---------- | ------------ | ----------- | -----|
-|  | Aanvaller doet zich voor als vertrouwd extern systeem | Spoofing | Een aanvaller doet zich voor als vertrouwd extern systeem, waardoor een dataplatform vertrouwelijke gegevens beschikbaar stelt aan de aanvaller | Het dataplatform vereist mutual TLS op basis van een PKI Overheid Private G1 certificaat iom beveiligingsrichtlijnen TLS van het NCSC, minimaal niveau Voldoende. Het dataplatform vereist een door het vertrouwde externe systeem digitaal ondertekend JWT |
+|  | Aanvaller doet zich voor als vertrouwd extern systeem | Spoofing | Een aanvaller doet zich voor als vertrouwd extern systeem, waardoor een dataplatform vertrouwelijke gegevens beschikbaar stelt aan de aanvaller | Het dataplatform vereist mutual TLS op basis van een PKI Overheid Private G4 certificaat iom beveiligingsrichtlijnen TLS van het NCSC, minimaal niveau Voldoende. Het dataplatform vereist een door het vertrouwde externe systeem digitaal ondertekend JWT |
 
 
 # Uitwerking van maatregelen 
@@ -80,16 +80,16 @@ Voor TLS 13 worden de volgende cypher suites ondersteund:
 - TLS_AES_128_GCM_SHA256
 
 ### Eisen aan de te gebruiken certificaten
-Het dataplatform presenteert een PKI Overheid Private G1 certificaat aan het externe systeem. Een multitenant dataplatform (een dataplatform dat door meerdere paramedische praktijken wordt gebruikt) kan hetzelfde PKI overheid certificaat gebruiken voor alle onderliggende praktijken.
+Het dataplatform presenteert een PKI Overheid Private G4 certificaat aan het externe systeem. Een multitenant dataplatform (een dataplatform dat door meerdere paramedische praktijken wordt gebruikt) kan hetzelfde PKI overheid certificaat gebruiken voor alle onderliggende praktijken.
 
-Het dataplatform vereist dat het externe systeem een PKI Overheid Private G1 certificaat presenteert tijdens de TLS handshake
+Het dataplatform vereist dat het externe systeem een PKI Overheid Private G4 certificaat presenteert tijdens de TLS handshake
 
 ## Application level security
-Aan iedere HTTP call naar een FHIR API van het dataplatform wordt een ondertekend en versleuteld JWT token toegevoegd aan de HTTP Authorization header.
+Aan iedere HTTP call naar een FHIR API van het dataplatform wordt een ondertekend en versleuteld JWT token (NESTED JWT) toegevoegd aan de HTTP Authorization header.
 
-### Token inhoud
+### JWS token inhoud
 
-**Token header**
+**JWS Token header**
 De token header bevat de volgende velden:
 
 | veld | betekenis | waarde | Verplicht |
@@ -98,7 +98,7 @@ De token header bevat de volgende velden:
 | typ | Type token | Vaste waarde: JWT | Ja |
 | kid | ID van de Key gebruikt voor signing | alfanumerieke identifier van de key in de JWKS keyset | Ja |
 
-**Token payload**
+**JWS Token payload**
 De token payload bevat de volgende claims:
 
 | veld | betekenis | waarde | Voorbeeld| Verplicht |
@@ -163,8 +163,12 @@ Voor zowel de signing keys als de encryption keys worden X.509 certificaten gebr
 ### Key rotation
 Het dataplatform gebruikt JWKS key rotation om verlopen keys tijdig en automatisch te vervangen door nieuwe keys.
 
-> [!WARNING]
-> Verder uitwerken. Hoe om te gaan met key rotation van encryption keys???
+**Rotatie van de signing key**
+De client van het dataplatform biedt een JWKS document aan op /.well-known/jwks.json en publiceert daarin de keys die worden gebruikt om de tokens te ondertekenen. Het dataplatform haalt automatisch de jwks opnieuw op wanneer het token een onbekende 'kid' bevat. 
+
+***Rotatie van de encryptie key***
+Het dataplatform biedt een JWKS document aan op /.well-known/jwks.json en publiceert daarin de keys die worden gebruikt om de tokens te versleutelen.
+
 
 ### Afhandeling van ongeldige tokens
 Wanneer tokenvalidatie mislukt retourneert het dataplatform een HTTP 401 response met een WWW-Authenticate header.
