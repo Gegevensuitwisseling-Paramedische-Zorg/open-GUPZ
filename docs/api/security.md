@@ -103,7 +103,7 @@ De token payload bevat de volgende claims:
 
 | veld | betekenis | waarde | Voorbeeld| Verplicht |
 |---|---|---|---|---|
-| patient | BSN van de patiënt waarvan gegevens worden opgevraagd of gewijzigd | http://fhir.nl/fhir/NamingSystem/bsn\|{bsn} | http://fhir.nl/fhir/NamingSystem/bsn\|000000012 | Nee |
+| patient | BSN van de patiënt waarvan gegevens worden opgevraagd of gewijzigd | http://fhir.nl/fhir/NamingSystem/bsn\|{bsn} | http://fhir.nl/fhir/NamingSystem/bsn\|000000012 | Voor patiëntgebonden requests|
 | provider | Zorgaanbieder waarvoor het verzoek bestemd is | http://fhir.nl/fhir/NamingSystem/agb-z\|{agb} | http://fhir.nl/fhir/NamingSystem/agb-z\|20000001| Nee |
 | iat | Moment waarop het token gecreeerd is. Wordt door dataplatform gebruikt om maximale token lifetime te kunnen controleren | Numeric Date | 1617181723 | Ja |
 | exp | Uiterlijke moment van geldigheid van het token | Numeric Date| 1617182623| Ja |
@@ -166,5 +166,64 @@ Het dataplatform gebruikt JWKS key rotation om verlopen keys tijdig en automatis
 > [!WARNING]
 > Verder uitwerken. Hoe om te gaan met key rotation van encryption keys???
 
+### Afhandeling van ongeldige tokens
+Wanneer tokenvalidatie mislukt retourneert het dataplatform een HTTP 401 response met een WWW-Authenticate header.
+
+```
+HTTP/1.1 401 Unauthorized
+WWW-Authenticate: Bearer realm="[url dataplatform-server]",
+  error="invalid_token",
+  error_description="The access token expired"
+```
+
+De body van het response bevat een OperationOutcome resource:
+
+```
+{
+  "resourceType": "OperationOutcome",
+  "issue": [{
+    "severity": "error",
+    "code": "login",
+    "diagnostics": "The access token has expired"
+  }]
+}
+```
+
+> [!WARNING]
+> De inhoud van WWW-Authenticate. error_description en OperationOutcome.issue.diagnostics moet gelijk zijn.
+
+> [!WARNING]
+> De error_description en issue.diagnostics mogen geen details bevatten van de validatiefout, anders dan dat het token is verlopen of dat signature_validation is gefaald.
+
+
+
+### Afhandeling van ontbrekende autorisatie
+Indien een request wordt gedaan dat buiten de in het token opgenomen scope valt retourneert het dataplatform een HTTP 403 response met een WWW_Authenticate header:
+
+```
+HTTP/1.1 403 Forbidden
+WWW-Authenticate: Bearer realm="[url dataplatform-server]",
+  error="insufficient_scope",
+  error_description="Insufficient scope: '[vereiste scope]' is required for this operation",
+  scope="[de benodigde scope, zoals het MedMij gegevensdienst nummer, zodat de client deze alsnog kan aanvragen/ sturen]"
+```
+
+De body van het response bevat een OperationOutcome resource:
+
+```
+{
+  "resourceType": "OperationOutcome",
+  "issue": [{
+    "severity": "error",
+    "code": "forbidden",
+    "diagnostics": "Insufficient scope: '[vereiste scope]' is required for this operation"
+  }]
+}
+```
+
+> [!WARNING]
+> De inhoud van WWW-Authenticate. error_description en OperationOutcome.issue.diagnostics moet gelijk zijn.
+
+
 ## Audit trail
-Het dataplatform imnplementeert audit trail die voldoet aan NEN7513.
+Het dataplatform implementeert audit trail die voldoet aan NEN7513.
