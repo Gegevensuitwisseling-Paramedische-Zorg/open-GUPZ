@@ -84,6 +84,8 @@ Het dataplatform presenteert een PKI Overheid Private G4 certificaat aan het ext
 
 Het dataplatform vereist dat het externe systeem een PKI Overheid Private G4 certificaat presenteert tijdens de TLS handshake
 
+Voor testdoeleinden is het gebruik van een G4 certificaat niet vereist.
+
 ## Application level security
 Aan iedere HTTP call naar een FHIR API van het dataplatform wordt een ondertekend en versleuteld JWT token (NESTED JWT) toegevoegd aan de HTTP Authorization header.
 
