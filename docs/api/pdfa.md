@@ -30,6 +30,34 @@ Het dataplatform volgt de door Nictiz opgestelde  [MedMij FHIR Implementation Gu
 | Dataplatform | Document Responder | Find Document Reference | Required |
 | Dataplatform | Document Responder | Retreive Document | Required |
 
+### Afhandeling van DocumentManifest requests
+Ondersteuning van DocumentManifest is niet verplicht. Als DocumentManifest niet wordt geïmplementeerd, dan wordt een request naar DocumentManifest  beantwoord met http statuscode 404 (NOT FOUND) en een OperationOutcome resource met de volgende waarden:
+
+| Veld | Waarde | 
+| ------ | --------- | 
+| issue.severity | error | 
+| issue.code | not-supported | 
+
+Voorbeeld:
+```
+{
+  "resourceType": "OperationOutcome",
+  "issue": [
+    {
+      "severity": "error",
+      "code": "not-supported",
+      "details": {
+        "text": "The resource 'DocumentManifest' is not implemented"
+      },
+      "diagnostics": "HTTP 404 Not Found: The requested resourcetype is not supported",
+      "expression": [
+        "http://nictiz.nl"
+      ]
+    }
+  ]
+}
+```
+
 ### Document referenties ###
 Het dataplatform biedt alle documentreferenties aan als verwijzing naar een binary resource. Dit betekent dat de Retrieve Document transactie de binary resource bevraagt.
 
