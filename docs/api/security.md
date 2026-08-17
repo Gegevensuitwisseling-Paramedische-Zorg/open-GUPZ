@@ -106,7 +106,7 @@ De token payload bevat de volgende claims:
 | patient | BSN van de patiënt waarvan gegevens worden opgevraagd of gewijzigd | http://fhir.nl/fhir/NamingSystem/bsn\|{bsn} | http://fhir.nl/fhir/NamingSystem/bsn\|000000012 | Nee |
 | provider | Zorgaanbieder waarvoor het verzoek bestemd is | http://fhir.nl/fhir/NamingSystem/agb-z\|{agb} | http://fhir.nl/fhir/NamingSystem/agb-z\|20000001| Nee |
 | iat | Moment waarop het token gecreeerd is. Wordt door dataplatform gebruikt om maximale token lifetime te kunnen controleren | Numeric Date | 1617181723 | Ja |
-| exp | Uiterlijke moment van geldigheid van het token | Numeric Date| 1617185323| Ja |
+| exp | Uiterlijke moment van geldigheid van het token | Numeric Date| 1617182623| Ja |
 | iss | Token issuer | String | ZorgDomein | Ja |
 | nbf | Note before, eerste moment vanaf wanneer het token geldig is | Numeric Date | 1617181723 | Nee |
 | jti | Unieke ID token | String | 4a006a12-dc2b-470a-b031-a3682b653ba7 | Nee |
@@ -118,7 +118,7 @@ Het gebruikte JWT token bevat gevoelige informatie, waaronder met name het BSN v
 
 - De inhoud van het token wordt aangepast door een onbevoegde/ kwaadwillende partij (token integriteit)
 - De inhoud van het token wordt blootgesteld aan een onbevoegde/ kwaadwillende partij (token vertrouwelijkheid)
-- Een onvertouwde partij een token kan genereren dat afkomstig lijkt van een vertrouwde partij (token authentocatie)
+- Een onvertouwde partij een token kan genereren dat afkomstig lijkt van een vertrouwde partij (token authenticiteit)
 
 Het dataplatform gaat uit van de volgende stappen voor JWT token beveiliging:
 
@@ -126,8 +126,8 @@ Het dataplatform gaat uit van de volgende stappen voor JWT token beveiliging:
 - Sign the JWT (JWS): Het vertrouwde externe systeem creeert het JWT en ondertekend het met de private signing key
 - Encrypt the JWT (JWE): Het vertrouwde externe systeem versleutelt het resulterende ondertekende JWT met behulp van de public encryption key van het dataplatform
 - Het vertrouwde externe systeem verstuurt het versleutelde token in de HTTP Authorization header: Authorization bearer <encrypted token>. Het dataplatform ontsleutelt het token met behukp van zijn private encryption key en valideert de digital signature met behulp van de public signing key van het vertrouwde externe systeem
-- Het dataplatform valideert de creation time van het JWT token. Indien deze langer is dan 15 minuten geleden dan wordt het request geweigerd
-- Het dataplatform valideert de expiration time van het JWT token. Indien deze is verstreken wordt het request geweigerd
+- Het dataplatform valideert de creation time van het JWT token. Indien deze langer is dan 15 minuten (900 seconden) geleden dan wordt het request geweigerd (geldige tokens voldoen aan: now-iat < 900)
+- Het dataplatform valideert de expiration time van het JWT token. Indien deze is verstreken wordt het request geweigerd (geldige tokens voldoen aan: now<exp)
 - Het dataplatform valideert de issuer van het token 
 
 ### MedMij specifieke eisen op het gebied van application level security ###
