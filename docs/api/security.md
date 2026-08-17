@@ -130,6 +130,14 @@ Het dataplatform gaat uit van de volgende stappen voor JWT token beveiliging:
 - Het dataplatform valideert de expiration time van het JWT token. Indien deze is verstreken wordt het request geweigerd (geldige tokens voldoen aan: now<exp)
 - Het dataplatform valideert de issuer van het token 
 
+Het token wordt eerst gesigned, waarna de resulterende JWS als inhoud wordt opgenomen in een JWE.Dit staat bekend als 'NESTED JWT', omdat het ondertekende token wordt opgenomen als waarde in het encrypted token. De resulterende JWE heeft de volgende header velden:
+
+| veld | betekenis | waarde | Verplicht |
+|---|---|---|---|
+| alg | Asymmetrisch algoritme gebruikt om de sleutel te versleutelen | Vaste waarde: RSA-OAEP | Ja |
+| enc | Symmetrisch algoritme om de inhoud te versleutelen | Vaste waaarde: A256CBC-HS512 | Ja |
+| cty | Content Type | Vaste waarde: JWT | Ja |
+
 ### MedMij specifieke eisen op het gebied van application level security ###
 In tokens afkomstig van een MedMij DVA wordt het JWT scope field door de DVA gevuld met één of meer van de geldige MedMij gegevensdienstnummers conform het volgende format:
 > medmij.gegevensdienst.**nummer van de gegevensdienst**
@@ -148,7 +156,8 @@ Voor zowel de signing keys als de encryption keys worden X.509 certificaten gebr
 
 **Encryption Key**
 - Key usage: keyEncipherment 
-- Encryption Algoritm: RSA-OAEP-256
+- Key Encryption Algoritm: RSA-OAEP
+- Content Encryption Algorithm: A256CBC-HS512
 
 
 ### Key rotation
