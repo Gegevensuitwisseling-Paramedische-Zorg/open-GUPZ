@@ -94,7 +94,7 @@ De token header bevat de volgende velden:
 
 | veld | betekenis | waarde | Verplicht |
 |---|---|---|---|
-| alg | Signing algorithm| Vaste waarde: HS256| Ja |
+| alg | Signing algorithm| Vaste waarde: RS256| Ja |
 | typ | Type token | Vaste waarde: JWT | Ja |
 | kid | ID van de Key gebruikt voor signing | alfanumerieke identifier van de key in de JWKS keyset | Ja |
 
