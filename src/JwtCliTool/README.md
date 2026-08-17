@@ -63,8 +63,8 @@ controleren, bijvoorbeeld met een kleine dotnet-fx snippet of met een tool als `
   bouwt automatisch een geneste token wanneer zowel `SigningCredentials` als
   `EncryptingCredentials` op de `SecurityTokenDescriptor` staan: eerst wordt de JWT ondertekend
   (JWS/RS256), daarna wordt die JWS als payload ge-encrypt tot een JWE (RSA-OAEP key-wrap +
-  AES-256-GCM content-encryptie). Dit is de gangbare, interoperabele manier om "signed en
-  encrypted" JWT's te bouwen.
+  A256CBC-HS512 content-encryptie). Dit is een gangbare, interoperabele manier om "signed en
+  encrypted" JWT's te bouwen. In de huidige versie wordt gebruikt gemaakt van RSA-OAEP omdat de .NET Tokenhandler RSA-OAEP256 niet standaard ondersteunt. In een toekomstige versie zal ondersteuning van RSA-OAEP256 worden toegevoegd.
 - **PEM-parsing**: gebruikt `RSA.ImportFromPem` (PKCS#1 of PKCS#8) en, voor public keys,
   ondersteunt het ook een `-----BEGIN CERTIFICATE-----` PEM (X.509) naast een kale
   SubjectPublicKeyInfo PEM.
