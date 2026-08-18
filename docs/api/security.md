@@ -240,4 +240,4 @@ De body van het response bevat een OperationOutcome resource:
 
 
 ## Audit trail
-Het dataplatform implementeert audit trail die voldoet aan NEN7513.
+Het dataplatform implementeert audit trail die voldoet aan NEN7513. Als gebruiker MOET de waarde van de sub claim worden gelogd
