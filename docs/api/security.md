@@ -201,6 +201,8 @@ De body van het response bevat een OperationOutcome resource:
 > [!WARNING]
 > De error_description en issue.diagnostics mogen geen details bevatten van de validatiefout, anders dan dat het token is verlopen of dat signature_validation is gefaald.
 
+> [!Information]
+> Voor testdoeleinden is het toegestaan meer details op te nemen in de error_description en issue.diagnostics. Tijdens het testen dient echter ook aangetoond te kunnen worden dat het opnemen van dit soort details kan worden uitgeschakeld
 
 
 ### Afhandeling van ontbrekende autorisatie
