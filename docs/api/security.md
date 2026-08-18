@@ -32,7 +32,7 @@ Een goede beveiliging van via het dataplatform beschikaar gestelde gegevens is e
 | --| ---------- | ------------ | ----------- | -----|
 |  | Aanvaller doet zich voor als FHIR API| Spoofing | Een aanvaller doet zich voor als de FHIR API van het dataplatform waardoor een vertrouwde externe partij vertrouwelijke gegevens naar de aanvaller stuurt en/ of onterecht vertrouwd op gegevens afkomstig van de aanvaller|mTLS op basis van PKI Overheid Private G4 server certificaat iom beveiligingsrichtlijnen voor TLS van NCSC, minimaal niveau Voldoende |
 |  | Externe partij ontkent het opvragen of wijzigen van data bij het dataplatform| Non-Repudiation | Een extern systeem ontkent een actie op het dataplatform| Alle FHIR operaties (CRUD) worden gelogd conform NEN7513 |
-| | Token replay | Elevation of Privilage | Aanvaller hergebruikt een token om toegang tot API's te verkrijgen | Maximaal geaccepteerde token lifespan van 15 minuten. Combinatie met mTLS |
+| | Token replay | Elevation of Privilage | Aanvaller hergebruikt een token om toegang tot API's te verkrijgen | Maximaal geaccepteerde token lifespan van 15 minuten. Combinatie met mTLS. Overweeg het token te binden aan het client certificate |
 
 **FHIR flow**
 
@@ -40,7 +40,7 @@ Een goede beveiliging van via het dataplatform beschikaar gestelde gegevens is e
 | --| ---------- | ------------ | ----------- | -----|
 |  | Blootstelling vertouwelijke gegevens in transit | Information Disclosure | Vertrouwelijke gegevens kunnen worden 'afgeluisterd' door een 'man in the middle' | Het dataplatform vereist TLS configuratie iom Beveiligingsrichtlijnen voor TLS van het NCSC, minimaal niveau Voldoende |
 |  | Ongeautoriseerde aanpassing van gegevens in transit | Information Disclosure | Vertrouwelijke gegevens kunnen worden 'aangepast' door een 'man in the middle' | Het dataplatform vereist TLS configuratie iom Beveiligingsrichtlijnen voor TLS van het NCSC, minimaal niveau Voldoende |
-|  | Blootstelling BSN | Information Disclosure | BSN uit het JWT token is leesbaar voor onvertrouwde tussenliggende componenten die TLS termination ? SSL offloading doen, zoals proxies en load balancers | Het dataplatform vereist een versleuteld JWT token |
+|  | Blootstelling BSN | Information Disclosure | BSN uit het JWT token is leesbaar voor onvertrouwde tussenliggende componenten die TLS termination ? SSL offloading doen, zoals proxies en load balancers | Het dataplatform vereist een versleuteld JWT token. BSN's in FHIR urls worden niet ondersteund |
 
 **External system**
 
@@ -87,7 +87,7 @@ Het dataplatform vereist dat het externe systeem een PKI Overheid Private G4 cer
 Voor testdoeleinden is het gebruik van een G4 certificaat niet vereist.
 
 ## Application level security
-Aan iedere HTTP call naar een FHIR API van het dataplatform wordt een ondertekend en versleuteld JWT token (NESTED JWT) toegevoegd aan de HTTP Authorization header.
+Aan iedere HTTP call naar een FHIR API van het dataplatform wordt een ondertekend en versleuteld JWT token (NESTED JWT) toegevoegd aan de HTTP Authorization header. Een JWT token dat wordt gebruikt in een patiëntgebonden request is patientspecifiek. Dit betekent dat voor iedere patiënt waarvoor data bij het dataplatform wordt opgehaald, een nieuw token moet worden gemaakt.
 
 ### JWS token inhoud
 
@@ -115,6 +115,7 @@ De token payload bevat de volgende claims:
 | jti | Unieke ID token | String | 4a006a12-dc2b-470a-b031-a3682b653ba7 | Nee |
 | aud | Resource server waarvoor de JWT geldig is (de specifieke dataplatform instantie) | String | https://praktijkx.dataplatform.nl | Ja |
 | scope | Diensten (resources) waarvoor het JWT geldig is | String. Eén of meerdere scopes, gescheiden door een spatie | medmij.gegevensdienst.51 medmij.gegevensdienst.47 | ja |
+| cnf. x5t#S256 | De base64url-gecodeerde SHA-256-hash van de DER-gecodeerde clientcertificaat-bytes, iom RFC 8705 | String | bwcK0esc3ACC3DB2Y5_lESsXE8o9ltc05O89jdN-dg2 | Nee |
 
 ### Token beveiliging
 Het gebruikte JWT token bevat gevoelige informatie, waaronder met name het BSN van de patiënt waarvoor informatie wordt benaderd. Het token dient daarom te worden beveiligd om te voorkomen dat:
@@ -140,6 +141,10 @@ Het token wordt eerst gesigned, waarna de resulterende JWS als inhoud wordt opge
 | alg | Asymmetrisch algoritme gebruikt om de sleutel te versleutelen | Vaste waarde: RSA-OAEP | Ja |
 | enc | Symmetrisch algoritme om de inhoud te versleutelen | Vaste waaarde: A256CBC-HS512 | Ja |
 | cty | Content Type | Vaste waarde: JWT | Ja |
+
+> [!IMPORTANT]
+> Ondersteuning van RFC 8705 is optioneel voor zowel het dataplatform als clients op het dataplatform. Verwacht wordt dat RFC 8705 op termijn verplicht zal worden gesteld. Dit betekent dat clients aan het token een cnf. x5t#S256 claim toevoegen met de base64url-gecodeerde SHA-256-hash van de DER-gecodeerde clientcertificaat-bytes. Het dataplatform zal dan controleren of het token ook daadwerkelijk is gebonden aan het betreffende clientcertificaat.
+
 
 ### MedMij specifieke eisen op het gebied van application level security ###
 In tokens afkomstig van een MedMij DVA wordt het JWT scope field door de DVA gevuld met één of meer van de geldige MedMij gegevensdienstnummers conform het volgende format:
@@ -202,7 +207,7 @@ De body van het response bevat een OperationOutcome resource:
 > [!WARNING]
 > De error_description en issue.diagnostics mogen geen details bevatten van de validatiefout, anders dan dat het token is verlopen of dat signature_validation is gefaald.
 
-> [!Information]
+> [!IMPORTANT]
 > Voor testdoeleinden is het toegestaan meer details op te nemen in de error_description en issue.diagnostics. Tijdens het testen dient echter ook aangetoond te kunnen worden dat het opnemen van dit soort details kan worden uitgeschakeld
 
 
