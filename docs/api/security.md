@@ -107,13 +107,14 @@ De token payload bevat de volgende claims:
 |---|---|---|---|---|
 | patient | BSN van de patiënt waarvan gegevens worden opgevraagd of gewijzigd | http://fhir.nl/fhir/NamingSystem/bsn\|{bsn} | http://fhir.nl/fhir/NamingSystem/bsn\|000000012 | Voor patiëntgebonden requests|
 | provider | Zorgaanbieder waarvoor het verzoek bestemd is | http://fhir.nl/fhir/NamingSystem/agb-z\|{agb} | http://fhir.nl/fhir/NamingSystem/agb-z\|20000001| Nee |
+| sub | Gebruiker die het request initieert. Dit is ofwel de patiënt (zelde waarde als patient claim), ofwel een gemachtigde ofwel een zorgverlener| http://fhir.nl/fhir/NamingSystem/bsn\|{bsn} of een string igv een zorgverlener | http://fhir.nl/fhir/NamingSystem/bsn\|000000012 | Ja |
 | iat | Moment waarop het token gecreeerd is. Wordt door dataplatform gebruikt om maximale token lifetime te kunnen controleren | Numeric Date | 1617181723 | Ja |
 | exp | Uiterlijke moment van geldigheid van het token | Numeric Date| 1617182623| Ja |
 | iss | Token issuer | String | ZorgDomein | Ja |
 | nbf | Note before, eerste moment vanaf wanneer het token geldig is | Numeric Date | 1617181723 | Nee |
 | jti | Unieke ID token | String | 4a006a12-dc2b-470a-b031-a3682b653ba7 | Nee |
 | aud | Resource server waarvoor de JWT geldig is (de specifieke dataplatform instantie) | String | https://praktijkx.dataplatform.nl | Ja |
-| scope | Diensten (resources) waarvoor het JWT geldig is | String. Wordt vooralsnog optioneel meegestuurd | medmij.gegevensdienst.50 | nee |
+| scope | Diensten (resources) waarvoor het JWT geldig is | String. Eén of meerdere scopes, gescheiden door een spatie | medmij.gegevensdienst.51 medmij.gegevensdienst.47 | ja |
 
 ### Token beveiliging
 Het gebruikte JWT token bevat gevoelige informatie, waaronder met name het BSN van de patiënt waarvoor informatie wordt benaderd. Het token dient daarom te worden beveiligd om te voorkomen dat:
