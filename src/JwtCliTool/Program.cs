@@ -18,16 +18,17 @@ internal static class Program
         "  --iat <unix-seconds>    issued-at (iat). Standaard: nu",
         "  --exp <unix-seconds>    expiry (exp). Heeft voorrang op --ttl",     
         "  --iss <waarde>          issuer (iss)",   
+        "  --scope <waarde>        scope claim",
+        "  --aud <waarde>          audience (aud)",
+        "  --sub <waarde>          subject (sub)",
         "",
         "Optioneel:",
         "  --patient <waarde>      Waarde voor de \"patient\" claim",
-        "  --provider <waarde>     Waarde voor de \"provider\" claim",
-        "  --aud <waarde>          audience (aud)",
-        "  --scope <waarde>        scope claim",
+        "  --provider <waarde>     Waarde voor de \"provider\" claim",        
         "  --jti <waarde>          JWT ID (jti). Standaard: nieuwe GUID",
         "  --nbf <unix-seconds>    not-before (nbf). Standaard: nu",
         "  --help                  toon deze help",
-        "  --out <pad>             schrijf JWT naar bestand in plaats van stdout",
+        "  --out <pad>              schrijf JWT naar bestand in plaats van stdout",
         "",
         "Voorbeeld:",
         "  jwtcli --signing-key private_signing_key.pem --encryption-key public_encryption_key.pem  \\",
@@ -53,6 +54,9 @@ internal static class Program
             RequireOption(options, "iat");
             RequireOption(options, "exp");
             RequireOption(options, "iss");
+            RequireOption(options, "scope");
+            RequireOption(options, "aud");
+            RequireOption(options, "sub");
 
             string privateKeyPath = options["signing-key"][0];
             string publicKeyPath = options["encryption-key"][0];
@@ -105,28 +109,26 @@ internal static class Program
             ["patient"] = GetSingleOption(options, "patient")!,
             ["provider"] = GetSingleOption(options, "provider")!,
             ["jti"] = GetSingleOption(options, "jti") ?? Guid.NewGuid().ToString(),
+            ["sub"] = GetSingleOption(options, "sub")!,
+            ["scope"]= GetSingleOption(options, "scope")!,
+            ["aud"] = GetSingleOption(options, "aud")!,
         };
 
-        string? scope = GetSingleOption(options, "scope");
-        if (scope is not null)
-        {
-            claims["scope"] = scope;
-        }
-
-        string? iss = GetSingleOption(options, "iss");
         string? aud = GetSingleOption(options, "aud");
+        string? iss = GetSingleOption(options, "iss");
 
 
         var descriptor = new SecurityTokenDescriptor
         {
+            
             Issuer = iss,
             Audience = aud,
             IssuedAt = DateTimeOffset.FromUnixTimeSeconds(iat).UtcDateTime,
             NotBefore = DateTimeOffset.FromUnixTimeSeconds(nbf).UtcDateTime,
             Expires = DateTimeOffset.FromUnixTimeSeconds(exp).UtcDateTime,
             Claims = claims,
-            SigningCredentials = new SigningCredentials(new RsaSecurityKey(signingRsa), sigAlg),
-            EncryptingCredentials = new EncryptingCredentials(new RsaSecurityKey(encryptionRsa), encAlgKw, encAlgContent),
+            SigningCredentials = new SigningCredentials(new RsaSecurityKey(signingRsa){KeyId="signing-key-gupz"}, sigAlg),
+            EncryptingCredentials = new EncryptingCredentials(new RsaSecurityKey(encryptionRsa){KeyId="encryption-key-gupz"}, encAlgKw, encAlgContent),
         };
 
         var handler = new JsonWebTokenHandler();
