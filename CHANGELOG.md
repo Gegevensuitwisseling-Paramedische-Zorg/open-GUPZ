@@ -39,3 +39,7 @@
 - /src/JwtDecryptCliTool/JwtDecryptCliTool.csproj
 - /src/JwtDecryptCliTool/Program.cs
 - /docs/test/tokens-testen.md
+
+## [1.0.4] 10-08-2026
+### Changed
+- /src/JwtCliTool/Program.cs #issue 75
