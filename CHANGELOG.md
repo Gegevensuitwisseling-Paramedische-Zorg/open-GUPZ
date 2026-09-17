@@ -43,3 +43,8 @@
 ## [1.0.4] 10-08-2026
 ### Changed
 - /src/JwtCliTool/Program.cs #issue 75
+
+## [1.0.5] 17-09-2026
+### Added
+- /src/TestCertificateGeneration
+- /docs/test/localxpose-tunnels-voor-testen.md
