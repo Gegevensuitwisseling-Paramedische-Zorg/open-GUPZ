@@ -54,3 +54,4 @@
 - /src/JwtCliTool/Program.cs #issue 84
 - /src/JwtCliTool/README.md #issue 84
 - /src/JwtCliTool/Program.cs #issue 92
+- /docs/standards/Pas-toe-leg-uit-standaarden.md #issue 87
