@@ -40,12 +40,17 @@ dotnet run -- \
   --encryption-key public_encryption_key.pem 
   --iat 1786025213 
   --exp 1786028873  
-  --patient 123456789 \
-  --provider 06010520 \
-  --iss https://issuer.example \
-  --aud https://audience.example \
-  --scope "patient/read" \
+  --patient 123456789 
+  --sub 123456789
+  --provider 06010520 
+  --iss https://paris.opengupz.nl
+  --aud https://audience.example 
+  --scope "medmij.gegevensdienst.51" 
   --out token.txt
+```
+
+```bash
+./jwtcli --signing-key jwt_private_signing_key.pem --encryption-key jwt_private_encryption_key.pem --iat 1786025213 --exp 1786028873 --iss opengupz.nl --scope "medmij.gegevensdienst.51" --patient 123456789  --sub 123456789 --provider 06010520 --aud https://paris.opengupz.nl
 ```
 
 
@@ -63,8 +68,8 @@ controleren, bijvoorbeeld met een kleine dotnet-fx snippet of met een tool als `
   bouwt automatisch een geneste token wanneer zowel `SigningCredentials` als
   `EncryptingCredentials` op de `SecurityTokenDescriptor` staan: eerst wordt de JWT ondertekend
   (JWS/RS256), daarna wordt die JWS als payload ge-encrypt tot een JWE (RSA-OAEP key-wrap +
-  A256CBC-HS512 content-encryptie). Dit is een gangbare, interoperabele manier om "signed en
-  encrypted" JWT's te bouwen. In de huidige versie wordt gebruikt gemaakt van RSA-OAEP omdat de .NET Tokenhandler RSA-OAEP256 niet standaard ondersteunt. In een toekomstige versie zal ondersteuning van RSA-OAEP256 worden toegevoegd.
+  AES-256-GCM content-encryptie). Dit is de gangbare, interoperabele manier om "signed en
+  encrypted" JWT's te bouwen.
 - **PEM-parsing**: gebruikt `RSA.ImportFromPem` (PKCS#1 of PKCS#8) en, voor public keys,
   ondersteunt het ook een `-----BEGIN CERTIFICATE-----` PEM (X.509) naast een kale
   SubjectPublicKeyInfo PEM.
