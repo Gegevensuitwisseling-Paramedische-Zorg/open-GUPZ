@@ -185,7 +185,7 @@ Wanneer tokenvalidatie mislukt retourneert het dataplatform een HTTP 401 respons
 HTTP/1.1 401 Unauthorized
 WWW-Authenticate: Bearer realm="[url dataplatform-server]",
   error="invalid_token",
-  error_description="The access token expired"
+  error_description="The access token has expired"
 ```
 
 De body van het response bevat een OperationOutcome resource:
