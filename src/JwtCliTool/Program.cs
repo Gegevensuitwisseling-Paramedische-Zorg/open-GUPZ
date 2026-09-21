@@ -72,7 +72,7 @@ internal static class Program
 
                 jwe = BuildToken(options, signingRsa, encryptionRsa);                
             }
-            
+
             if (options.TryGetValue("out", out var outValues))
                 {
                     File.WriteAllText(outValues[0], jwe);
@@ -154,14 +154,23 @@ private static string BuildToken(Dictionary<string, List<string>> options, RSA s
         
 
         var claims = new Dictionary<string, object>
-        {
-            ["patient"] = GetSingleOption(options, "patient")!,
-            ["provider"] = GetSingleOption(options, "provider")!,
+        {                        
             ["jti"] = GetSingleOption(options, "jti") ?? Guid.NewGuid().ToString(),
             ["sub"] = GetSingleOption(options, "sub")!,
             ["scope"]= GetSingleOption(options, "scope")!,
             ["aud"] = GetSingleOption(options, "aud")!,
         };
+
+        string? patient = GetSingleOption(options, "patient");
+        if(null != patient)
+        {
+            claims["patient"] = patient;
+        }
+        string? provider = GetSingleOption(options, "provider");
+        if(null != provider)
+        {
+            claims["provider"] = provider;
+        }
 
         string? aud = GetSingleOption(options, "aud");
         string? iss = GetSingleOption(options, "iss");
