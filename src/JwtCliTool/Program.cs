@@ -10,17 +10,17 @@ internal static class Program
     private static readonly string HelpText = string.Join(Environment.NewLine, new[]
     {
         "jwtcli - genereert een JWT, signeert met een RSA private key (JWS/RS256)",
-        "         en encrypt het resultaat als geneste JWE (RSA-OAEP + A256CBC-HS512).",
+        "         en (optioneel) encrypt het resultaat als geneste JWE (RSA-OAEP + A256CBC-HS512).",
         "",
         "Verplicht:",
         "  --signing-key <pad>     PEM-bestand met de RSA private key (PKCS#1 of PKCS#8), voor signing",
-        "  --encryption-key <pad>      PEM-bestand met de RSA public key (SubjectPublicKeyInfo of certificaat), voor encryptie",  
         "  --iss <waarde>          issuer (iss)",   
         "  --scope <waarde>        scope claim",
         "  --aud <waarde>          audience (aud)",
         "  --sub <waarde>          subject (sub)",
         "",
         "Optioneel:",
+        "  --encryption-key <pad>  PEM-bestand met de RSA public key (SubjectPublicKeyInfo of certificaat), voor encryptie",  
         "  --patient <waarde>      Waarde voor de \"patient\" claim",
         "  --provider <waarde>     Waarde voor de \"provider\" claim",        
         "  --jti <waarde>          JWT ID (jti). Standaard: nieuwe GUID",
@@ -50,7 +50,7 @@ internal static class Program
             var options = ParseArgs(args);
 
             RequireOption(options, "signing-key");
-            RequireOption(options, "encryption-key");
+            //RequireOption(options, "encryption-key");
             //RequireOption(options, "iat");
             //RequireOption(options, "exp");
             RequireOption(options, "iss");
@@ -58,25 +58,32 @@ internal static class Program
             RequireOption(options, "aud");
             RequireOption(options, "sub");
 
-            string privateKeyPath = options["signing-key"][0];
-            string publicKeyPath = options["encryption-key"][0];
-
+            string privateKeyPath = options["signing-key"][0];            
             using RSA signingRsa = LoadPrivateKey(privateKeyPath);
-            using RSA encryptionRsa = LoadPublicKey(publicKeyPath);
 
-            string jwe = BuildToken(options, signingRsa, encryptionRsa);
+            string? publicKeyPath = GetSingleOption(options, "encryption-key");
+            string jwe = String.Empty;
+            if(null == publicKeyPath)
+            {
+             jwe = BuildToken(options, signingRsa);   
+            }else{
 
+                using RSA encryptionRsa = LoadPublicKey(publicKeyPath);
+
+                jwe = BuildToken(options, signingRsa, encryptionRsa);                
+            }
+            
             if (options.TryGetValue("out", out var outValues))
-            {
-                File.WriteAllText(outValues[0], jwe);
-                Console.WriteLine($"JWT geschreven naar {outValues[0]}");
-            }
-            else
-            {
-                Console.WriteLine(jwe);
-            }
+                {
+                    File.WriteAllText(outValues[0], jwe);
+                    Console.WriteLine($"JWT geschreven naar {outValues[0]}");
+                }
+                else
+                {
+                    Console.WriteLine(jwe);
+                }
 
-            return 0;
+                return 0;
         }
         catch (CliArgumentException ex)
         {
@@ -135,6 +142,46 @@ internal static class Program
         return handler.CreateToken(descriptor);
     }
 
+private static string BuildToken(Dictionary<string, List<string>> options, RSA signingRsa)
+    {
+        DateTime now = DateTime.UtcNow;
+
+        long iat = GetLongOption(options, "iat") ?? ToUnixSeconds(now);
+        long nbf = GetLongOption(options, "nbf") ?? iat;
+        long exp = GetLongOption(options, "exp") ?? (iat + 900);
+
+        string sigAlg = GetSingleOption(options, "sig-alg") ?? SecurityAlgorithms.RsaSha256;
+        
+
+        var claims = new Dictionary<string, object>
+        {
+            ["patient"] = GetSingleOption(options, "patient")!,
+            ["provider"] = GetSingleOption(options, "provider")!,
+            ["jti"] = GetSingleOption(options, "jti") ?? Guid.NewGuid().ToString(),
+            ["sub"] = GetSingleOption(options, "sub")!,
+            ["scope"]= GetSingleOption(options, "scope")!,
+            ["aud"] = GetSingleOption(options, "aud")!,
+        };
+
+        string? aud = GetSingleOption(options, "aud");
+        string? iss = GetSingleOption(options, "iss");
+
+
+        var descriptor = new SecurityTokenDescriptor
+        {
+            
+            Issuer = iss,
+            Audience = aud,
+            IssuedAt = DateTimeOffset.FromUnixTimeSeconds(iat).UtcDateTime,
+            NotBefore = DateTimeOffset.FromUnixTimeSeconds(nbf).UtcDateTime,
+            Expires = DateTimeOffset.FromUnixTimeSeconds(exp).UtcDateTime,
+            Claims = claims,
+            SigningCredentials = new SigningCredentials(new RsaSecurityKey(signingRsa){KeyId="signing-key-gupz"}, sigAlg)            
+        };
+
+        var handler = new JsonWebTokenHandler();
+        return handler.CreateToken(descriptor);
+    }
     private static RSA LoadPrivateKey(string path)
     {
         if (!File.Exists(path))

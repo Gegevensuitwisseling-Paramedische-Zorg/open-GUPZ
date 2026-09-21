@@ -1,7 +1,7 @@
 # jwtcli
 
 Commandline tool (.NET 8, C#) dat een JWT genereert op basis van commandline-parameters,
-de JWT signeert (JWS, RS256) met een RSA private key uit een PEM-bestand, en het resultaat
+de JWT signeert (JWS, RS256) met een RSA private key uit een PEM-bestand, en (optioneel) het resultaat
 vervolgens encrypt als een geneste JWE (RSA-OAEP + A256CBC-HS512) met een RSA public key uit een
 ander PEM-bestand. Het eindresultaat is dus: **JWS in JWE** (industriestandaard "nested JWT").
 
