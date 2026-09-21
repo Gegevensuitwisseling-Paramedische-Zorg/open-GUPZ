@@ -14,9 +14,7 @@ internal static class Program
         "",
         "Verplicht:",
         "  --signing-key <pad>     PEM-bestand met de RSA private key (PKCS#1 of PKCS#8), voor signing",
-        "  --encryption-key <pad>      PEM-bestand met de RSA public key (SubjectPublicKeyInfo of certificaat), voor encryptie",
-        "  --iat <unix-seconds>    issued-at (iat). Standaard: nu",
-        "  --exp <unix-seconds>    expiry (exp). Heeft voorrang op --ttl",     
+        "  --encryption-key <pad>      PEM-bestand met de RSA public key (SubjectPublicKeyInfo of certificaat), voor encryptie",  
         "  --iss <waarde>          issuer (iss)",   
         "  --scope <waarde>        scope claim",
         "  --aud <waarde>          audience (aud)",
@@ -26,6 +24,8 @@ internal static class Program
         "  --patient <waarde>      Waarde voor de \"patient\" claim",
         "  --provider <waarde>     Waarde voor de \"provider\" claim",        
         "  --jti <waarde>          JWT ID (jti). Standaard: nieuwe GUID",
+        "  --iat <unix-seconds>    issued-at (iat). Standaard: nu",
+        "  --exp <unix-seconds>    Uiterlijke moment van geldigheid van het token (exp). Standaard: iat + 900 seconden",   
         "  --nbf <unix-seconds>    not-before (nbf). Standaard: nu",
         "  --help                  toon deze help",
         "  --out <pad>              schrijf JWT naar bestand in plaats van stdout",
@@ -33,8 +33,8 @@ internal static class Program
         "Voorbeeld:",
         "  jwtcli --signing-key private_signing_key.pem --encryption-key public_encryption_key.pem  \\",
         "         --iat 1786025213 --exp 1786028873 --iss https://issuer.example \\",
-        "         --patient 123456789 --provider 06010520 \\",
-        "         --aud https://audience.example --scope \"patient/read\" ---out token.txt ",
+        "         --patient 123456789 --sub 123456789 --provider 06010520 \\",
+        "         --aud https://audience.example --scope \"patient/read\" --out token.txt ",
     });
 
     private static int Main(string[] args)
@@ -51,8 +51,8 @@ internal static class Program
 
             RequireOption(options, "signing-key");
             RequireOption(options, "encryption-key");
-            RequireOption(options, "iat");
-            RequireOption(options, "exp");
+            //RequireOption(options, "iat");
+            //RequireOption(options, "exp");
             RequireOption(options, "iss");
             RequireOption(options, "scope");
             RequireOption(options, "aud");
@@ -98,7 +98,7 @@ internal static class Program
 
         long iat = GetLongOption(options, "iat") ?? ToUnixSeconds(now);
         long nbf = GetLongOption(options, "nbf") ?? iat;
-        long exp = GetLongOption(options, "exp") ?? (iat + 600);
+        long exp = GetLongOption(options, "exp") ?? (iat + 900);
 
         string sigAlg = GetSingleOption(options, "sig-alg") ?? SecurityAlgorithms.RsaSha256;
         string encAlgKw = GetSingleOption(options, "enc-alg") ?? SecurityAlgorithms.RsaOAEP;
