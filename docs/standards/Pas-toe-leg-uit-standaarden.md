@@ -18,7 +18,7 @@ filename: Pas-toe-leg-uit-standaarden.md
 |[TLS](https://datatracker.ietf.org/doc/html/rfc8446)| Transport Layer Security is een encryptie-protocol dat de communicatie tussen computers (bijvoorbeeld op het internet) beveiligt|1.2 of hoger|[IETF](https://www.ietf.org/)|
 |[HTTPS en HSTS](https://datatracker.ietf.org/doc/html/rfc2818)|	Beveiligde verbindingen over HTTP (websites en API's)|RFC 9110 en RFC 6797|[IETF](https://www.ietf.org/)|
 |[IPv4](https://datatracker.ietf.org/doc/html/rfc791)|IPv4 is de vierde versie van het internetprotocol. Deze versie werd voor het eerst op grote schaal gebruikt en vormt de basis voor adressering (de identificatie van computers) binnen het internet.|RFC791|[IETF](https://www.ietf.org/)|
-|[IPv6](https://datatracker.ietf.org/doc/html/rfc8200)|Opvolger van IPv4 met onder andere stere toename van het aantal mogelijke adressen|RFC791|[IETF](https://www.ietf.org/)|
+|[IPv6](https://datatracker.ietf.org/doc/html/rfc8200)|Opvolger van IPv4 met onder andere stere toename van het aantal mogelijke adressen|RFC8200|[IETF](https://www.ietf.org/)|
 |[NEN7510](https://www.nen.nl/zorg-welzijn/ict-in-de-zorg/informatiebeveiliging-in-de-zorg)|Nederlandse norm voor informatiebeveiliging in de zorg|NEN7510:2024|[NEN](https://www.nen.nl/)|
 |[NEN7513](https://www.nen.nl/nen-7513-2024-nl-329182)|Nederlandse norm voor logging van toegang tot gezondheids(zorg)informatie|NEN7513:2024|[NEN](https://www.nen.nl/)|
 |[OpenAPI](https://spec.openapis.org/oas/latest.html)|Standaard voor het beschrijven van REST APIs|3.2|[OpenAPI initiative](https://www.openapis.org/)|
