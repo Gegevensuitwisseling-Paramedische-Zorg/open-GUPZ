@@ -52,4 +52,5 @@
 ## [1.0.4] 10-08-2026
 ### Changed
 - /src/JwtCliTool/Program.cs #issue 84
-- - /src/JwtCliTool/README.md #issue 84
+- /src/JwtCliTool/README.md #issue 84
+- /src/JwtCliTool/Program.cs #issue 92
