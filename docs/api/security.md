@@ -146,6 +146,8 @@ Het token wordt eerst gesigned, waarna de resulterende JWS als inhoud wordt opge
 > [!IMPORTANT]
 > Ondersteuning van RFC 8705 is optioneel voor zowel het dataplatform als clients op het dataplatform. Verwacht wordt dat RFC 8705 op termijn verplicht zal worden gesteld. Dit betekent dat clients aan het token een cnf. x5t#S256 claim toevoegen met de base64url-gecodeerde SHA-256-hash van de DER-gecodeerde clientcertificaat-bytes. Het dataplatform zal dan controleren of het token ook daadwerkelijk is gebonden aan het betreffende clientcertificaat.
 
+> [!IMPORTANT]
+> Voor testdoeleinden is het toegestaan om tokens te accepteren die alleen gesigneerd maar niet versleuteld zijn (JWS). Tijdens het testen dient echter ook aangetoond te kunnen worden dat gesigneerde EN versleutelde tokens (JWE) kunnen worden verwerkt.
 
 ### MedMij specifieke eisen op het gebied van application level security ###
 In tokens afkomstig van een MedMij DVA wordt het JWT scope field door de DVA gevuld met één of meer van de geldige MedMij gegevensdienstnummers conform het volgende format:
