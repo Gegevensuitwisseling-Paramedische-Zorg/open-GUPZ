@@ -21,6 +21,8 @@ internal static class Program
         "",
         "Optioneel:",
         "  --encryption-key <pad>  PEM-bestand met de RSA public key (SubjectPublicKeyInfo of certificaat), voor encryptie",  
+        "  --signing-kid <waarde>  Key ID (kid) voor de signing key. Standaard: \"signing-key-gupz\"",
+        "  --encryption-kid <waarde> Key ID (kid) voor de encryptie key. Standaard: \"encryption-key-gupz\"",
         "  --patient <waarde>      Waarde voor de \"patient\" claim",
         "  --provider <waarde>     Waarde voor de \"provider\" claim",        
         "  --jti <waarde>          JWT ID (jti). Standaard: nieuwe GUID",
@@ -50,9 +52,6 @@ internal static class Program
             var options = ParseArgs(args);
 
             RequireOption(options, "signing-key");
-            //RequireOption(options, "encryption-key");
-            //RequireOption(options, "iat");
-            //RequireOption(options, "exp");
             RequireOption(options, "iss");
             RequireOption(options, "scope");
             RequireOption(options, "aud");
@@ -110,6 +109,7 @@ internal static class Program
         string sigAlg = GetSingleOption(options, "sig-alg") ?? SecurityAlgorithms.RsaSha256;
         string encAlgKw = GetSingleOption(options, "enc-alg") ?? SecurityAlgorithms.RsaOAEP;
         string encAlgContent = GetSingleOption(options, "enc") ?? SecurityAlgorithms.Aes256CbcHmacSha512;
+        string? aud = GetSingleOption(options, "aud");
 
         var claims = new Dictionary<string, object>
         {
@@ -118,12 +118,12 @@ internal static class Program
             ["jti"] = GetSingleOption(options, "jti") ?? Guid.NewGuid().ToString(),
             ["sub"] = GetSingleOption(options, "sub")!,
             ["scope"]= GetSingleOption(options, "scope")!,
-            ["aud"] = GetSingleOption(options, "aud")!,
+            ["aud"] =aud!,
         };
 
-        string? aud = GetSingleOption(options, "aud");
         string? iss = GetSingleOption(options, "iss");
-
+        string signing_kid = GetSingleOption(options, "signing-kid") ?? "signing-key-gupz";
+        string encryption_kid = GetSingleOption(options, "encryption-kid") ?? "encryption-key-gupz";
 
         var descriptor = new SecurityTokenDescriptor
         {
@@ -134,8 +134,8 @@ internal static class Program
             NotBefore = DateTimeOffset.FromUnixTimeSeconds(nbf).UtcDateTime,
             Expires = DateTimeOffset.FromUnixTimeSeconds(exp).UtcDateTime,
             Claims = claims,
-            SigningCredentials = new SigningCredentials(new RsaSecurityKey(signingRsa){KeyId="signing-key-gupz"}, sigAlg),
-            EncryptingCredentials = new EncryptingCredentials(new RsaSecurityKey(encryptionRsa){KeyId="encryption-key-gupz"}, encAlgKw, encAlgContent),
+            SigningCredentials = new SigningCredentials(new RsaSecurityKey(signingRsa){KeyId=signing_kid}, sigAlg),
+            EncryptingCredentials = new EncryptingCredentials(new RsaSecurityKey(encryptionRsa){KeyId=encryption_kid}, encAlgKw, encAlgContent),
         };
 
         var handler = new JsonWebTokenHandler();
@@ -150,15 +150,15 @@ private static string BuildToken(Dictionary<string, List<string>> options, RSA s
         long nbf = GetLongOption(options, "nbf") ?? iat;
         long exp = GetLongOption(options, "exp") ?? (iat + 900);
 
-        string sigAlg = GetSingleOption(options, "sig-alg") ?? SecurityAlgorithms.RsaSha256;
-        
+        string sigAlg = GetSingleOption(options, "sig-alg") ?? SecurityAlgorithms.RsaSha256;        
+        string? aud = GetSingleOption(options, "aud");
 
         var claims = new Dictionary<string, object>
         {                        
             ["jti"] = GetSingleOption(options, "jti") ?? Guid.NewGuid().ToString(),
             ["sub"] = GetSingleOption(options, "sub")!,
             ["scope"]= GetSingleOption(options, "scope")!,
-            ["aud"] = GetSingleOption(options, "aud")!,
+            ["aud"] = aud!,
         };
 
         string? patient = GetSingleOption(options, "patient");
@@ -172,8 +172,9 @@ private static string BuildToken(Dictionary<string, List<string>> options, RSA s
             claims["provider"] = provider;
         }
 
-        string? aud = GetSingleOption(options, "aud");
+  
         string? iss = GetSingleOption(options, "iss");
+        string kid = GetSingleOption(options, "kid") ?? "signing-key-gupz";
 
 
         var descriptor = new SecurityTokenDescriptor
@@ -185,7 +186,7 @@ private static string BuildToken(Dictionary<string, List<string>> options, RSA s
             NotBefore = DateTimeOffset.FromUnixTimeSeconds(nbf).UtcDateTime,
             Expires = DateTimeOffset.FromUnixTimeSeconds(exp).UtcDateTime,
             Claims = claims,
-            SigningCredentials = new SigningCredentials(new RsaSecurityKey(signingRsa){KeyId="signing-key-gupz"}, sigAlg)            
+            SigningCredentials = new SigningCredentials(new RsaSecurityKey(signingRsa){KeyId=kid}, sigAlg)            
         };
 
         var handler = new JsonWebTokenHandler();
