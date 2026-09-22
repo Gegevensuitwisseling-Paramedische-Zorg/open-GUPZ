@@ -49,10 +49,14 @@
 - /src/TestCertificateGeneration
 - /docs/test/localxpose-tunnels-voor-testen.md
 
-## [1.0.4] 10-08-2026
+## [1.0.6] 10-08-2026
 ### Changed
 - /src/JwtCliTool/Program.cs #issue 84
 - /src/JwtCliTool/README.md #issue 84
 - /src/JwtCliTool/Program.cs #issue 92
 - /docs/standards/Pas-toe-leg-uit-standaarden.md #issue 87
 - /docs/api/security.md #issue 83
+
+## [1.0.7] 11-08-2026
+### Changed
+- /src/JwtCliTool/Program.cs #issue 75
