@@ -141,6 +141,7 @@ Het token wordt eerst gesigned, waarna de resulterende JWS als inhoud wordt opge
 | alg | Asymmetrisch algoritme gebruikt om de sleutel te versleutelen | Vaste waarde: RSA-OAEP | Ja |
 | enc | Symmetrisch algoritme om de inhoud te versleutelen | Vaste waaarde: A256CBC-HS512 | Ja |
 | cty | Content Type | Vaste waarde: JWT | Ja |
+| kid | ID van de key gebruikt voor signing | Ja |
 
 > [!IMPORTANT]
 > Ondersteuning van RFC 8705 is optioneel voor zowel het dataplatform als clients op het dataplatform. Verwacht wordt dat RFC 8705 op termijn verplicht zal worden gesteld. Dit betekent dat clients aan het token een cnf. x5t#S256 claim toevoegen met de base64url-gecodeerde SHA-256-hash van de DER-gecodeerde clientcertificaat-bytes. Het dataplatform zal dan controleren of het token ook daadwerkelijk is gebonden aan het betreffende clientcertificaat.
