@@ -37,7 +37,9 @@ openssl rsa -in encryption_private.pem -pubout -out encryption_public.pem
 ```bash
 dotnet run -- \
   --signing-key private_signing_key.pem 
-  --encryption-key public_encryption_key.pem 
+  --encryption-key public_encryption_key.pem
+  --signing-kid opengupz.nl
+  --encryption-kid paris.opengupz.nl
   --iat 1786025213 
   --exp 1786028873  
   --patient 123456789 
