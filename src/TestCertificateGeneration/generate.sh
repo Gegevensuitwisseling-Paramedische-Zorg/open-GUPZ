@@ -44,16 +44,17 @@ while IFS= read -r domain || [ -n "$domain" ]; do
     domain="${domain%$'\r'}"
     [ -z "$domain" ] && continue
     
-    echo " - Genereren voor: $domain"
+    echo " - Genereren voor: $domain (inclusief *.$domain)"
     DOMAIN_DIR="$PARIS_OUT_DIR/$domain"
     mkdir -p "$DOMAIN_DIR"
     
-    echo "subjectAltName=DNS:$domain" > "$DOMAIN_DIR/${domain}_ext.cnf"
+    # Voeg zowel het hoofddomein als de wildcard toe aan de SAN
+    echo "subjectAltName=DNS:$domain,DNS:*.$domain" > "$DOMAIN_DIR/${domain}_ext.cnf"
     
     openssl req -newkey rsa:2048 -nodes -keyout "$DOMAIN_DIR/${domain}.key" -out "$DOMAIN_DIR/${domain}.csr" -subj "/CN=$domain"
     openssl x509 -req -in "$DOMAIN_DIR/${domain}.csr" -CA "$CA_DIR/rootCA.crt" -CAkey "$CA_DIR/rootCA.key" -CAcreateserial -out "$DOMAIN_DIR/${domain}.crt" -days 365 -extfile "$DOMAIN_DIR/${domain}_ext.cnf"
     
-    # Exporteer direct naar PFX
+    # Exporteer direct naar PFX (legacy vlag behouden voor o.a. .NET X509Certificate2 compatibiliteit)
     openssl pkcs12 -export -legacy -out "$DOMAIN_DIR/${domain}.pfx" -inkey "$DOMAIN_DIR/${domain}.key" -in "$DOMAIN_DIR/${domain}.crt" -certfile "$CA_DIR/rootCA.crt" -passout pass:$PFX_PASS
     
     # Bereken de SHA1 Thumbprint, forceer kleine letters en sla op in de specifieke domeinmap
