@@ -61,3 +61,8 @@
 ### Changed
 - /src/JwtCliTool/Program.cs #issue 75
 - /doc/api/security.md #issue 79
+
+## [1.0.7] 129-10-2026
+### Changed
+- /docs/api/security.md #issue 103
+
