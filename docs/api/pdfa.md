@@ -87,6 +87,36 @@ In de MedMij kwalificatie wordt uitgegaan van de door Nictiz gehanteerde statuss
 > [!NOTE]
 > Indien een document te status 'entered-in-error' krijgt, **en** er kan met zekerheid worden vastgesteld dat het document door geen enkele (externe) gebruiker is ingezien, dan mag het document worden verwijderd.
 
+## Document types ##
+Onderstaande LOINC codes MOETEN worden gebruikt om DocumentReference.type te coderen:
+
+| GUPZ Document type | LOINC code | Display |  
+| ------ | --------- | ----------- |
+| Behandelplan| 18776-5 |Plan of Care Note | 
+| Diagnostiekplan | 51847-2 | Evaluation + Plan Note |
+| Paramedische diagnose| 51848-0 | Evaluation Note | 
+| DT-bericht| 86530-3 | Visit Notification Note |
+| Update | 34133-9 | Summary of Episode Note | 
+| Antwoord op uw vraag | 11488-4 | Consult Note | 
+
+## Disciplines coderen ##
+Onderstaande Vektis codes MOETEN worden gebruikt om DocumentReference.context.practiceSetting te coderen:
+
+| GUPZ Discipline | Vektis code code | Display |  
+| ------ | --------- | ----------- |
+| Fysiotherapie| 0400 |Fysiotherapeuten, niet nader gespecificeerd | 
+| Logopedie | 0500 | Logopedisten, niet nader gespecificeerd  |
+| Oefentherapie| 0725 | Oefentherapeuten | 
+| Diëtetiek| 2405| Diëtetiek |
+| Ergotherapie | 8805 | Ergotherapie | 
+| Optometrie | 4405 | Optometrie | 
+| Huidtherapie | 9013 | Huidtherapie | 
+
+## Leesbare document titels ##
+In DocumentReference.description en content.attachment.title MOET een leesbare titel van het document worden opgenomen. De titel MOET als volgt worden opgebouwd:
+
+- Nederlandse vertaling van de displayvalue van het Document type (LOINC code)
+- Display value van de practiceSetting (Vektis code)
 
 ## Security ##
 De beveiliging van verkeer tussen client en het dataplatform wordt beschreven in [security.md](security.md).
