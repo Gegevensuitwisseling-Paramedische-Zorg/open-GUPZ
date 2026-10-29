@@ -115,7 +115,7 @@ Onderstaande Vektis codes MOETEN worden gebruikt om DocumentReference.context.pr
 ## Leesbare document titels ##
 In DocumentReference.description en content.attachment.title MOET een leesbare titel van het document worden opgenomen. De titel MOET als volgt worden opgebouwd:
 
-- GUPZ document code
+- GUPZ document type
 - Spatie
 - Display value van de practiceSetting (Vektis code)
 
