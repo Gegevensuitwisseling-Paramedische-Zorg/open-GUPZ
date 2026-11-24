@@ -106,7 +106,7 @@ De token payload bevat de volgende claims:
 | veld | betekenis | waarde | Voorbeeld| Verplicht |
 |---|---|---|---|---|
 | patient | BSN van de patiënt waarvan gegevens worden opgevraagd of gewijzigd | http://fhir.nl/fhir/NamingSystem/bsn\|{bsn} | http://fhir.nl/fhir/NamingSystem/bsn\|000000012 | Voor patiëntgebonden requests|
-| provider | Zorgaanbieder waarvoor het verzoek bestemd is | http://fhir.nl/fhir/NamingSystem/agb-z\|{agb} | http://fhir.nl/fhir/NamingSystem/agb-z\|20000001| Nee |
+| provider | Zorgaanbieder waarvoor het verzoek bestemd is | http://fhir.nl/fhir/NamingSystem/agb-z\|{agb} | http://fhir.nl/fhir/NamingSystem/agb-z\|20000001| Ja |
 | sub | Gebruiker die het request initieert. Dit is ofwel de patiënt (zelde waarde als patient claim), ofwel een gemachtigde ofwel een zorgverlener| http://fhir.nl/fhir/NamingSystem/bsn\|{bsn} of een string igv een zorgverlener | http://fhir.nl/fhir/NamingSystem/bsn\|000000012 | Ja |
 | iat | Moment waarop het token gecreeerd is. Wordt door dataplatform gebruikt om maximale token lifetime te kunnen controleren | Numeric Date | 1617181723 | Ja |
 | exp | Uiterlijke moment van geldigheid van het token | Numeric Date| 1617182623| Ja |
@@ -132,7 +132,8 @@ Het dataplatform gaat uit van de volgende stappen voor JWT token beveiliging:
 - Het vertrouwde externe systeem verstuurt het versleutelde token in de HTTP Authorization header: Authorization bearer <encrypted token>. Het dataplatform ontsleutelt het token met behukp van zijn private encryption key en valideert de digital signature met behulp van de public signing key van het vertrouwde externe systeem
 - Het dataplatform valideert de creation time van het JWT token. Indien deze langer is dan 15 minuten (900 seconden) geleden dan wordt het request geweigerd (geldige tokens voldoen aan: now-iat < 900)
 - Het dataplatform valideert de expiration time van het JWT token. Indien deze is verstreken wordt het request geweigerd (geldige tokens voldoen aan: now<exp)
-- Het dataplatform valideert de issuer van het token 
+- Het dataplatform valideert de issuer van het token
+- Het dataplatform valideert de provider van het token en of de DVA geauthoriseert is om data op te halen van die provider.
 
 Het token wordt eerst gesigned, waarna de resulterende JWS als inhoud wordt opgenomen in een JWE.Dit staat bekend als 'NESTED JWT', omdat het ondertekende token wordt opgenomen als waarde in het encrypted token. De resulterende JWE heeft de volgende header velden:
 
